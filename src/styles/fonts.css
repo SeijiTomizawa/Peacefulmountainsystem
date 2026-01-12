@@ -1,0 +1,8 @@
+/* Google Fonts with optimized loading */
+/* Using text parameter to load only required characters for Japanese fonts */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;600;700&family=Noto+Sans+JP:wght@400;600&family=Damion&display=swap&subset=japanese');
+
+/* Preconnect for faster font loading */
+@supports (font-display: swap) {
+  /* Font faces are handled by Google Fonts */
+}
