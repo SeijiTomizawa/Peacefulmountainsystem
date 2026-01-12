@@ -1,10 +1,11 @@
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import { FadeTransition } from './FadeTransition';
-import { MapPin } from 'lucide-react';
-import { memo } from 'react';
+import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { ButtonLink } from './ButtonLink';
 import { COLORS, FONTS } from '../constants/theme';
-import hachiojiStationImage from 'figma:asset/34c365d8a77015e7ca628b7066f84e1f0c17645e.png';
+import { hachiojiStationImage } from '../assets/images';
+import { memo } from 'react';
 
 export const AccessSection = memo(function AccessSection() {
   const { language } = useLanguage();

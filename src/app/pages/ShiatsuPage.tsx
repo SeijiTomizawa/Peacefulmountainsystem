@@ -11,18 +11,7 @@ import { Check, X } from "lucide-react";
 import Slider from "react-slick";
 import "../../styles/slick.css";
 import { COLORS } from "../constants/theme";
-import clientLetter1 from "figma:asset/4ef646d7ee2f816af9da7712e8c88b62377ca1ea.png";
-import clientLetter2 from "figma:asset/82e2a14f1b6266e6f8c1374b8bf134e66ef52e69.png";
-import clientLetter3 from "figma:asset/357c11d605275a73cd43daf99f7b813aebb0d46a.png";
-import carouselImage1 from "figma:asset/d7358c0eb3e00d9ea9af29be651420e1695f79e8.png";
-import carouselImage2 from "figma:asset/0ed6bc0b8813a0536d5a93a5ff8edaa4a1e8cfea.png";
-import carouselImage3 from "figma:asset/c94bd3277776d1c89f84563e9fd59b5b2be7e7ca.png";
-import carouselImage4 from "figma:asset/0eb0424aee8e9c80496d580aa5d3a006795f64de.png";
-import carouselImage5 from "figma:asset/31026d6cfdcbd228c507cf2c8cdfc1b7ff4adb75.png";
-import carouselImage6 from "figma:asset/99aadc6c4c57149c2b8bb8764ee6d9206771570c.png";
-import sokePhoto from "figma:asset/d829665103e42dd1fe9cba586113da03f3bfe73c.png";
-import certificate1 from "figma:asset/8f80d9f96620e8aad571b511326f36e3e7d9ab86.png";
-import certificate2 from "figma:asset/4f5c29b9973e9ad95a89da08b6e8c6c176e80e19.png";
+import * as Images from "../assets/images";
 
 function ShiatsuPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -33,26 +22,26 @@ function ShiatsuPage() {
 
   const clientLetters = [
     {
-      src: clientLetter1,
+      src: Images.clientLetter1,
       alt: "Thank you letter from client Hilda",
     },
     {
-      src: clientLetter2,
+      src: Images.clientLetter2,
       alt: "Thank you letter from client Francesca",
     },
     {
-      src: clientLetter3,
+      src: Images.clientLetter3,
       alt: "Thank you letter from client Alexandra",
     },
   ];
 
   const carouselImages = [
-    carouselImage1,
-    carouselImage2,
-    carouselImage3,
-    carouselImage4,
-    carouselImage5,
-    carouselImage6,
+    Images.carouselImage1,
+    Images.carouselImage2,
+    Images.carouselImage3,
+    Images.carouselImage4,
+    Images.carouselImage5,
+    Images.carouselImage6,
   ];
 
   const sliderSettings = {
@@ -213,7 +202,7 @@ function ShiatsuPage() {
             }}
           >
             <img
-              src={sokePhoto}
+              src={Images.sokePhoto}
               alt="Soke Joe Miller"
               className="w-full h-full object-contain"
               style={{ objectPosition: "center" }}
@@ -568,7 +557,7 @@ function ShiatsuPage() {
               letterSpacing: "0.02em",
             }}
           >
-            {language === "jp" ? "指圧免状" : "Shiatsu Certificates"}
+            {language === "jp" ? "指圧認定証" : "Shiatsu Certificates"}
           </h2>
           <p
             style={{
@@ -597,7 +586,7 @@ function ShiatsuPage() {
                 style={{ backgroundColor: "white" }}
               >
                 <img
-                  src={certificate1}
+                  src={Images.certificate1}
                   alt="Namikoshi System of Shiatsu Certificate - Joseph Miller"
                   className="w-full h-auto object-contain"
                   style={{ objectPosition: "center" }}
@@ -632,7 +621,7 @@ function ShiatsuPage() {
                 style={{ backgroundColor: "white" }}
               >
                 <img
-                  src={certificate2}
+                  src={Images.certificate2}
                   alt="Shiatsu Tokyo License - Joseph Miller License Number 1224"
                   className="w-full h-auto object-contain"
                   style={{ objectPosition: "center" }}
@@ -655,6 +644,84 @@ function ShiatsuPage() {
                   : "Shiatsu Tokyo License (License Number: 1224)"}
               </p>
             </div>
+          </FadeTransition>
+        </div>
+      </section>
+
+      {/* Emotional Letter from Bible Study Section */}
+      <section
+        style={{ backgroundColor: "white" }}
+        className="px-6 py-16"
+      >
+        <FadeTransition
+          keyValue={`bible-letter-heading-${language}`}
+        >
+          <h2
+            style={{
+              fontFamily: "'Noto Serif JP', serif",
+              fontSize: "28px",
+              fontWeight: 700,
+              color: "#6B1F23",
+              lineHeight: "1.5",
+              marginBottom: "16px",
+              textAlign: "center",
+              letterSpacing: "0.02em",
+            }}
+          >
+            {language === "jp"
+              ? "教会のバイブルスタディで宗家が助けた女性からの感動的な手紙"
+              : "Emotional Letter from a Lady who Soke Miller Helped Out in the Church During Bible Study"}
+          </h2>
+          <p
+            style={{
+              color: "#1A2B48",
+              fontSize: "15px",
+              lineHeight: "1.8",
+              marginBottom: "48px",
+              textAlign: "center",
+              opacity: 0.85,
+            }}
+          >
+            {language === "jp"
+              ? "教会のバイブルスタディで宗家ミラー先生から癒しと励ましを受けた女性からの心温まる感謝の手紙"
+              : "A heartwarming letter of gratitude from a lady who received healing and encouragement from Soke Miller during Bible study at church"}
+          </p>
+        </FadeTransition>
+
+        <div className="max-w-4xl mx-auto">
+          <FadeTransition
+            keyValue={`bible-letter-image-${language}`}
+          >
+            <div
+              className="rounded-lg overflow-hidden shadow-2xl"
+              style={{ backgroundColor: "white" }}
+            >
+              <img
+                src={Images.bibleLadyLetter}
+                alt={
+                  language === "jp"
+                    ? "教会のバイブルスタディで宗家ミラー先生が助けた女性からの感動的な手紙"
+                    : "Emotional letter from a lady who Soke Miller helped during Bible study"
+                }
+                className="w-full h-auto object-contain"
+                style={{ objectPosition: "center" }}
+              />
+            </div>
+            <p
+              className="mt-6"
+              style={{
+                color: "#1A2B48",
+                fontSize: "14px",
+                lineHeight: "1.8",
+                textAlign: "center",
+                opacity: 0.75,
+                fontStyle: "italic",
+              }}
+            >
+              {language === "jp"
+                ? "教会でのバイブルスタディ中に宗家ミラー先生から助けを受けた女性からの感謝の手紙"
+                : "Letter of gratitude from a lady who received help from Soke Miller during Bible study at church"}
+            </p>
           </FadeTransition>
         </div>
       </section>

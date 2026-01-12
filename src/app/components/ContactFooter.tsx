@@ -1,10 +1,11 @@
-import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import { FadeTransition } from './FadeTransition';
+import { Phone, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { memo } from 'react';
 import { COLORS, FONTS } from '../constants/theme';
-import logoImage from 'figma:asset/8fbc73fac66db1cbb73a089ff2f0be78335936a2.png';
+import { logoImage } from '../assets/images';
 
 export const ContactFooter = memo(function ContactFooter() {
   const { language } = useLanguage();

@@ -4,49 +4,13 @@ import { translations } from "../translations/translations";
 import { FadeTransition } from "../components/FadeTransition";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
-
-// Real images from Unsplash
-const sokeImage = "https://images.unsplash.com/photo-1608583224016-d7fdbc3bf282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGRlcmx5JTIwbWFydGlhbCUyMGFydHMlMjBtYXN0ZXIlMjBkb2pvfGVufDF8fHx8MTc2ODA3MzA3NHww&ixlib=rb-4.1.0&q=80&w=1080";
-const sokeCouple = "https://images.unsplash.com/photo-1550058905-c91bce5e0bf5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGRlcmx5JTIwbWFydGlhbCUyMGFydHMlMjBjb3VwbGV8ZW58MXx8fHwxNzY4MTQ3MTAwfDA&ixlib=rb-4.1.0&q=80&w=1080";
-const shihanSaulCohe = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const sokeMichaelDePasquale = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMGdyYW5kbWFzdGVyfGVufDF8fHx8MTc2ODE0NzEwMHww&ixlib=rb-4.1.0&q=80&w=1080";
-const shodaiOkuyama = "https://images.unsplash.com/photo-1731530338283-eb0d9371e463?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGFpa2lkbyUyMG1hc3RlcnxlbnwxfHx8fDE3NjgxNDcxMDh8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic1 = "https://images.unsplash.com/photo-1703231528182-5ced05e25800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwbWFydGlhbCUyMGFydHMlMjB0cmFpbmluZ3xlbnwxfHx8fDE3NjgxNDcxMDd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic2 = "https://images.unsplash.com/photo-1585220703197-37c07314376e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGQlMjBkb2pvJTIwcGhvdG9ncmFwaHxlbnwxfHx8fDE3NjgxNDcxMDd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic3 = "https://images.unsplash.com/photo-1703231528182-5ced05e25800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwanVkbyUyMHByYWN0aWNlfGVufDF8fHx8MTc2ODE0NzEwN3ww&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic4 = "https://images.unsplash.com/photo-1529630218527-7df22fc2d4ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGFzc2ljJTIwbWFydGlhbCUyMGFydHMlMjBwaG90b3xlbnwxfHx8fDE3NjgxNDcxMDh8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic5 = "https://images.unsplash.com/photo-1731530338283-eb0d9371e463?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGFpa2lkbyUyMG1hc3RlcnxlbnwxfHx8fDE3NjgxNDcxMDh8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic6 = "https://images.unsplash.com/photo-1703231528182-5ced05e25800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwbWFydGlhbCUyMGFydHMlMjB0cmFpbmluZ3xlbnwxfHx8fDE3NjgxNDcxMDd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic7 = "https://images.unsplash.com/photo-1585220703197-37c07314376e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbGQlMjBkb2pvJTIwcGhvdG9ncmFwaHxlbnwxfHx8fDE3NjgxNDcxMDd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic8 = "https://images.unsplash.com/photo-1703231528182-5ced05e25800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwanVkbyUyMHByYWN0aWNlfGVufDF8fHx8MTc2ODE0NzEwN3ww&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic9 = "https://images.unsplash.com/photo-1529630218527-7df22fc2d4ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbGFzc2ljJTIwbWFydGlhbCUyMGFydHMlMjBwaG90b3xlbnwxfHx8fDE3NjgxNDcxMDh8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const oldPic10 = "https://images.unsplash.com/photo-1703231528182-5ced05e25800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx2aW50YWdlJTIwbWFydGlhbCUyMGFydHMlMjB0cmFpbmluZ3xlbnwxfHx8fDE3NjgxNDcxMDd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt1 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt2 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt3 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt4 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt5 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt6 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt7 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt8 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt9 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt10 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt11 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt12 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt13 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt14 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt15 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt16 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt17 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt18 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt19 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const martialArt20 = "https://images.unsplash.com/photo-1550759807-50dc0b381a1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMG1hc3RlciUyMHNoaWhhbnxlbnwxfHx8fDE3NjgxNDcxMDB8MA&ixlib=rb-4.1.0&q=80&w=1080";
 import { NavigationDrawer } from "../components/NavigationDrawer";
 import { AccessSection } from "../components/AccessSection";
 import { ContactFooter } from "../components/ContactFooter";
 import { Header } from "../components/Header";
 import Slider from "react-slick";
 import "../../styles/slick.css";
+import * as Images from "../assets/images";
 
 export function SokePage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -58,39 +22,39 @@ export function SokePage() {
   const t = translations[language];
 
   const martialArtImages = [
-    martialArt1,
-    martialArt2,
-    martialArt3,
-    martialArt4,
-    martialArt5,
-    martialArt6,
-    martialArt7,
-    martialArt8,
-    martialArt9,
-    martialArt10,
-    martialArt11,
-    martialArt12,
-    martialArt13,
-    martialArt14,
-    martialArt15,
-    martialArt16,
-    martialArt17,
-    martialArt18,
-    martialArt19,
-    martialArt20,
+    Images.sokeMartialArt1,
+    Images.sokeMartialArt2,
+    Images.sokeMartialArt3,
+    Images.sokeMartialArt4,
+    Images.sokeMartialArt5,
+    Images.sokeMartialArt6,
+    Images.sokeMartialArt7,
+    Images.sokeMartialArt8,
+    Images.sokeMartialArt9,
+    Images.sokeMartialArt10,
+    Images.sokeMartialArt11,
+    Images.sokeMartialArt12,
+    Images.sokeMartialArt13,
+    Images.sokeMartialArt14,
+    Images.sokeMartialArt15,
+    Images.sokeMartialArt16,
+    Images.sokeMartialArt17,
+    Images.sokeMartialArt18,
+    Images.sokeMartialArt19,
+    Images.sokeMartialArt20,
   ];
 
   const oldPictureImages = [
-    oldPic1,
-    oldPic2,
-    oldPic3,
-    oldPic4,
-    oldPic5,
-    oldPic6,
-    oldPic7,
-    oldPic8,
-    oldPic9,
-    oldPic10,
+    Images.sokeOldPic1,
+    Images.sokeOldPic2,
+    Images.sokeOldPic3,
+    Images.sokeOldPic4,
+    Images.sokeOldPic5,
+    Images.sokeOldPic6,
+    Images.sokeOldPic7,
+    Images.sokeOldPic8,
+    Images.sokeOldPic9,
+    Images.sokeOldPic10,
   ];
 
   return (
@@ -126,7 +90,7 @@ export function SokePage() {
           }}
         >
           <img
-            src={sokeImage}
+            src={Images.sokeSokeImage}
             alt="Soke Joseph Miller"
             className="w-full h-full object-contain"
             style={{ objectPosition: "center" }}
@@ -240,9 +204,9 @@ export function SokePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {t.master.page.masters.instructors.map((instructor: any, index: number) => {
               const images = [
-                shihanSaulCohe,
-                sokeMichaelDePasquale,
-                shodaiOkuyama
+                Images.sokeShihanSaulCohe,
+                Images.sokeSokeMichaelDePasquale,
+                Images.sokeShodaiOkuyama
               ];
               
               return (
@@ -456,7 +420,7 @@ export function SokePage() {
                     }}
                   >
                     <img
-                      src={sokeCouple}
+                      src={Images.sokeSokeCouple}
                       alt="Soke and his wife in Japan"
                       className="w-full h-auto"
                     />

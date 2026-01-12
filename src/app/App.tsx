@@ -28,37 +28,8 @@ import { SokePage } from './pages/SokePage';
 import { ContactPage } from './pages/ContactPage';
 import { LinksPage } from './pages/LinksPage';
 
-// Real images from Unsplash
-const sokeImage = "https://images.unsplash.com/photo-1608583224016-d7fdbc3bf282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGRlcmx5JTIwbWFydGlhbCUyMGFydHMlMjBtYXN0ZXIlMjBkb2pvfGVufDF8fHx8MTc2ODA3MzA3NHww&ixlib=rb-4.1.0&q=80&w=1080";
-const shiatsuImage = "https://images.unsplash.com/photo-1700882304335-34d47c682a4c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaGlhdHN1JTIwbWFzc2FnZSUyMHRoZXJhcHl8ZW58MXx8fHwxNzY4MTQ3MTQ5fDA&ixlib=rb-4.1.0&q=80&w=1080";
-const dojoInteriorImage = "https://images.unsplash.com/photo-1746701905946-f1babf656914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGRvam8lMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjgxNDcwNjV8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const sokeTeachingImage = "https://images.unsplash.com/photo-1618676156034-df5979d43c7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMHRlYWNoaW5nJTIwZG9qb3xlbnwxfHx8fDE3NjgxNDcxNTB8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const taizanLogo = "https://images.unsplash.com/photo-1758567056386-768c303d19b8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqYXBhbmVzZSUyMG1hcnRpYWwlMjBhcnRzJTIwbG9nb3xlbnwxfHx8fDE3NjgxNDcxNTF8MA&ixlib=rb-4.1.0&q=80&w=1080";
-
-// Import seminar images from Gallery
-import aichiSeminar1 from 'figma:asset/db40543d9d90e4cda1317b174a599f709968d361.png';
-import aichiSeminar2 from 'figma:asset/42a2977f6a5ce4972c8661283579e31fdd1a9415.png';
-import aichiSeminar3 from 'figma:asset/2acc8c1b17db30ad5e8691d7037bfe35274af246.png';
-import aichiSeminar4 from 'figma:asset/3de84f3f7419eec29d9608061efeec99539769fd.png';
-import aichiSeminar5 from 'figma:asset/5390e5f3b93c9a6b05f9c075b8d02241efdb2cd5.png';
-import aichiSeminar6 from 'figma:asset/0d93ca616dfb4c279614b21d34a37ab9dbeee91d.png';
-import aichiSeminar7 from 'figma:asset/2841be2f862da858e46d8d9c8e67d0190736bc4d.png';
-import aichiSeminar8 from 'figma:asset/8f74319c8bac11c3b230fdc688a35d6f0b88681e.png';
-import aichiSeminar9 from 'figma:asset/dc5be25d9ef4513eea354180f26d1ff64167f1f2.png';
-import aichiSeminar11 from 'figma:asset/79c3081e4dfb3eb089c930ed57cc44b7f9a7ac8a.png';
-import newyorkSeminar1 from 'figma:asset/edbac0f9aeb0b77b4652d48377a036f91c2c3ac6.png';
-import newyorkSeminar2 from 'figma:asset/847ac80f9933f31d709d0a66ad0d7a21f603200a.png';
-import newyorkSeminar3 from 'figma:asset/532f451ae7a981cf4b9cf39ee4024c782b30395a.png';
-import newyorkSeminar4 from 'figma:asset/564b287ae3c05b96a7ebebdd67b63be495259ff2.png';
-import newyorkSeminar5 from 'figma:asset/6d3ef3925904f7a35b744f3f15f897da10ed845e.png';
-import newyorkSeminar6 from 'figma:asset/bae8d63cc0414f4f527c0500b686e22aa5b3f587.png';
-import newyorkSeminar7 from 'figma:asset/204715bbf31be36e9cb6be9852c449ee819a93cc.png';
-import newyorkSeminar8 from 'figma:asset/643025310f6b7b37f6a45556b3026ddd4429fea0.png';
-import newyorkSeminar9 from 'figma:asset/be58dd497adaeb1eeffb66eb9805d3317d7b378b.png';
-import newyorkSeminar10 from 'figma:asset/d10ec4a06ca3deffab9b5434427b977817658db3.png';
-import newyorkSeminar11 from 'figma:asset/59dbb4c8c55d7b1c6f1c237077ff7cc7be255c69.png';
-import newyorkSeminar12 from 'figma:asset/25ede162a1846c6685e1173ac451cfd220b02179.png';
-import newyorkSeminar13 from 'figma:asset/18892ee108e9049dc84871557a24f795c22ec67e.png';
+// Import all images from centralized asset management
+import * as Images from './assets/images';
 
 function DojoWebsite() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -71,29 +42,29 @@ function DojoWebsite() {
 
   // All seminar images
   const allSeminarImages = useMemo(() => [
-    { src: aichiSeminar1, alt: 'Seminar 1' },
-    { src: aichiSeminar2, alt: 'Seminar 2' },
-    { src: aichiSeminar3, alt: 'Seminar 3' },
-    { src: aichiSeminar4, alt: 'Seminar 4' },
-    { src: aichiSeminar5, alt: 'Seminar 5' },
-    { src: aichiSeminar6, alt: 'Seminar 6' },
-    { src: aichiSeminar7, alt: 'Seminar 7' },
-    { src: aichiSeminar8, alt: 'Seminar 8' },
-    { src: aichiSeminar9, alt: 'Seminar 9' },
-    { src: aichiSeminar11, alt: 'Seminar 11' },
-    { src: newyorkSeminar1, alt: 'Seminar 12' },
-    { src: newyorkSeminar2, alt: 'Seminar 13' },
-    { src: newyorkSeminar3, alt: 'Seminar 14' },
-    { src: newyorkSeminar4, alt: 'Seminar 15' },
-    { src: newyorkSeminar5, alt: 'Seminar 16' },
-    { src: newyorkSeminar6, alt: 'Seminar 17' },
-    { src: newyorkSeminar7, alt: 'Seminar 18' },
-    { src: newyorkSeminar8, alt: 'Seminar 19' },
-    { src: newyorkSeminar9, alt: 'Seminar 20' },
-    { src: newyorkSeminar10, alt: 'Seminar 21' },
-    { src: newyorkSeminar11, alt: 'Seminar 22' },
-    { src: newyorkSeminar12, alt: 'Seminar 23' },
-    { src: newyorkSeminar13, alt: 'Seminar 24' },
+    { src: Images.aichiSeminar1, alt: 'Seminar 1' },
+    { src: Images.aichiSeminar2, alt: 'Seminar 2' },
+    { src: Images.aichiSeminar3, alt: 'Seminar 3' },
+    { src: Images.aichiSeminar4, alt: 'Seminar 4' },
+    { src: Images.aichiSeminar5, alt: 'Seminar 5' },
+    { src: Images.aichiSeminar6, alt: 'Seminar 6' },
+    { src: Images.aichiSeminar7, alt: 'Seminar 7' },
+    { src: Images.aichiSeminar8, alt: 'Seminar 8' },
+    { src: Images.aichiSeminar9, alt: 'Seminar 9' },
+    { src: Images.aichiSeminar11, alt: 'Seminar 11' },
+    { src: Images.newyorkSeminar1, alt: 'Seminar 12' },
+    { src: Images.newyorkSeminar2, alt: 'Seminar 13' },
+    { src: Images.newyorkSeminar3, alt: 'Seminar 14' },
+    { src: Images.newyorkSeminar4, alt: 'Seminar 15' },
+    { src: Images.newyorkSeminar5, alt: 'Seminar 16' },
+    { src: Images.newyorkSeminar6, alt: 'Seminar 17' },
+    { src: Images.newyorkSeminar7, alt: 'Seminar 18' },
+    { src: Images.newyorkSeminar8, alt: 'Seminar 19' },
+    { src: Images.newyorkSeminar9, alt: 'Seminar 20' },
+    { src: Images.newyorkSeminar10, alt: 'Seminar 21' },
+    { src: Images.newyorkSeminar11, alt: 'Seminar 22' },
+    { src: Images.newyorkSeminar12, alt: 'Seminar 23' },
+    { src: Images.newyorkSeminar13, alt: 'Seminar 24' },
   ], []);
 
   // Select 7 random images from all seminar images
@@ -142,7 +113,7 @@ function DojoWebsite() {
           >
             <div style={{ height: '500px', width: '100%' }}>
               <img 
-                src={sokeImage} 
+                src={Images.homeSokeImage} 
                 alt="Soke Joe Miller seated in seiza"
                 loading="eager"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 70%', opacity: 0.7 }}
@@ -150,7 +121,7 @@ function DojoWebsite() {
             </div>
             <div style={{ height: '500px', width: '100%' }}>
               <img
-                src={sokeTeachingImage}
+                src={Images.homeSokeTeachingImage}
                 alt="Soke teaching students"
                 loading="lazy"
                 decoding="async"
@@ -159,7 +130,7 @@ function DojoWebsite() {
             </div>
             <div style={{ height: '500px', width: '100%' }}>
               <img
-                src={shiatsuImage}
+                src={Images.homeShiatsuImage}
                 alt="Soke demonstrating technique"
                 loading="lazy"
                 decoding="async"
@@ -241,7 +212,7 @@ function DojoWebsite() {
           <div className="flex flex-col">
             <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: COLORS.offWhite }}>
               <img
-                src={dojoInteriorImage}
+                src={Images.homeDojoInteriorImage}
                 alt="Taizan-Ryu Self-Defense"
                 className="w-full h-full object-contain"
                 style={{ objectPosition: 'center' }}
@@ -300,7 +271,7 @@ function DojoWebsite() {
           <div className="flex flex-col">
             <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: COLORS.offWhite }}>
               <img
-                src={shiatsuImage}
+                src={Images.homeShiatsuImage}
                 alt="Taizan-Ryu Shiatsu"
                 className="w-full h-full object-contain"
                 style={{ objectPosition: 'center' }}
@@ -359,7 +330,7 @@ function DojoWebsite() {
           <div className="flex flex-col">
             <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: COLORS.offWhite }}>
               <img 
-                src={sokeImage} 
+                src={Images.sokeImage} 
                 alt="Soke Joe Miller" 
                 className="w-full h-full object-contain"
                 style={{ objectPosition: 'center' }}
@@ -455,7 +426,7 @@ function DojoWebsite() {
         <FadeTransition keyValue={`taizan-logo-${language}`}>
           <div className="max-w-2xl mx-auto text-center">
             <img
-              src={taizanLogo}
+              src={Images.taizanLogo}
               alt="Taizan-Ryu Peaceful Mountain System Logo"
               className="mx-auto"
               style={{

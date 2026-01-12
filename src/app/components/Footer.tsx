@@ -2,7 +2,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import { FadeTransition } from './FadeTransition';
 import { Link } from 'react-router-dom';
-import logoImage from 'figma:asset/8fbc73fac66db1cbb73a089ff2f0be78335936a2.png';
+import { logoImage } from '../assets/images';
 
 export function Footer() {
   const { language } = useLanguage();

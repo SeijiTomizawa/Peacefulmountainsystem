@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import membersGroupImage from 'figma:asset/6e8b55f691e785a4d8b75d740e8d7afe7c7d118b.png';
+import { membersGroupImage } from '../assets/images';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import { FadeTransition } from '../components/FadeTransition';

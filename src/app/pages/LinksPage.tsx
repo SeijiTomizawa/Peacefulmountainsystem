@@ -1,14 +1,14 @@
-import { Link } from 'react-router-dom';
-import { Header } from '../components/Header';
 import { NavigationDrawer } from '../components/NavigationDrawer';
+import { Header } from '../components/Header';
+import { FadeTransition } from '../components/FadeTransition';
 import { AccessSection } from '../components/AccessSection';
 import { ContactFooter } from '../components/ContactFooter';
-import { FadeTransition } from '../components/FadeTransition';
+import { SEOHead } from '../components/SEOHead';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
-import taizanLogo from 'figma:asset/09d49476fe4027268ff925b91cfd4d682a4710cd.png';
+import { taizanLogo } from '../assets/images';
 import { COLORS } from '../constants/theme';
 
 export function LinksPage() {

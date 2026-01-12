@@ -8,26 +8,7 @@ import { AccessSection } from '../components/AccessSection';
 import { ContactFooter } from '../components/ContactFooter';
 import { Check, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-
-// Real images from Unsplash
-const sokeImage = "https://images.unsplash.com/photo-1608583224016-d7fdbc3bf282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGRlcmx5JTIwbWFydGlhbCUyMGFydHMlMjBtYXN0ZXIlMjBkb2pvfGVufDF8fHx8MTc2ODA3MzA3NHww&ixlib=rb-4.1.0&q=80&w=1080";
-const dojoInteriorImage = "https://images.unsplash.com/photo-1746701905946-f1babf656914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGRvam8lMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjgxNDcwNjV8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const dojoStudents = "https://images.unsplash.com/photo-1664802273197-7cdd6a6cbc6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMHN0dWRlbnRzJTIwdHJhaW5pbmd8ZW58MXx8fHwxNzY4MTQ3MDY2fDA&ixlib=rb-4.1.0&q=80&w=1080";
-const dojoTraining1 = "https://images.unsplash.com/photo-1618676156034-df5979d43c7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhaWtpZG8lMjB0cmFpbmluZyUyMHNlc3Npb258ZW58MXx8fHwxNzY4MTQ3MDY2fDA&ixlib=rb-4.1.0&q=80&w=1080";
-const dojoTraining2 = "https://images.unsplash.com/photo-1542937306-d1056fdd367a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqdWRvJTIwcHJhY3RpY2UlMjBkb2pvfGVufDF8fHx8MTc2ODE0NzA2Nnww&ixlib=rb-4.1.0&q=80&w=1080";
-const dojoTraining3 = "https://images.unsplash.com/photo-1594027674775-5ed49697e1da?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxrYXJhdGUlMjB0cmFpbmluZyUyMGhhbGx8ZW58MXx8fHwxNzY4MTQ3MDY3fDA&ixlib=rb-4.1.0&q=80&w=1080";
-const dojoTraining4 = "https://images.unsplash.com/photo-1608583224016-d7fdbc3bf282?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGRlcmx5JTIwbWFydGlhbCUyMGFydHMlMjBtYXN0ZXIlMjBkb2pvfGVufDF8fHx8MTc2ODA3MzA3NHww&ixlib=rb-4.1.0&q=80&w=1080";
-const dojoTraining5 = "https://images.unsplash.com/photo-1746701905946-f1babf656914?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGRvam8lMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjgxNDcwNjV8MA&ixlib=rb-4.1.0&q=80&w=1080";
-
-// Certificate images
-const certificate1 = "https://images.unsplash.com/photo-1697086279220-bcaea17a8734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMGNlcnRpZmljYXRlJTIwZGlwbG9tYXxlbnwxfHx8fDE3NjgxNDcwNjd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const certificate2 = "https://images.unsplash.com/photo-1762115839587-42f72597f24d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGphcGFuZXNlJTIwc2Nyb2xsfGVufDF8fHx8MTc2ODE0NzA2N3ww&ixlib=rb-4.1.0&q=80&w=1080";
-const certificate3 = "https://images.unsplash.com/photo-1697086279220-bcaea17a8734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMGNlcnRpZmljYXRlJTIwZGlwbG9tYXxlbnwxfHx8fDE3NjgxNDcwNjd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const certificate4 = "https://images.unsplash.com/photo-1762115839587-42f72597f24d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGphcGFuZXNlJTIwc2Nyb2xsfGVufDF8fHx8MTc2ODE0NzA2N3ww&ixlib=rb-4.1.0&q=80&w=1080";
-const certificate5 = "https://images.unsplash.com/photo-1697086279220-bcaea17a8734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMGNlcnRpZmljYXRlJTIwZGlwbG9tYXxlbnwxfHx8fDE3NjgxNDcwNjd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const certificate6 = "https://images.unsplash.com/photo-1762115839587-42f72597f24d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGphcGFuZXNlJTIwc2Nyb2xsfGVufDF8fHx8MTc2ODE0NzA2N3ww&ixlib=rb-4.1.0&q=80&w=1080";
-const certificate7 = "https://images.unsplash.com/photo-1697086279220-bcaea17a8734?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYXJ0aWFsJTIwYXJ0cyUyMGNlcnRpZmljYXRlJTIwZGlwbG9tYXxlbnwxfHx8fDE3NjgxNDcwNjd8MA&ixlib=rb-4.1.0&q=80&w=1080";
-const certificate8 = "https://images.unsplash.com/photo-1762115839587-42f72597f24d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmFkaXRpb25hbCUyMGphcGFuZXNlJTIwc2Nyb2xsfGVufDF8fHx8MTc2ODE0NzA2N3ww&ixlib=rb-4.1.0&q=80&w=1080";
+import * as Images from '../assets/images';
 
 function SelfDefensePage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -36,14 +17,14 @@ function SelfDefensePage() {
   const t = translations[language];
 
   const certificateImages = [
-    certificate1,
-    certificate2,
-    certificate3,
-    certificate4,
-    certificate5,
-    certificate6,
-    certificate7,
-    certificate8,
+    Images.selfDefenseCertificate1,
+    Images.selfDefenseCertificate2,
+    Images.selfDefenseCertificate3,
+    Images.selfDefenseCertificate4,
+    Images.selfDefenseCertificate5,
+    Images.selfDefenseCertificate6,
+    Images.selfDefenseCertificate7,
+    Images.selfDefenseCertificate8,
   ];
 
   const handlePrevious = () => {
@@ -131,8 +112,8 @@ function SelfDefensePage() {
               border: '1px solid rgba(26, 43, 72, 0.1)'
             }}>
               <img 
-                src={sokeImage} 
-                alt="Soke Joe Miller" 
+                src={Images.selfDefenseDojoInterior} 
+                alt="Dojo Interior" 
                 className="w-full h-full object-contain"
                 style={{ objectPosition: 'center' }}
               />
@@ -376,7 +357,7 @@ function SelfDefensePage() {
               border: '1px solid rgba(26, 43, 72, 0.1)'
             }}>
               <img 
-                src={dojoInteriorImage} 
+                src={Images.dojoInteriorImage} 
                 alt="Dojo Interior" 
                 className="w-full h-full object-contain"
                 style={{ objectPosition: 'center' }}
@@ -427,12 +408,12 @@ function SelfDefensePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {[
-              { src: dojoStudents, alt: 'Hachioji Dojo - Student Practice' },
-              { src: dojoTraining1, alt: 'Hachioji Dojo - Individual Instruction' },
-              { src: dojoTraining2, alt: 'Hachioji Dojo - Technique Practice' },
-              { src: dojoTraining3, alt: 'Hachioji Dojo - Certificate Ceremony' },
-              { src: dojoTraining4, alt: 'Hachioji Dojo - Advanced Training' },
-              { src: dojoTraining5, alt: 'Hachioji Dojo - Practical Application' },
+              { src: Images.selfDefenseDojoStudents, alt: 'Hachioji Dojo - Student Practice' },
+              { src: Images.selfDefenseDojoTraining1, alt: 'Hachioji Dojo - Individual Instruction' },
+              { src: Images.selfDefenseDojoTraining2, alt: 'Hachioji Dojo - Technique Practice' },
+              { src: Images.selfDefenseDojoTraining3, alt: 'Hachioji Dojo - Certificate Ceremony' },
+              { src: Images.selfDefenseDojoTraining4, alt: 'Hachioji Dojo - Advanced Training' },
+              { src: Images.selfDefenseDojoTraining5, alt: 'Hachioji Dojo - Practical Application' },
             ].map((image, index) => (
               <FadeTransition key={index} keyValue={`gallery-${index}-${language}`}>
                 <div 
