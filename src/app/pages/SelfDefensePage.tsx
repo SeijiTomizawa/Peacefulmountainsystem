@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import { NavigationDrawer } from '../components/NavigationDrawer';
@@ -6,15 +7,17 @@ import { Header } from '../components/Header';
 import { FadeTransition } from '../components/FadeTransition';
 import { AccessSection } from '../components/AccessSection';
 import { ContactFooter } from '../components/ContactFooter';
-import { Check, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Check, X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import * as Images from '../assets/images';
+import { videosData, getCloudflareStreamThumbnail } from '../data/videosData';
 
 function SelfDefensePage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState<number | null>(null);
   const { language } = useLanguage();
   const t = translations[language];
+  const navigate = useNavigate();
 
   const certificateImages = [
     Images.selfDefenseCertificate1,
@@ -332,6 +335,95 @@ function SelfDefensePage() {
                 </div>
               </FadeTransition>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Videos Section */}
+      <section style={{ backgroundColor: '#1A2B48' }} className="px-6 py-20">
+        <div className="max-w-6xl mx-auto">
+          <FadeTransition keyValue={`videos-heading-${language}`}>
+            <h2 style={{ 
+              fontFamily: "'Noto Serif JP', serif",
+              fontSize: '32px',
+              fontWeight: 700,
+              color: 'white',
+              lineHeight: '1.4',
+              marginBottom: '16px',
+              textAlign: 'center',
+              letterSpacing: '0.01em'
+            }}>
+              {t.selfDefense.videos.heading}
+            </h2>
+            <p style={{ 
+              color: 'white',
+              fontSize: '16px',
+              lineHeight: '1.8',
+              marginBottom: '48px',
+              textAlign: 'center',
+              opacity: 0.85
+            }}>
+              {t.selfDefense.videos.description}
+            </p>
+          </FadeTransition>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {videosData.slice(0, 3).map((video, index) => (
+              <FadeTransition key={index} keyValue={`video-card-${index}-${language}`}>
+                <div 
+                  className="rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer group"
+                  style={{ 
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    aspectRatio: '16/9'
+                  }}
+                  onClick={() => navigate('/videos')}
+                >
+                  <div className="relative w-full h-full">
+                    {/* Cloudflare Stream Thumbnail */}
+                    <img
+                      src={getCloudflareStreamThumbnail(video.cloudflareVideoId, video.thumbnailTime || 0)}
+                      alt={language === 'jp' ? video.titleJP : video.titleEN}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      onError={(e) => {
+                        // サムネイル読み込みエラー時はグラデーション背景を表示
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                    {/* Fallback gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900" style={{ zIndex: -1 }} />
+                    
+                    {/* Overlay and Play Button */}
+                    <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <Play 
+                        size={64} 
+                        color="white" 
+                        className="relative z-10 transition-transform duration-300 group-hover:scale-110"
+                        style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </FadeTransition>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <button
+              onClick={() => navigate('/videos')}
+              className="px-8 py-4 rounded-full transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              style={{
+                backgroundColor: '#5DADE2',
+                color: 'white',
+                fontWeight: 600,
+                fontSize: '16px',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              {t.selfDefense.videos.button}
+            </button>
           </div>
         </div>
       </section>

@@ -32,7 +32,7 @@ export const translations = {
     },
     introduction: {
       heading: "The Peaceful Mountain System - 泰山流",
-      text: "泰山流は、八光流（52年）、義経柔術（59年）、空手、柔道（20年）といった伝統的な武道の技術と哲学を基に、宗家ジョー・ミラーが創り上げた総合護身術システムです。守破離の概念に基づき、実践的な護術と癒の整体を統合しています。",
+      text: "泰山流は、八光流（52年）、義経柔術（59年）、空手、柔道（20年）といった伝統的な武道の技術と哲学を基に、宗家ジョー・ミラーが創り上げた総合護身術システムです。守破離の概念に基づき、実践的な護���と癒の整体を統合しています。",
     },
     master: {
       heading: "宗家 ジョセフ・ミラー - 60年の武道人生",
@@ -367,42 +367,50 @@ export const translations = {
         signature: "宗家　ジョセフ・ミラー",
       },
       training: {
-        heading: "トレーニング内容",
+        heading: "Training Content",
         items: [
           {
-            title: "基本技術（型・カタ）",
+            title: "Basic Techniques (Kata)",
             description:
-              "伝統的な型を通じて、身体の使い方と原理を学びます",
+              "Learn body usage and principles through traditional katas",
           },
           {
-            title: "応用技術（技・ワザ）",
+            title: "Applied Techniques (Waza)",
             description:
-              "実戦での防御応用、360度全方位からの攻撃に対応",
+              "Practical defense applications, 360-degree defense against attacks",
           },
           {
-            title: "逮捕術（Taiho Jutsu）",
-            description: "法執行機関向けの専門的な制圧技術",
+            title: "Taiho Jutsu",
+            description:
+              "Specialized apprehension techniques for law enforcement",
           },
           {
-            title: "精神修養",
-            description: "守破離の概念に基づいた心身の鍛錬",
+            title: "Mental Cultivation",
+            description:
+              "Mind and body training based on Shuhari concept",
           },
         ],
       },
+      videos: {
+        heading: "Training Videos",
+        subheading: "Taizan-Ryu techniques and training sessions",
+        description: "Watch actual techniques and movements from our training sessions.",
+        button: "View Video Gallery",
+      },
       benefits: {
-        heading: "このような方におすすめ",
+        heading: "Recommended For",
         items: [
-          "実戦的な護身術を学びたい方",
-          "伝統的な武道の哲学に興味がある方",
-          "英語の環境で武道を習い、一石二鳥を求める方",
-          "心身の鍛錬を通じて成長したい方",
-          "少人数制で丁寧な指導を求める方",
+          "Those seeking practical self-defense",
+          "Interest in traditional martial arts philosophy",
+          "Law enforcement & security professionals",
+          "Personal growth through mind-body training",
+          "Small class sizes with detailed instruction",
         ],
       },
       schedule: {
-        heading: "クラススケジュール",
-        note: "完全予約制・少人数指導",
-        text: "宗家ジョー・ミラーによる直接指導。選ばれた少数の生徒のみを対象とした、質の高いマンツーマン指導を提供しています。",
+        heading: "Class Schedule",
+        note: "By Appointment Only - Small Group Instruction",
+        text: "Direct instruction from Soke Joe Miller. High-quality, personalized training for select students only.",
       },
     },
     links: {
@@ -412,7 +420,8 @@ export const translations = {
           subtext: "泰山流と共に歩む仲間たち",
         },
         heading: "友好関係の道場・団体",
-        subheading: "世界各地で活動する泰山流の仲間と関連組織",
+        subheading:
+          "世界各地で活動する泰山流の仲間と関連組織",
         description:
           "宗家ジョー・ミラーと共に修行を重ねてきた道場や、友好関係にある武道団体をご紹介します。",
         items: [
@@ -830,6 +839,12 @@ export const translations = {
               "Mind and body training based on Shuhari concept",
           },
         ],
+      },
+      videos: {
+        heading: "Training Videos",
+        subheading: "Taizan-Ryu techniques and training sessions",
+        description: "Watch actual techniques and movements from our training sessions.",
+        button: "View Video Gallery",
       },
       benefits: {
         heading: "Recommended For",

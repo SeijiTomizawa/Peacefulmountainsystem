@@ -22,7 +22,7 @@ import '../styles/slick.css';
 import ShiatsuPage from './pages/ShiatsuPage';
 import SelfDefensePage from './pages/SelfDefensePage';
 import { MembersPage } from './pages/MembersPage';
-import { VideosPage } from './pages/VideosPage';
+import VideosPageDefault from './pages/VideosPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { SokePage } from './pages/SokePage';
 import { ContactPage } from './pages/ContactPage';
@@ -632,7 +632,7 @@ export default function App() {
             <Route path="/shiatsu" element={<ShiatsuPage />} />
             <Route path="/self-defense" element={<SelfDefensePage />} />
             <Route path="/members" element={<MembersPage />} />
-            <Route path="/videos" element={<VideosPage />} />
+            <Route path="/videos" element={<VideosPageDefault />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/soke" element={<SokePage />} />
             <Route path="/contact" element={<ContactPage />} />
