@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react'
+import React, { useState, memo, useEffect } from 'react'
 
 const ERROR_IMG_SRC =
   'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODgiIGhlaWdodD0iODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgc3Ryb2tlPSIjMDAwIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBvcGFjaXR5PSIuMyIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIzLjciPjxyZWN0IHg9IjE2IiB5PSIxNiIgd2lkdGg9IjU2IiBoZWlnaHQ9IjU2IiByeD0iNiIvPjxwYXRoIGQ9Im0xNiA1OCAxNi0xOCAzMiAzMiIvPjxjaXJjbGUgY3g9IjUzIiBjeT0iMzUiIHI9IjciLz48L3N2Zz4KCg=='
@@ -6,9 +6,28 @@ const ERROR_IMG_SRC =
 export const ImageWithFallback = memo(function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) {
   const [didError, setDidError] = useState(false)
 
-  const handleError = () => {
+  const handleError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    // エラーイベントの伝播を停止してコンソールエラーを防ぐ
+    e.preventDefault();
+    e.stopPropagation();
     setDidError(true)
   }
+
+  // Figmaプレビュー環境のエラーを抑制
+  useEffect(() => {
+    const handleGlobalError = (event: ErrorEvent) => {
+      if (event.message && event.message.includes('No data found for this image')) {
+        event.preventDefault();
+        event.stopPropagation();
+        return true;
+      }
+    };
+
+    window.addEventListener('error', handleGlobalError, true);
+    return () => {
+      window.removeEventListener('error', handleGlobalError, true);
+    };
+  }, []);
 
   const { src, alt, style, className, loading = 'lazy', ...rest } = props
 

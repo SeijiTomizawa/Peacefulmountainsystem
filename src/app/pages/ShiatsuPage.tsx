@@ -15,7 +15,8 @@ import * as Images from "../assets/images";
 import { 
   shiatsuTestimonialsData, 
   getCloudflareStreamUrl, 
-  getCloudflareStreamThumbnail 
+  getCloudflareStreamThumbnail,
+  CLOUDFLARE_STREAM_CONFIG
 } from "../data/videosData";
 
 function ShiatsuPage() {
@@ -882,100 +883,59 @@ function ShiatsuPage() {
               `}</style>
               <div 
                 className="flex gap-4 video-scroll-container"
-                style={{ minWidth: 'min-content' }}
+                style={{ minWidth: 'min-content', justifyContent: 'center' }}
               >
-                {(showAllVideos ? shiatsuTestimonialsData : shiatsuTestimonialsData.slice(0, 6)).map((video) => (
+                {(showAllVideos ? shiatsuTestimonialsData : shiatsuTestimonialsData.slice(0, 6)).map((video, index) => (
                   <FadeTransition
                     key={video.id}
                     keyValue={`testimonial-${video.id}-${language}`}
                   >
                     <div
-                      className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer group flex-shrink-0"
+                      className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl flex-shrink-0"
                       style={{
                         backgroundColor: "rgba(255, 255, 255, 0.05)",
                         border: "1px solid rgba(255, 255, 255, 0.1)",
-                        width: "200px",
+                        width: "160px",
                       }}
-                      onClick={() => setSelectedVideoId(selectedVideoId === video.id ? null : video.id)}
                     >
-                      {selectedVideoId === video.id ? (
-                        // Playing: Show iframe
-                        <div
-                          className="relative w-full"
+                      {/* Cloudflare Stream iframe - always visible with controls */}
+                      <div
+                        className="relative w-full"
+                        style={{
+                          aspectRatio: "9/16",
+                        }}
+                      >
+                        <iframe
+                          key={`video-${video.id}-${selectedVideoId === video.id ? 'active' : 'inactive'}`}
+                          src={getCloudflareStreamUrl(
+                            video.cloudflareVideoId, 
+                            selectedVideoId === video.id,
+                            video.thumbnailTime || 3
+                          )}
+                          className="w-full h-full"
+                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                          allowFullScreen
                           style={{
-                            aspectRatio: "9/16",
+                            border: "none",
+                          }}
+                        />
+                      </div>
+
+                      {/* Video Title - Compact */}
+                      <div className="p-2">
+                        <p
+                          style={{
+                            fontFamily: "'Noto Sans JP', sans-serif",
+                            fontSize: "12px",
+                            fontWeight: 600,
+                            color: "white",
+                            lineHeight: "1.3",
+                            textAlign: "center",
                           }}
                         >
-                          <iframe
-                            src={getCloudflareStreamUrl(video.cloudflareVideoId)}
-                            className="w-full h-full"
-                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                            allowFullScreen
-                            style={{
-                              border: "none",
-                            }}
-                          />
-                        </div>
-                      ) : (
-                        // Thumbnail: Show preview
-                        <>
-                          {/* Video Thumbnail */}
-                          <div
-                            className="relative"
-                            style={{
-                              aspectRatio: "9/16",
-                              backgroundColor: "#1A2B48",
-                            }}
-                          >
-                            {/* Cloudflare Stream Thumbnail */}
-                            <img
-                              src={getCloudflareStreamThumbnail(
-                                video.cloudflareVideoId,
-                                video.thumbnailTime || 0
-                              )}
-                              alt={language === "jp" ? video.titleJP : video.titleEN}
-                              className="absolute inset-0 w-full h-full object-cover"
-                              onError={(e) => {
-                                e.currentTarget.style.display = "none";
-                              }}
-                            />
-                            {/* Fallback gradient background */}
-                            <div
-                              className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"
-                              style={{ zIndex: -1 }}
-                            />
-
-                            {/* Overlay and Play Button */}
-                            <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300" />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <Play
-                                size={48}
-                                color="white"
-                                className="relative z-10 transition-transform duration-300 group-hover:scale-110"
-                                style={{
-                                  filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.5))",
-                                }}
-                              />
-                            </div>
-                          </div>
-
-                          {/* Video Title - Compact */}
-                          <div className="p-2">
-                            <p
-                              style={{
-                                fontFamily: "'Noto Sans JP', sans-serif",
-                                fontSize: "12px",
-                                fontWeight: 600,
-                                color: "white",
-                                lineHeight: "1.3",
-                                textAlign: "center",
-                              }}
-                            >
-                              {language === "jp" ? video.titleJP : video.titleEN}
-                            </p>
-                          </div>
-                        </>
-                      )}
+                          {language === "jp" ? video.titleJP : video.titleEN}
+                        </p>
+                      </div>
                     </div>
                   </FadeTransition>
                 ))}
