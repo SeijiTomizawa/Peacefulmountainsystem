@@ -21,7 +21,7 @@ function VideosPage() {
   const t = translations[language];
 
   const handleVideoClick = (videoId: number) => {
-    setSelectedVideo(videoId);
+    setSelectedVideo(selectedVideo === videoId ? null : videoId);
   };
 
   const handleCloseVideo = () => {
@@ -121,135 +121,98 @@ function VideosPage() {
             {videosData.map((video, index) => (
               <FadeTransition key={video.id} keyValue={`video-${video.id}-${language}`}>
                 <div 
-                  className="rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 cursor-pointer group"
+                  className="rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl cursor-pointer"
                   style={{ 
                     backgroundColor: 'white',
                     border: '1px solid rgba(26, 43, 72, 0.1)'
                   }}
                   onClick={() => handleVideoClick(video.id)}
                 >
-                  {/* Video Thumbnail */}
-                  <div 
-                    className="relative"
-                    style={{ 
-                      aspectRatio: '16/9',
-                      backgroundColor: '#1A2B48'
-                    }}
-                  >
-                    {/* Cloudflare Stream Thumbnail */}
-                    <img
-                      src={getCloudflareStreamThumbnail(video.cloudflareVideoId, video.thumbnailTime || 0)}
-                      alt={language === 'jp' ? video.titleJP : video.titleEN}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      onError={(e) => {
-                        // サムネイル読み込みエラー時はグラデーション背景を表示
-                        e.currentTarget.style.display = 'none';
+                  {selectedVideo === video.id ? (
+                    // Playing: Show iframe
+                    <div
+                      className="relative w-full"
+                      style={{
+                        aspectRatio: '16/9',
                       }}
-                    />
-                    {/* Fallback gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900" style={{ zIndex: -1 }} />
-                    
-                    {/* Overlay and Play Button */}
-                    <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Play 
-                        size={56} 
-                        color="white" 
-                        className="relative z-10 transition-transform duration-300 group-hover:scale-125"
-                        style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
+                    >
+                      <iframe
+                        src={getCloudflareStreamUrl(video.cloudflareVideoId)}
+                        className="w-full h-full"
+                        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                        allowFullScreen
+                        style={{
+                          border: 'none',
+                        }}
                       />
                     </div>
-                  </div>
+                  ) : (
+                    // Thumbnail: Show preview
+                    <div className="group">
+                      {/* Video Thumbnail */}
+                      <div 
+                        className="relative"
+                        style={{ 
+                          aspectRatio: '16/9',
+                          backgroundColor: '#1A2B48'
+                        }}
+                      >
+                        {/* Cloudflare Stream Thumbnail */}
+                        <img
+                          src={getCloudflareStreamThumbnail(video.cloudflareVideoId, video.thumbnailTime || 0)}
+                          alt={language === 'jp' ? video.titleJP : video.titleEN}
+                          className="absolute inset-0 w-full h-full object-cover"
+                          onError={(e) => {
+                            // サムネイル読み込みエラー時はグラデーション背景を表示
+                            e.currentTarget.style.display = 'none';
+                          }}
+                        />
+                        {/* Fallback gradient background */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900" style={{ zIndex: -1 }} />
+                        
+                        {/* Overlay and Play Button */}
+                        <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-10 transition-all duration-300" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <Play 
+                            size={56} 
+                            color="white" 
+                            className="relative z-10 transition-transform duration-300 group-hover:scale-125"
+                            style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
+                          />
+                        </div>
+                      </div>
 
-                  {/* Video Info */}
-                  <div className="p-6">
-                    <h3 style={{ 
-                      fontFamily: "'Noto Serif JP', serif",
-                      fontSize: '18px',
-                      fontWeight: 700,
-                      color: '#8C272E',
-                      marginBottom: '12px',
-                      letterSpacing: '0.01em'
-                    }}>
-                      {language === 'jp' ? video.titleJP : video.titleEN}
-                    </h3>
-                    <p style={{ 
-                      color: '#1A2B48',
-                      fontSize: '14px',
-                      lineHeight: '1.7',
-                      opacity: 0.75
-                    }}>
-                      {language === 'jp' ? video.descriptionJP : video.descriptionEN}
-                    </p>
-                  </div>
+                      {/* Video Info */}
+                      <div className="p-6">
+                        <h3 style={{ 
+                          fontFamily: "'Noto Serif JP', serif",
+                          fontSize: '18px',
+                          fontWeight: 700,
+                          color: '#8C272E',
+                          marginBottom: '12px',
+                          letterSpacing: '0.01em'
+                        }}>
+                          {language === 'jp' ? video.titleJP : video.titleEN}
+                        </h3>
+                        {(video.descriptionJP || video.descriptionEN) && (
+                          <p style={{ 
+                            color: '#1A2B48',
+                            fontSize: '14px',
+                            lineHeight: '1.7',
+                            opacity: 0.75
+                          }}>
+                            {language === 'jp' ? video.descriptionJP : video.descriptionEN}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </FadeTransition>
             ))}
           </div>
         </div>
       </section>
-
-      {/* Video Modal */}
-      {selectedVideo !== null && selectedVideoData && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-95 p-4"
-          onClick={handleCloseVideo}
-        >
-          <div 
-            className="relative w-full max-w-5xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              className="absolute -top-12 right-0 text-white text-lg font-semibold hover:text-gray-300 transition-colors"
-              onClick={handleCloseVideo}
-            >
-              {language === 'jp' ? '閉じる ×' : 'Close ×'}
-            </button>
-
-            {/* Video Container */}
-            <div 
-              className="relative rounded-lg overflow-hidden shadow-2xl"
-              style={{ 
-                backgroundColor: '#000',
-                aspectRatio: '16/9'
-              }}
-            >
-              <iframe
-                width="100%"
-                height="100%"
-                src={getCloudflareStreamUrl(selectedVideoData.cloudflareVideoId)}
-                title={language === 'jp' ? selectedVideoData.titleJP : selectedVideoData.titleEN}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0"
-              />
-            </div>
-
-            {/* Video Title */}
-            <div className="mt-6 text-center">
-              <h3 style={{ 
-                fontFamily: "'Noto Serif JP', serif",
-                fontSize: '24px',
-                fontWeight: 700,
-                color: 'white',
-                marginBottom: '8px'
-              }}>
-                {language === 'jp' ? selectedVideoData.titleJP : selectedVideoData.titleEN}
-              </h3>
-              <p style={{ 
-                color: 'white',
-                fontSize: '16px',
-                lineHeight: '1.6',
-                opacity: 0.85
-              }}>
-                {language === 'jp' ? selectedVideoData.descriptionJP : selectedVideoData.descriptionEN}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Note Section */}
       <section style={{ backgroundColor: '#1A2B48' }} className="px-6 py-16">

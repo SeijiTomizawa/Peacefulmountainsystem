@@ -7,16 +7,23 @@ import { AccessSection } from "../components/AccessSection";
 import { ContactFooter } from "../components/ContactFooter";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useState } from "react";
-import { Check, X } from "lucide-react";
+import { Check, X, Play } from "lucide-react";
 import Slider from "react-slick";
 import "../../styles/slick.css";
 import { COLORS } from "../constants/theme";
 import * as Images from "../assets/images";
+import { 
+  shiatsuTestimonialsData, 
+  getCloudflareStreamUrl, 
+  getCloudflareStreamThumbnail 
+} from "../data/videosData";
 
 function ShiatsuPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedLetterIndex, setSelectedLetterIndex] =
     useState<number | null>(null);
+  const [selectedVideoId, setSelectedVideoId] = useState<number | null>(null);
+  const [showAllVideos, setShowAllVideos] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
 
@@ -700,7 +707,7 @@ function ShiatsuPage() {
                 src={Images.bibleLadyLetter}
                 alt={
                   language === "jp"
-                    ? "教会のバイブルスタディで宗家ミラー先生が助けた女性からの感動的な手紙"
+                    ? "教会のバイブルタディで宗家ミラー先生が助けた女性からの感動的な手紙"
                     : "Emotional letter from a lady who Soke Miller helped during Bible study"
                 }
                 className="w-full h-auto object-contain"
@@ -805,6 +812,228 @@ function ShiatsuPage() {
               </p>
             </FadeTransition>
           ))}
+        </div>
+      </section>
+
+      {/* Testimonials Videos Section */}
+      <section
+        style={{ backgroundColor: "#1A2B48" }}
+        className="px-6 py-12"
+      >
+        <div className="max-w-7xl mx-auto">
+          <FadeTransition keyValue={`testimonials-heading-${language}`}>
+            <h2
+              style={{
+                fontFamily: "'Noto Serif JP', serif",
+                fontSize: "26px",
+                fontWeight: 700,
+                color: "white",
+                lineHeight: "1.4",
+                marginBottom: "8px",
+                textAlign: "center",
+                letterSpacing: "0.01em",
+              }}
+            >
+              {language === "jp"
+                ? "お客様の声（ビデオ）"
+                : "Customer Testimonials (Videos)"}
+            </h2>
+            <p
+              style={{
+                color: "white",
+                fontSize: "14px",
+                lineHeight: "1.6",
+                marginBottom: "32px",
+                textAlign: "center",
+                opacity: 0.75,
+              }}
+            >
+              {language === "jp"
+                ? "実際に施術を受けられたお客様の声をご覧ください"
+                : "Hear from our clients who have experienced our treatments"}
+            </p>
+          </FadeTransition>
+
+          {/* Video Grid */}
+          <div className="relative mb-6">
+            {/* 横スクロールコンテナ */}
+            <div 
+              className="overflow-x-auto pb-4"
+              style={{
+                scrollbarWidth: 'thin',
+                scrollbarColor: '#5DADE2 rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              <style>{`
+                .video-scroll-container::-webkit-scrollbar {
+                  height: 8px;
+                }
+                .video-scroll-container::-webkit-scrollbar-track {
+                  background: rgba(255, 255, 255, 0.1);
+                  border-radius: 4px;
+                }
+                .video-scroll-container::-webkit-scrollbar-thumb {
+                  background: #5DADE2;
+                  border-radius: 4px;
+                }
+                .video-scroll-container::-webkit-scrollbar-thumb:hover {
+                  background: #4A9FD8;
+                }
+              `}</style>
+              <div 
+                className="flex gap-4 video-scroll-container"
+                style={{ minWidth: 'min-content' }}
+              >
+                {(showAllVideos ? shiatsuTestimonialsData : shiatsuTestimonialsData.slice(0, 8)).map((video) => (
+                  <FadeTransition
+                    key={video.id}
+                    keyValue={`testimonial-${video.id}-${language}`}
+                  >
+                    <div
+                      className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer group flex-shrink-0"
+                      style={{
+                        backgroundColor: "rgba(255, 255, 255, 0.05)",
+                        border: "1px solid rgba(255, 255, 255, 0.1)",
+                        width: "200px",
+                      }}
+                      onClick={() => setSelectedVideoId(selectedVideoId === video.id ? null : video.id)}
+                    >
+                      {selectedVideoId === video.id ? (
+                        // Playing: Show iframe
+                        <div
+                          className="relative w-full"
+                          style={{
+                            aspectRatio: "9/16",
+                          }}
+                        >
+                          <iframe
+                            src={getCloudflareStreamUrl(video.cloudflareVideoId)}
+                            className="w-full h-full"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                            allowFullScreen
+                            style={{
+                              border: "none",
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        // Thumbnail: Show preview
+                        <>
+                          {/* Video Thumbnail */}
+                          <div
+                            className="relative"
+                            style={{
+                              aspectRatio: "9/16",
+                              backgroundColor: "#1A2B48",
+                            }}
+                          >
+                            {/* Cloudflare Stream Thumbnail */}
+                            <img
+                              src={getCloudflareStreamThumbnail(
+                                video.cloudflareVideoId,
+                                video.thumbnailTime || 0
+                              )}
+                              alt={language === "jp" ? video.titleJP : video.titleEN}
+                              className="absolute inset-0 w-full h-full object-cover"
+                              onError={(e) => {
+                                e.currentTarget.style.display = "none";
+                              }}
+                            />
+                            {/* Fallback gradient background */}
+                            <div
+                              className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"
+                              style={{ zIndex: -1 }}
+                            />
+
+                            {/* Overlay and Play Button */}
+                            <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300" />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <Play
+                                size={48}
+                                color="white"
+                                className="relative z-10 transition-transform duration-300 group-hover:scale-110"
+                                style={{
+                                  filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.5))",
+                                }}
+                              />
+                            </div>
+                          </div>
+
+                          {/* Video Title - Compact */}
+                          <div className="p-2">
+                            <p
+                              style={{
+                                fontFamily: "'Noto Sans JP', sans-serif",
+                                fontSize: "12px",
+                                fontWeight: 600,
+                                color: "white",
+                                lineHeight: "1.3",
+                                textAlign: "center",
+                              }}
+                            >
+                              {language === "jp" ? video.titleJP : video.titleEN}
+                            </p>
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </FadeTransition>
+                ))}
+              </div>
+            </div>
+
+            {/* スクロールヒント（モバイル用） */}
+            {!showAllVideos && shiatsuTestimonialsData.length > 8 && (
+              <div className="md:hidden text-center mt-2">
+                <p
+                  style={{
+                    color: "white",
+                    fontSize: "12px",
+                    opacity: 0.6,
+                    fontStyle: "italic",
+                  }}
+                >
+                  {language === "jp" ? "← スワイプして他のビデオを見る →" : "← Swipe to see more →"}
+                </p>
+              </div>
+            )}
+          </div>
+
+          {/* Show More/Less Button */}
+          {shiatsuTestimonialsData.length > 8 && (
+            <FadeTransition keyValue={`show-more-btn-${showAllVideos}`}>
+              <div className="text-center">
+                <button
+                  onClick={() => setShowAllVideos(!showAllVideos)}
+                  className="px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                  style={{
+                    backgroundColor: COLORS.buttonPrimary,
+                    color: "white",
+                    fontSize: "14px",
+                    fontWeight: 600,
+                    border: "none",
+                    cursor: "pointer",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
+                >
+                  {showAllVideos
+                    ? language === "jp"
+                      ? "表示を減らす"
+                      : "Show Less"
+                    : language === "jp"
+                    ? `もっと見る（${shiatsuTestimonialsData.length - 8}件）`
+                    : `Show More (${shiatsuTestimonialsData.length - 8} more)`}
+                </button>
+              </div>
+            </FadeTransition>
+          )}
         </div>
       </section>
 
