@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
-import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { MapPin, Clock, Phone, Mail, User, AtSign, MessageSquare, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import { NavigationDrawer } from '../components/NavigationDrawer';
@@ -14,6 +15,8 @@ export function ContactPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -23,25 +26,62 @@ export function ContactPage() {
     message: ''
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // メール本文を作成
-    const emailBody = `
+    try {
+      // EmailJS設定 - これらの値は実際のEmailJSアカウントから取得する必要があります
+      // 現在はプレースホルダーとして設定しています
+      const SERVICE_ID = 'YOUR_SERVICE_ID';
+      const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+      const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+      
+      // EmailJSのテンプレートパラメータ
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || (language === 'jp' ? '未入力' : 'Not provided'),
+        inquiry_type: formData.inquiryType,
+        message: formData.message,
+        to_email: 'sokemiller@gmail.com',
+        language: language === 'jp' ? '日本語' : 'English'
+      };
+      
+      // EmailJS使用版（アカウント設定後に有効化）
+      // await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
+      
+      // 現在はmailtoリンクにフォールバック
+      const emailBody = `
 ${language === 'jp' ? 'お名前' : 'Name'}: ${formData.name}
 ${language === 'jp' ? 'メールアドレス' : 'Email'}: ${formData.email}
-${language === 'jp' ? '電話番号' : 'Phone'}: ${formData.phone || language === 'jp' ? '未入力' : 'Not provided'}
+${language === 'jp' ? '電話番号' : 'Phone'}: ${formData.phone || (language === 'jp' ? '未入力' : 'Not provided')}
 ${language === 'jp' ? 'お問い合わせ種別' : 'Inquiry Type'}: ${formData.inquiryType}
 
 ${language === 'jp' ? 'メッセージ' : 'Message'}:
 ${formData.message}
-    `.trim();
-    
-    // mailto リンクを作成
-    const mailtoLink = `mailto:sokemiller@gmail.com?cc=info@denkyusha.com&subject=${encodeURIComponent(language === 'jp' ? 'お問い合わせ - 泰山流護身術' : 'Contact Form - Taizan-Ryu')}&body=${encodeURIComponent(emailBody)}`;
-    
-    // メールクライアントを開く
-    window.location.href = mailtoLink;
+      `.trim();
+      
+      const mailtoLink = `mailto:sokemiller@gmail.com?cc=info@denkyusha.com&subject=${encodeURIComponent(language === 'jp' ? 'お問い合わせ - 泰山流護身術' : 'Contact Form - Taizan-Ryu')}&body=${encodeURIComponent(emailBody)}`;
+      
+      window.location.href = mailtoLink;
+      
+      setSubmitStatus('success');
+      // フォームをリセット
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        inquiryType: 'trial',
+        message: ''
+      });
+    } catch (error) {
+      console.error('メール送信エラー:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -95,213 +135,292 @@ ${formData.message}
 
       {/* Contact Form Section */}
       <section style={{ backgroundColor: 'white' }} className="px-6 py-16">
-        <FadeTransition keyValue={`form-heading-${language}`}>
-          <h2 style={{ 
-            fontFamily: "'Noto Serif JP', serif",
-            fontSize: '26px',
-            fontWeight: 700,
-            color: '#1A2B48',
-            lineHeight: '1.5',
-            marginBottom: '8px',
-            textAlign: 'center'
+        <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+          <FadeTransition keyValue={`form-heading-${language}`}>
+            <h2 style={{ 
+              fontFamily: "'Noto Serif JP', serif",
+              fontSize: '26px',
+              fontWeight: 700,
+              color: '#1A2B48',
+              lineHeight: '1.5',
+              marginBottom: '8px',
+              textAlign: 'center'
+            }}>
+              {t.contact.page.form.heading}
+            </h2>
+            <p style={{ 
+              color: '#1A2B48',
+              fontSize: '14px',
+              lineHeight: '1.8',
+              marginBottom: '40px',
+              textAlign: 'center',
+              opacity: 0.7
+            }}>
+              {t.contact.page.form.subheading}
+            </p>
+          </FadeTransition>
+
+          <div style={{
+            backgroundColor: '#FAFAFA',
+            border: '1px solid #E8E2D6',
+            borderRadius: '16px',
+            padding: '32px 24px',
+            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06)'
           }}>
-            {t.contact.page.form.heading}
-          </h2>
-          <p style={{ 
-            color: '#1A2B48',
-            fontSize: '14px',
-            lineHeight: '1.8',
-            marginBottom: '32px',
-            textAlign: 'center',
-            opacity: 0.7
-          }}>
-            {t.contact.page.form.subheading}
-          </p>
-        </FadeTransition>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Name Field */}
+              <FadeTransition keyValue={`name-field-${language}`}>
+                <div>
+                  <label style={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontWeight: 600,
+                    color: '#1A2B48',
+                    marginBottom: '10px',
+                    fontSize: '14px'
+                  }}>
+                    <User size={16} color="#6B1F23" />
+                    {t.contact.page.form.nameLabel} <span style={{ color: '#6B1F23' }}>*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder={t.contact.page.form.namePlaceholder}
+                    className="w-full px-4 py-3 border rounded-lg transition-all"
+                    style={{ 
+                      borderColor: '#D1C7B7',
+                      fontSize: '15px',
+                      backgroundColor: 'white',
+                      outline: 'none'
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = '#5DADE2';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(93, 173, 226, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = '#D1C7B7';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  />
+                </div>
+              </FadeTransition>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name Field */}
-          <FadeTransition keyValue={`name-field-${language}`}>
-            <div>
-              <label style={{ 
-                display: 'block',
-                fontWeight: 600,
+              {/* Email Field */}
+              <FadeTransition keyValue={`email-field-${language}`}>
+                <div>
+                  <label style={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontWeight: 600,
+                    color: '#1A2B48',
+                    marginBottom: '10px',
+                    fontSize: '14px'
+                  }}>
+                    <AtSign size={16} color="#6B1F23" />
+                    {t.contact.page.form.emailLabel} <span style={{ color: '#6B1F23' }}>*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder={t.contact.page.form.emailPlaceholder}
+                    className="w-full px-4 py-3 border rounded-lg transition-all"
+                    style={{ 
+                      borderColor: '#D1C7B7',
+                      fontSize: '15px',
+                      backgroundColor: 'white',
+                      outline: 'none'
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = '#5DADE2';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(93, 173, 226, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = '#D1C7B7';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  />
+                </div>
+              </FadeTransition>
+
+              {/* Phone Field */}
+              <FadeTransition keyValue={`phone-field-${language}`}>
+                <div>
+                  <label style={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontWeight: 600,
+                    color: '#1A2B48',
+                    marginBottom: '10px',
+                    fontSize: '14px'
+                  }}>
+                    <Phone size={16} color="#6B1F23" />
+                    {t.contact.page.form.phoneLabel}
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder={t.contact.page.form.phonePlaceholder}
+                    className="w-full px-4 py-3 border rounded-lg transition-all"
+                    style={{ 
+                      borderColor: '#D1C7B7',
+                      fontSize: '15px',
+                      backgroundColor: 'white',
+                      outline: 'none'
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = '#5DADE2';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(93, 173, 226, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = '#D1C7B7';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  />
+                </div>
+              </FadeTransition>
+
+              {/* Inquiry Type Field */}
+              <FadeTransition keyValue={`inquiry-type-field-${language}`}>
+                <div>
+                  <label style={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontWeight: 600,
+                    color: '#1A2B48',
+                    marginBottom: '10px',
+                    fontSize: '14px'
+                  }}>
+                    <MessageSquare size={16} color="#6B1F23" />
+                    {t.contact.page.form.inquiryTypeLabel} <span style={{ color: '#6B1F23' }}>*</span>
+                  </label>
+                  <select
+                    name="inquiryType"
+                    required
+                    value={formData.inquiryType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border rounded-lg transition-all"
+                    style={{ 
+                      borderColor: '#D1C7B7',
+                      fontSize: '15px',
+                      backgroundColor: 'white',
+                      outline: 'none',
+                      cursor: 'pointer'
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = '#5DADE2';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(93, 173, 226, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = '#D1C7B7';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    <option value="trial">{t.contact.page.form.inquiryTypes.trial}</option>
+                    <option value="shiatsu">{t.contact.page.form.inquiryTypes.shiatsu}</option>
+                    <option value="general">{t.contact.page.form.inquiryTypes.general}</option>
+                    <option value="other">{t.contact.page.form.inquiryTypes.other}</option>
+                  </select>
+                </div>
+              </FadeTransition>
+
+              {/* Message Field */}
+              <FadeTransition keyValue={`message-field-${language}`}>
+                <div>
+                  <label style={{ 
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontWeight: 600,
+                    color: '#1A2B48',
+                    marginBottom: '10px',
+                    fontSize: '14px'
+                  }}>
+                    <MessageSquare size={16} color="#6B1F23" />
+                    {t.contact.page.form.messageLabel} <span style={{ color: '#6B1F23' }}>*</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder={t.contact.page.form.messagePlaceholder}
+                    rows={6}
+                    className="w-full px-4 py-3 border rounded-lg transition-all"
+                    style={{ 
+                      borderColor: '#D1C7B7',
+                      fontSize: '15px',
+                      backgroundColor: 'white',
+                      resize: 'vertical',
+                      outline: 'none'
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = '#5DADE2';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(93, 173, 226, 0.1)';
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = '#D1C7B7';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  />
+                </div>
+              </FadeTransition>
+
+              {/* Submit Button */}
+              <FadeTransition keyValue={`submit-button-${language}`}>
+                <button
+                  type="submit"
+                  className="w-full px-6 py-4 rounded-lg shadow-md"
+                  style={{ 
+                    backgroundColor: COLORS.buttonPrimary,
+                    color: 'white',
+                    fontSize: '16px',
+                    fontWeight: 600,
+                    transition: 'all 0.3s ease',
+                    border: 'none',
+                    cursor: 'pointer',
+                    marginTop: '8px'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.boxShadow = '0 8px 16px rgba(93, 173, 226, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                  }}
+                >
+                  {t.contact.page.form.submitButton}
+                </button>
+              </FadeTransition>
+
+              {/* Privacy Note */}
+              <p style={{ 
+                fontSize: '12px',
                 color: '#1A2B48',
-                marginBottom: '8px',
-                fontSize: '14px'
+                opacity: 0.6,
+                textAlign: 'center',
+                lineHeight: '1.6',
+                marginTop: '16px'
               }}>
-                {t.contact.page.form.nameLabel} <span style={{ color: '#8C272E' }}>*</span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                placeholder={t.contact.page.form.namePlaceholder}
-                className="w-full px-4 py-3 border rounded-lg"
-                style={{ 
-                  borderColor: '#E8E2D6',
-                  fontSize: '14px',
-                  backgroundColor: '#F9F9F7'
-                }}
-              />
-            </div>
-          </FadeTransition>
-
-          {/* Email Field */}
-          <FadeTransition keyValue={`email-field-${language}`}>
-            <div>
-              <label style={{ 
-                display: 'block',
-                fontWeight: 600,
-                color: '#1A2B48',
-                marginBottom: '8px',
-                fontSize: '14px'
-              }}>
-                {t.contact.page.form.emailLabel} <span style={{ color: '#8C272E' }}>*</span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                placeholder={t.contact.page.form.emailPlaceholder}
-                className="w-full px-4 py-3 border rounded-lg"
-                style={{ 
-                  borderColor: '#E8E2D6',
-                  fontSize: '14px',
-                  backgroundColor: '#F9F9F7'
-                }}
-              />
-            </div>
-          </FadeTransition>
-
-          {/* Phone Field */}
-          <FadeTransition keyValue={`phone-field-${language}`}>
-            <div>
-              <label style={{ 
-                display: 'block',
-                fontWeight: 600,
-                color: '#1A2B48',
-                marginBottom: '8px',
-                fontSize: '14px'
-              }}>
-                {t.contact.page.form.phoneLabel}
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder={t.contact.page.form.phonePlaceholder}
-                className="w-full px-4 py-3 border rounded-lg"
-                style={{ 
-                  borderColor: '#E8E2D6',
-                  fontSize: '14px',
-                  backgroundColor: '#F9F9F7'
-                }}
-              />
-            </div>
-          </FadeTransition>
-
-          {/* Inquiry Type Field */}
-          <FadeTransition keyValue={`inquiry-type-field-${language}`}>
-            <div>
-              <label style={{ 
-                display: 'block',
-                fontWeight: 600,
-                color: '#1A2B48',
-                marginBottom: '8px',
-                fontSize: '14px'
-              }}>
-                {t.contact.page.form.inquiryTypeLabel} <span style={{ color: '#8C272E' }}>*</span>
-              </label>
-              <select
-                name="inquiryType"
-                required
-                value={formData.inquiryType}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border rounded-lg"
-                style={{ 
-                  borderColor: '#E8E2D6',
-                  fontSize: '14px',
-                  backgroundColor: '#F9F9F7'
-                }}
-              >
-                <option value="trial">{t.contact.page.form.inquiryTypes.trial}</option>
-                <option value="shiatsu">{t.contact.page.form.inquiryTypes.shiatsu}</option>
-                <option value="general">{t.contact.page.form.inquiryTypes.general}</option>
-                <option value="other">{t.contact.page.form.inquiryTypes.other}</option>
-              </select>
-            </div>
-          </FadeTransition>
-
-          {/* Message Field */}
-          <FadeTransition keyValue={`message-field-${language}`}>
-            <div>
-              <label style={{ 
-                display: 'block',
-                fontWeight: 600,
-                color: '#1A2B48',
-                marginBottom: '8px',
-                fontSize: '14px'
-              }}>
-                {t.contact.page.form.messageLabel} <span style={{ color: '#8C272E' }}>*</span>
-              </label>
-              <textarea
-                name="message"
-                required
-                value={formData.message}
-                onChange={handleChange}
-                placeholder={t.contact.page.form.messagePlaceholder}
-                rows={6}
-                className="w-full px-4 py-3 border rounded-lg"
-                style={{ 
-                  borderColor: '#E8E2D6',
-                  fontSize: '14px',
-                  backgroundColor: '#F9F9F7',
-                  resize: 'vertical'
-                }}
-              />
-            </div>
-          </FadeTransition>
-
-          {/* Submit Button */}
-          <FadeTransition keyValue={`submit-button-${language}`}>
-            <button
-              type="submit"
-              className="w-full px-6 py-4 rounded-lg shadow-lg"
-              style={{ 
-                backgroundColor: COLORS.buttonPrimary,
-                color: 'white',
-                fontSize: '16px',
-                fontWeight: 600,
-                transition: 'all 0.3s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
-              }}
-            >
-              {t.contact.page.form.submitButton}
-            </button>
-          </FadeTransition>
-
-          {/* Privacy Note */}
-          <p style={{ 
-            fontSize: '12px',
-            color: '#1A2B48',
-            opacity: 0.6,
-            textAlign: 'center',
-            lineHeight: '1.6'
-          }}>
-            {t.contact.page.form.privacyNote}
-          </p>
-        </form>
+                {t.contact.page.form.privacyNote}
+              </p>
+            </form>
+          </div>
+        </div>
       </section>
 
       {/* Dojo Information Section */}
