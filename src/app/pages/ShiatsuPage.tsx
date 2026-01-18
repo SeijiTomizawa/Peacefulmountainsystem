@@ -884,7 +884,7 @@ function ShiatsuPage() {
                 className="flex gap-4 video-scroll-container"
                 style={{ minWidth: 'min-content' }}
               >
-                {(showAllVideos ? shiatsuTestimonialsData : shiatsuTestimonialsData.slice(0, 8)).map((video) => (
+                {(showAllVideos ? shiatsuTestimonialsData : shiatsuTestimonialsData.slice(0, 6)).map((video) => (
                   <FadeTransition
                     key={video.id}
                     keyValue={`testimonial-${video.id}-${language}`}
@@ -983,7 +983,7 @@ function ShiatsuPage() {
             </div>
 
             {/* スクロールヒント（モバイル用） */}
-            {!showAllVideos && shiatsuTestimonialsData.length > 8 && (
+            {!showAllVideos && shiatsuTestimonialsData.length > 6 && (
               <div className="md:hidden text-center mt-2">
                 <p
                   style={{
@@ -1000,7 +1000,7 @@ function ShiatsuPage() {
           </div>
 
           {/* Show More/Less Button */}
-          {shiatsuTestimonialsData.length > 8 && (
+          {shiatsuTestimonialsData.length > 6 && (
             <FadeTransition keyValue={`show-more-btn-${showAllVideos}`}>
               <div className="text-center">
                 <button
@@ -1028,8 +1028,8 @@ function ShiatsuPage() {
                       ? "表示を減らす"
                       : "Show Less"
                     : language === "jp"
-                    ? `もっと見る（${shiatsuTestimonialsData.length - 8}件）`
-                    : `Show More (${shiatsuTestimonialsData.length - 8} more)`}
+                    ? `もっと見る（${shiatsuTestimonialsData.length - 6}件）`
+                    : `Show More (${shiatsuTestimonialsData.length - 6} more)`}
                 </button>
               </div>
             </FadeTransition>

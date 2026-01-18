@@ -10,11 +10,12 @@ import { ContactFooter } from '../components/ContactFooter';
 import { Check, X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import * as Images from '../assets/images';
-import { videosData, getCloudflareStreamThumbnail } from '../data/videosData';
+import { videosData, getCloudflareStreamThumbnail, getCloudflareStreamUrl } from '../data/videosData';
 
 function SelfDefensePage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedCertificate, setSelectedCertificate] = useState<number | null>(null);
+  const [selectedVideoId, setSelectedVideoId] = useState<number | null>(null);
   const { language } = useLanguage();
   const t = translations[language];
   const navigate = useNavigate();
@@ -367,46 +368,138 @@ function SelfDefensePage() {
             </p>
           </FadeTransition>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {videosData.slice(0, 3).map((video, index) => (
-              <FadeTransition key={index} keyValue={`video-card-${index}-${language}`}>
-                <div 
-                  className="rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer group"
-                  style={{ 
-                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    aspectRatio: '16/9'
-                  }}
-                  onClick={() => navigate('/videos')}
-                >
-                  <div className="relative w-full h-full">
-                    {/* Cloudflare Stream Thumbnail */}
-                    <img
-                      src={getCloudflareStreamThumbnail(video.cloudflareVideoId, video.thumbnailTime || 0)}
-                      alt={language === 'jp' ? video.titleJP : video.titleEN}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      onError={(e) => {
-                        // サムネイル読み込みエラー時はグラデーション背景を表示
-                        e.currentTarget.style.display = 'none';
+          {/* 横スクロールコンテナ */}
+          <div className="relative mb-6">
+            <div 
+              className="overflow-x-auto pb-4"
+              style={{
+                scrollbarWidth: 'thin',
+                scrollbarColor: '#5DADE2 rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              <style>{`
+                .video-scroll-container::-webkit-scrollbar {
+                  height: 8px;
+                }
+                .video-scroll-container::-webkit-scrollbar-track {
+                  background: rgba(255, 255, 255, 0.1);
+                  border-radius: 4px;
+                }
+                .video-scroll-container::-webkit-scrollbar-thumb {
+                  background: #5DADE2;
+                  border-radius: 4px;
+                }
+                .video-scroll-container::-webkit-scrollbar-thumb:hover {
+                  background: #4A9FD8;
+                }
+              `}</style>
+              <div 
+                className="flex gap-4 video-scroll-container"
+                style={{ minWidth: 'min-content' }}
+              >
+                {videosData.slice(0, 6).map((video, index) => (
+                  <FadeTransition key={index} keyValue={`video-card-${index}-${language}`}>
+                    <div 
+                      className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer group flex-shrink-0"
+                      style={{ 
+                        backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        width: '200px',
                       }}
-                    />
-                    {/* Fallback gradient background */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900" style={{ zIndex: -1 }} />
-                    
-                    {/* Overlay and Play Button */}
-                    <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Play 
-                        size={64} 
-                        color="white" 
-                        className="relative z-10 transition-transform duration-300 group-hover:scale-110"
-                        style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
-                      />
+                      onClick={() => setSelectedVideoId(selectedVideoId === video.id ? null : video.id)}
+                    >
+                      {selectedVideoId === video.id ? (
+                        // Playing: Show iframe
+                        <div
+                          className="relative w-full"
+                          style={{
+                            aspectRatio: "9/16",
+                          }}
+                        >
+                          <iframe
+                            src={getCloudflareStreamUrl(video.cloudflareVideoId)}
+                            className="w-full h-full"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                            allowFullScreen
+                            style={{
+                              border: "none",
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        // Thumbnail: Show preview
+                        <>
+                          {/* Video Thumbnail */}
+                          <div
+                            className="relative"
+                            style={{
+                              aspectRatio: "9/16",
+                              backgroundColor: "#1A2B48",
+                            }}
+                          >
+                            {/* Cloudflare Stream Thumbnail */}
+                            <img
+                              src={getCloudflareStreamThumbnail(video.cloudflareVideoId, video.thumbnailTime || 0)}
+                              alt={language === 'jp' ? video.titleJP : video.titleEN}
+                              className="absolute inset-0 w-full h-full object-cover"
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                            {/* Fallback gradient background */}
+                            <div
+                              className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"
+                              style={{ zIndex: -1 }}
+                            />
+
+                            {/* Overlay and Play Button */}
+                            <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300" />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <Play 
+                                size={48} 
+                                color="white" 
+                                className="relative z-10 transition-transform duration-300 group-hover:scale-110"
+                                style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}
+                              />
+                            </div>
+                          </div>
+
+                          {/* Video Title - Compact */}
+                          <div className="p-2">
+                            <p
+                              style={{
+                                fontFamily: "'Noto Sans JP', sans-serif",
+                                fontSize: "12px",
+                                fontWeight: 600,
+                                color: "white",
+                                lineHeight: "1.3",
+                                textAlign: "center",
+                              }}
+                            >
+                              {language === 'jp' ? video.titleJP : video.titleEN}
+                            </p>
+                          </div>
+                        </>
+                      )}
                     </div>
-                  </div>
-                </div>
-              </FadeTransition>
-            ))}
+                  </FadeTransition>
+                ))}
+              </div>
+            </div>
+
+            {/* スクロールヒント（モバイル用） */}
+            <div className="md:hidden text-center mt-2">
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "12px",
+                  opacity: 0.6,
+                  fontStyle: "italic",
+                }}
+              >
+                {language === "jp" ? "← スワイプして他のビデオを見る →" : "← Swipe to see more →"}
+              </p>
+            </div>
           </div>
 
           <div className="text-center mt-12">
