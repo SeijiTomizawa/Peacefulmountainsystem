@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../translations/translations";
 import { FadeTransition } from "../components/FadeTransition";
+import { SEOHead } from "../components/SEOHead";
+import { StructuredData } from "../components/StructuredData";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { NavigationDrawer } from "../components/NavigationDrawer";
@@ -65,6 +67,31 @@ export function SokePage() {
         backgroundColor: "#F9F9F7",
       }}
     >
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={language === 'jp' 
+          ? '宗家ジョセフ・ミラー | 60年以上の武道経験 - 泰山流八王子本部道場'
+          : 'Soke Joseph Miller | 60+ Years of Martial Arts Experience - Taizan-Ryu'}
+        description={language === 'jp'
+          ? '宗家ジョセフ・ミラーの60年以上にわたる武道の道。合気柔術、柔道、空手の修行から泰山流護身術の創始まで。'
+          : "Soke Joseph Miller's 60+ year journey in martial arts. From training in Aikijujutsu, Judo, and Karate to founding Taizan-Ryu self-defense system."}
+        keywords={language === 'jp'
+          ? '宗家,ジョセフ・ミラー,泰山流,八光流,合気柔術,武道家,師範,Soke,Joseph Miller'
+          : 'Soke,Joseph Miller,Taizan-Ryu,Hakkoryu,Aikijujutsu,Martial Arts Master,Shihan'}
+        canonicalUrl="https://www.taizan-ryu.com/soke"
+      />
+
+      {/* Structured Data */}
+      <StructuredData 
+        type="breadcrumb" 
+        data={{
+          breadcrumbs: [
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizan-ryu.com/' },
+            { name: language === 'jp' ? '宗家について' : 'About Soke', url: 'https://www.taizan-ryu.com/soke' }
+          ]
+        }}
+      />
+
       {/* Navigation Drawer */}
       <NavigationDrawer
         isOpen={isDrawerOpen}

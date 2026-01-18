@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { logoImage } from '../assets/images';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface SEOHeadProps {
   title?: string;
@@ -16,9 +17,14 @@ export function SEOHead({
   ogImage = '',
   canonicalUrl = '',
 }: SEOHeadProps) {
+  const { language } = useLanguage();
+
   useEffect(() => {
     // Update document title
     document.title = title;
+
+    // Update HTML lang attribute
+    document.documentElement.lang = language === 'jp' ? 'ja' : 'en';
 
     // Update favicon
     const updateFavicon = () => {
@@ -113,7 +119,7 @@ export function SEOHead({
       
       linkElement.href = canonicalUrl;
     }
-  }, [title, description, keywords, ogImage, canonicalUrl]);
+  }, [title, description, keywords, ogImage, canonicalUrl, language]);
 
   return null; // This component doesn't render anything
 }

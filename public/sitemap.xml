@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Page / トップページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/?lang=en" />
+  </url>
+
+  <!-- Self Defense Page / 護身術ページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/self-defense</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/self-defense?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/self-defense?lang=en" />
+  </url>
+
+  <!-- Shiatsu Page / 指圧ページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/shiatsu</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/shiatsu?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/shiatsu?lang=en" />
+  </url>
+
+  <!-- Soke Page / 宗家ページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/soke</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/soke?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/soke?lang=en" />
+  </url>
+
+  <!-- Members Page / メンバーページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/members</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/members?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/members?lang=en" />
+  </url>
+
+  <!-- Videos Page / 動画ページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/videos</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/videos?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/videos?lang=en" />
+  </url>
+
+  <!-- Gallery Page / ギャラリーページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/gallery</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/gallery?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/gallery?lang=en" />
+  </url>
+
+  <!-- Links Page / リンクページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/links</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/links?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/links?lang=en" />
+  </url>
+
+  <!-- Contact Page / お問い合わせページ -->
+  <url>
+    <loc>https://www.taizan-ryu.com/contact</loc>
+    <lastmod>2026-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizan-ryu.com/contact?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizan-ryu.com/contact?lang=en" />
+  </url>
+
+</urlset>

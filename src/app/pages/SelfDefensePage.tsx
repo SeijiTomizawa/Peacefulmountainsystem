@@ -7,6 +7,8 @@ import { Header } from '../components/Header';
 import { FadeTransition } from '../components/FadeTransition';
 import { AccessSection } from '../components/AccessSection';
 import { ContactFooter } from '../components/ContactFooter';
+import { SEOHead } from '../components/SEOHead';
+import { StructuredData } from '../components/StructuredData';
 import { Check, X, ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import * as Images from '../assets/images';
@@ -66,6 +68,31 @@ function SelfDefensePage() {
       fontFamily: "'Noto Sans JP', sans-serif",
       backgroundColor: '#F9F9F7'
     }}>
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={language === 'jp' 
+          ? '泰山流護身術・逮捕術 | 実践的な防御システム - 泰山流八王子本部道場'
+          : 'Taizan-Ryu Self-Defense & Arrest Techniques | Practical Defense System'}
+        description={language === 'jp'
+          ? '60年以上の武道経験に基づく実践的な護身術・逮捕術。合気柔術、柔道、空手の技術を統合した効果的な防御システムを八王子本部道場で学びます。'
+          : 'Practical self-defense and arrest techniques based on 60+ years of martial arts experience. Learn effective defense system integrating Aikijujutsu, Judo, and Karate at Hachioji Honbu Dojo.'}
+        keywords={language === 'jp'
+          ? '護身術,逮捕術,合気柔術,泰山流,八王子,武道,Self-Defense,実践的防御,防犯,護身'
+          : 'Self-Defense,Arrest Techniques,Aikijujutsu,Taizan-Ryu,Hachioji,Martial Arts,Practical Defense,Personal Safety'}
+        canonicalUrl="https://www.taizan-ryu.com/self-defense"
+      />
+
+      {/* Structured Data */}
+      <StructuredData 
+        type="breadcrumb" 
+        data={{
+          breadcrumbs: [
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizan-ryu.com/' },
+            { name: language === 'jp' ? '護身術・逮捕術' : 'Self-Defense', url: 'https://www.taizan-ryu.com/self-defense' }
+          ]
+        }}
+      />
+
       {/* Navigation Drawer */}
       <NavigationDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
 

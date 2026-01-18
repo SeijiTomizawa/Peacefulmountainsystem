@@ -5,6 +5,7 @@ import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { translations } from './translations/translations';
 import { COLORS } from './constants/theme';
 import { SEOHead } from './components/SEOHead';
+import { StructuredData } from './components/StructuredData';
 import { NavigationDrawer } from './components/NavigationDrawer';
 import { Header } from './components/Header';
 import { FadeTransition } from './components/FadeTransition';
@@ -87,6 +88,10 @@ function DojoWebsite() {
           ? '60年以上の武道経験に基づく実的な護身術。合気柔術、柔道、空手の技術を統合し、現代社会に適応した効果的な防御システムを学びます。'
           : 'Practical self-defense based on over 60 years of martial arts experience. Learn effective defense system integrating Aikijujutsu, Judo, and Karate techniques.'}
       />
+      
+      {/* Structured Data for SEO */}
+      <StructuredData type="organization" />
+      <StructuredData type="local-business" />
       
       {/* Navigation Drawer */}
       <NavigationDrawer isOpen={isDrawerOpen} onClose={handleDrawerClose} />

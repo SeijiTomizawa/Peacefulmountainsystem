@@ -7,6 +7,8 @@ import { translations } from '../translations/translations';
 import { NavigationDrawer } from '../components/NavigationDrawer';
 import { Header } from '../components/Header';
 import { FadeTransition } from '../components/FadeTransition';
+import { SEOHead } from '../components/SEOHead';
+import { StructuredData } from '../components/StructuredData';
 import { AccessSection } from '../components/AccessSection';
 import { Footer } from '../components/Footer';
 import { COLORS } from '../constants/theme';
@@ -96,6 +98,31 @@ ${formData.message}
       fontFamily: "'Noto Sans JP', sans-serif",
       backgroundColor: '#F9F9F7'
     }}>
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title={language === 'jp' 
+          ? 'お問い合わせ | 泰山流護身術 八王子本部道場'
+          : 'Contact Us | Taizan-Ryu Hachioji Honbu Dojo'}
+        description={language === 'jp'
+          ? '泰山流護身術八王子本部道場へのお問い合わせはこちら。体験入門、指圧・整体のご予約、その他ご質問など、お気軽にご連絡ください。'
+          : 'Contact Taizan-Ryu Hachioji Honbu Dojo for trial lessons, Shiatsu appointments, and general inquiries. We look forward to hearing from you.'}
+        keywords={language === 'jp'
+          ? 'お問い合わせ,体験入門,指圧予約,八王子,泰山流,Contact,Trial Lesson,Shiatsu Appointment'
+          : 'Contact,Inquiry,Trial Lesson,Shiatsu Appointment,Hachioji,Taizan-Ryu'}
+        canonicalUrl="https://www.taizan-ryu.com/contact"
+      />
+
+      {/* Structured Data */}
+      <StructuredData 
+        type="breadcrumb" 
+        data={{
+          breadcrumbs: [
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizan-ryu.com/' },
+            { name: language === 'jp' ? 'お問い合わせ' : 'Contact', url: 'https://www.taizan-ryu.com/contact' }
+          ]
+        }}
+      />
+
       {/* Navigation Drawer */}
       <NavigationDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
 
