@@ -32,7 +32,7 @@ export const translations = {
     },
     introduction: {
       heading: "The Peaceful Mountain System - 泰山流",
-      text: "泰山流は、八光流（52年）、義経柔術（59年）、空手、柔道（20年）といった伝統的な武道の技術と哲学を基に、宗家ジョー・ミラーが創り上げた総合護身術システムです。守破離の概念に基づき、実践的な護身術と癒しの整体を統合しています。",
+      text: "泰山流は、八光流（52年）、義経柔術（59年）、空手、柔道（20年）といった伝統的な武道の技術と哲学を基に、宗家ジョー・ミラーが創り上げた総合護身術システムです。守破離の概念に基づき、実践的な護術と癒の整体を統合しています。",
     },
     master: {
       heading: "宗家 ジョセフ・ミラー - 60年の武道人生",
@@ -57,7 +57,7 @@ export const translations = {
             "1964年のある月曜日の夕方、私はバスで義経道場に向かいました。バスを降りると、運転手が道場への道を教えてくれました。丁寧に礼を言い、道場に入りました。階段を降りてくる背の高い男性に出くわしました。この施設の管理人かと尋ねると、彼は顔をしかめて「私が管理人に見えるか？」と答えました。私は確信を持って「はい、そう見えます」と言いました。",
             "その背の高い管理人風の男性は、誰を探しているのかと尋ねてきました。私はこの学校の師範を探していると言いました。この学校に通っている私の体育教師であるソール・コーエ博士が、ここに来るように言ったと付け加えました。すると、その背の高い管理人風の男性は、誰かが助けてくれる2階に案内してくれました。階段の上に着くと、とても親切な美しい女性に会いました。彼女は「どうお手伝いできますか」と尋ねました。私は「はい、この学校の師範を探しています」と言いました。彼女は、今階段を下りて行った紳士が彼女の夫であるマイケル・デパスクワーレ宗家だと言いました。私は愚かにも「つまり、頭に髪の毛がない、管理人のように見え背の高い男性があなたの夫ですか？」と答えました。彼女は優しく「はい」と答えました。私は「ああ！困った」と言いました。彼に管理人かと尋ねたことを説明しました。彼女は心から笑って、心配しないで、私はこの学校のボスだけど、マット上では彼がボスなのよ、と言いました。",
             "私は来た理由を説明し、道着を持っていないと伝えました。彼女は道着をくれて、これは彼らからの贈り物だと言いました。彼女は更衣室に案内してくれて、そこで道着に着替えました。彼女は夫が来る前に急いでマットに向かうように言いました。私は武道の道着を着たことがありませんでした。部屋に着くと、部屋にいた生徒が私のところに来て、道着の着方が間違っていると教えてくれました。ズボンも上着も後ろ前だと言われました。それで急いで修正しました。",
-            "突然、部屋全体が静かになり、誰かがみんなを注目させました。それは私が管理人だと思っていた男性、師範/宗家マイケル・デパスクワーレでした。私は最初に彼の息子マイケルに会いました。彼はマイキーと呼ばれていました。彼はマイケル・シニア師範への礼の仕方を教えてくれました。礼は武道の伝統でした。マイキーは私を奇妙そうに見て、私は少し自意識過剰で緊張していました。学校で私だけが有色人種だから、彼は私を好きではないのかもしれないと思いました。私はこれをマイケル・デ・パスクワーレ師範に話すことにしました。彼のところに行って「すみませんが、なぜここには他の黒人がいないのですか」と言いました。彼は「いるよ、今私が見ている人だ」と言いました。私は笑って「なるほど」と言いました。「お前は私を管理人と呼んだ若い子に違いない。大きな間違いを犯したな。お前の人生を生き地獄にしてやる」と彼は激しく言いました。私はしっかりと「問題ありません。スパニッシュハーレム出身の私は、あなたが与えるものなら何でも受け止められると思います」と言いました。彼は「よろしい！では見てみよう」と言いました。それが師範マイケル・デパスクワーレとマイキーとの義経柔術システムでのキャリアの始まりでした。翌日の授業でマイキーは、今後はマイケル・デパスクワーレを宗家と呼ぶように説明しました。彼が義経柔術システムを創設したからです。覚えておくと伝えました。マイキーと私は義経道場での次の4年間で親密な関係になりました。1968年に私は義経柔術システムの初段茶帯のテストを受けました。そしてマイケル・デパスクワーレ・ジュニアは初段黒帯に昇進しました。私たちは両方とも信じられないほどの達成感を感じました。",
+            "突然、部屋全体が静かになり、誰かがみんなを注目させました。それは私が管理人だと思っていた男性、師範/宗家マイケル・デパスクワーレでした。私は初に彼の息子マイケルに会いました。彼はマイキーと呼ばれていました。彼はマイケル・シニア師範への礼の仕方を教えてくれました。礼は武道の伝統でした。マイキーは私を奇妙そうに見て、私は少し自意識過剰で緊張していました。学校で私だけが有色人種だから、彼は私を好きではないのかもしれないと思いました。私はこれをマイケル・デ・パスクワーレ師範に話すことにしました。彼のところに行って「すみませんが、なぜここには他の黒人がいないのですか」と言いました。彼は「いるよ、今私が見ている人だ」と言いました。私は笑って「なるほど」と言いました。「お前は私を管理人と呼んだ若い子に違いない。大きな間違いを犯したな。お前の人生を生き地獄にしてやる」と彼は激しく言いました。私はしっかりと「問題ありません。スパニッシュハーレム出身の私は、あなたが与えるものなら何でも受け止められると思います」と言いました。彼は「よろしい！では見てみよう」と言いました。それが師範マイケル・デパスクワーレとマイキーとの義経柔術システムでのキャリアの始まりでした。翌日の授業でマイキーは、今後はマイケル・デパスクワーレを宗家と呼ぶように説明しました。彼が義経柔術システムを創設したからです。覚えておくと伝えました。マイキーと私は義経道場での次の4年間で親密な関係になりました。1968年に私は義経柔術システムの初段茶帯のテストを受けました。そしてマイケル・デパスクワーレ・ジュニアは初段黒帯に昇進しました。私たちは両方とも信じられないほどの達成感を感じました。",
             "1968年の卒業後、私は米国空軍に入隊することにしました。テキサス州サンアントニオのラックランド空軍基地で訓練を完了しました。基礎訓練を卒業した後、2週間の休暇が許可され、母、父、家族と過ごしました。また、デパスクワーレ家を訪問し、マイケル・シニア宗家とマイキー・ジュニアと楽しい時間を過ごしました。道場でトレーニングもしました。",
             "1969年、空軍から次の4年間の軍事キャリアで日本に行くことが通知されました。この時、三沢空軍基地での次の任務のためにトップシークレットのクリアランスを受けました。マイケル・シニア宗家は、八光流柔術システムの創始者に推薦状を書くと知らせてくれました。マイケル宗家は、日本の八光流連盟の高位師範である斎藤順二の下で学びました。創始者は奥山龍峰でした。彼の正式な名前は奥山良治でした。米国空軍の特別捜査局は、私が誰であるかを確認するためにマイケル・デ・パスクワーレ・シニア宗家のところに来ました。マイケル・デパスクワーレ宗家は私の重要な推薦者の一人でした。マイケル宗家は元CID（中央諜報部）の将校でした。デパスクワーレ夫人によると、マイケル宗家とCID将校はその日何時間も話したそうです。",
             "1972年11月、ついに日本に到着しました。基地に落ち着いた後、埼玉県大宮の八光流柔術システムの創始者に会いに行きました。奥山龍峰に会うのは非常に重要な日でした。彼はマイク・デパスクワーレ師範から手紙を受け取ったと言いました。システムへの旅を始める準備ができているか尋ねられました。もちろん「はい」と答えました。新しい学校に通うのを待っている間、基地でマイケル・デパスクワーレ・シニア宗家から教わった義経柔術システムを教える機会を最大限に活用しました。すぐに週末に学校への入学を始めました。埼玉県大宮の八光流本部への旅は週単位で達成するのは本当に大変でした。大宮まで8時間かけて2本の電車に乗らなければなりませんでした。私は4年間毎週通い、高熱で病気になった1週末だけ休みました。1973年、私は八光流柔術システムの師範、つまり師範のテストを受ける準備ができていました。日本全国で15人がこの重要なテストの準備ができていました。2週間の集中テストがかかりました。私は少し不安だったので、マイケル・シニア宗家に電話して、彼のように師範の階級を授与されるかどうか尋ねました。彼は、あなたを組織に連れてきて、師範の階級を達成するために一生懸命訓練できるように、私の師匠の師匠に代わって手紙を書いたと言いました。私はマイケル師範がしてくれたすべてのサポートに感謝しました。深い愛と感謝を感じました。テストが終わったとき、私は師範の称号を授与されました。",
@@ -89,7 +89,7 @@ export const translations = {
         },
         philosophy: {
           heading: "指導理念",
-          text: "攻撃と防御のスキルを維持するために、できる限り修行に専念しなければならない。攻撃に対して360度すべての方向から自分を守るための身体の動きに注意を集中しています。武道と武の道は、すべての人のためのものではありません。古代の���身術を効果的に使用するには、その実践に時間をげなればならないと信じています。",
+          text: "攻撃と防御のスキルを維持するために、できる限り修行に専念しなければならない。攻撃に対して360度すべての方向から自分を守るための身体の動きに注意を集中しています。武道と武の道は、すべての人のためのものではありません。古代の身術を効果的に使用するには、その実践に時間をげなればならないと信じています。",
         },
         systems: {
           heading: "泰山流システム",
@@ -202,9 +202,9 @@ export const translations = {
     },
     members: {
       preview: {
-        heading: "Meet Our Members",
-        text: "Meet the training partners at Hachioji Honbu Dojo. Practitioners of various nationalities, ages, and experience levels are training together towards their goals.",
-        button: "View Members",
+        heading: "稽古仲間たち",
+        text: "八王子本部道場の稽古仲間をご紹介します。様々な国籍、年齢、経験レベルの実践者が、それぞれの目標に向かって共に稽古を積んでいます。",
+        button: "メンバーを見る",
       },
       page: {
         hero: {
@@ -218,25 +218,25 @@ export const translations = {
     },
     videos: {
       preview: {
-        heading: "Taizan-Ryu Techniques",
-        text: "Watch technical explanations by Soke Joe Miller and training sessions at our dojo. From basic techniques to practical applications, explore Taizan-Ryu techniques and philosophy through video.",
-        button: "View Video Gallery",
+        heading: "泰山流の技術",
+        text: "宗家ジョー・ミラーによる技術解説と、道場での稽古の様子をご覧ください。基本技術から実戦応用まで、映像を通じて泰山流の技術と哲学を体験できます。",
+        button: "動画ギャラリーを見る",
       },
       page: {
         hero: {
-          headline: "Taizan-Ryu Techniques",
+          headline: "泰山流の技術",
           subtext:
-            "Training sessions and technique demonstrations",
+            "稽古の様子と技術実演",
         },
-        heading: "Technique Explanations & Training Videos",
-        subheading: "Demonstrations by Soke and dojo practice",
+        heading: "技術解説・稽古動画",
+        subheading: "宗家による実演と道場での稽古",
         description:
-          "Explore Taizan-Ryu techniques and philosophy through video.",
+          "映像を通じて泰山流の技術と哲学を体験してください。",
       },
     },
     access: {
       heading: "アクセス",
-      text: "東京都八王子市子安町1-29-1\\n八王子駅南口より徒歩5分\\n新宿駅から30分、日本全国からアクセス良好",
+      text: "東京都八王子市子町1-29-1\\n八王子駅南口より徒歩5分\\n新宿駅から30分、日本全国からアクセス良好",
       mapPlaceholder: "Google Maps Integration",
     },
     contact: {
@@ -363,8 +363,8 @@ export const translations = {
         title: "私の遺産　泰山流",
         subtitle: "守破離",
         content:
-          "私の道場で教える「平和な山」のシステムは、守破離という三段階の習熟の概念に基づいています。\\n\\n私の旅は、人生をかけて学んできた伝統的な教えと基本技術から始まりました。八光流52年、義経柔術59年、空手、そして柔道20年。私が習得した武道と癒しの技は、私のライフスタイルに組み込まれています。私は自分が教えることを実践して生きています。",
-        signature: "宗家　ジョー・ミラー",
+          "守破離（SHUHARI）\n\n私の道場で教えている「平和なる山の体系（Peaceful Mountain System）」は、熟達への三段階である「守破離」という概念に基づいています。\n\n武道における私の歩み\n\n私の歩みは、私が生涯にわたり学んできた諸体系の伝統的な教えと基本技術から始まりました。八光流 52年、義経柔術 59年、空手および柔道 20年。私が修めた武道と治療の術は私の生活様式に取り入れられており、私は教えることをそのまま生きています。\n\n泰山流の創設\n\n私がいくつかの伝統的な柔術体系から離れる決意をしたとき、私は自らの体系である泰山流（TaizanRyu）「平和なる山の体系」を創りました。そして、私が教える泰山流の護身術体系の中で、逮捕術（Taiho Jutsu）、捕縛・制圧（検挙）技術、そしてその応用を指導しています。これらは誰にでも、特に法執行機関に携わる人々に有用です。私は伝統的な柔術体系も教えています。なぜなら、型（katas）や技（wazas）として知られる基本稽古は、実際の路上での現実的な状況において、護身の応用をどのように使うかを修行者に学ばせるからです。さらに私は、武術と治療術の調和を図るために私が発展させた「平和なる山の体系」の指圧（Shiatsu）という癒しの術も教え、奨励しています。\n\n私の指導哲学\n\n私は護身を目的として、伝統的な実戦的柔術技術を教え続けています。私の哲学は「人は可能な限り稽古に身を捧げ、攻防の技量を維持しなければならない」というものです。私は、いかなる攻撃に対しても全方向（360度）から身を守れるよう、身体の動きに重点を置いています。武道や武の道は、すべての人に向いているわけではありません。私の60年にわたる武道の知識と研鑽に基づけば、これら古来の護身術を効果的に用いるためには、稽古に時間を捧げる必要があります。\n\n信仰と感謝\n\nしかし私の歩みは、私の命を救ってくださった主であり救い主であるイエス・キリストへの愛がなければ、決して実現しなかったでしょう。\n神よ、私を信じてくださってありがとうございます。栄光は神に帰します。",
+        signature: "宗家　ジョセフ・ミラー",
       },
       training: {
         heading: "トレーニング内容",
@@ -647,11 +647,11 @@ export const translations = {
       },
       page: {
         hero: {
-          headline: "メンバー紹介",
-          subtext: "八王子本部道場の稽古仲間たち",
+          headline: "Member Introduction",
+          subtext: "Training Partners at Hachioji Honbu Dojo",
         },
-        heading: "共に稽古を積む仲間たち",
-        subheading: "2025年9月現在 - 泰山流護身術認定メンバー",
+        heading: "Training Together Towards Our Goals",
+        subheading: "As of September 2025 - Taizan-Ryu Certified Members",
         items: membersDataEN,
       },
     },
@@ -800,11 +800,11 @@ export const translations = {
         text: "Taizan-Ryu Self-Defense is a comprehensive self-defense system created by Soke Joe Miller, based on traditional martial arts including Hakkoryu (52 years), Yoshitsune Jujutsu (59 years), Karate, and Judo (20 years). It aims for true self-defense by balancing practical techniques with spiritual growth.",
       },
       legacy: {
-        title: "My Legacy: Taizan-Ryu",
-        subtitle: "Shuhari",
+        title: "My Legacy TAI ZAN RYU",
+        subtitle: "SHUHARI",
         content:
-          'The "Peaceful Mountain" system I teach at my dojo is based on the three-stage concept of mastery called Shuhari.\\n\\nMy journey began with the traditional teachings and fundamental techniques I have learned throughout my life. Hakkoryu 52 years, Yoshitsune Jujutsu 59 years, Karate, and Judo 20 years. The martial and healing arts I have mastered are incorporated into my lifestyle; I live what I teach.',
-        signature: "Soke Joe Miller",
+          "SHUHARI - The Three Stages of Mastery\n\nThe Peaceful Mountain System taught at my dojo is based on the concept of the three stages of proficiency: Shuhari.\n\nMy Journey in the Martial Arts\n\nMy journey started with traditional teachings and fundamental techniques of these systems that I have studied during my lifetime. Hakkoryu, 52 years, Yoshitsune Jujutsu 59 years, Karate, and Judo 20 years. The martial arts and healing arts I have mastered are incorporated into my lifestyle; I live what I teach.\n\nThe Formation of TaizanRyu\n\nWhen I decided to break away from certain traditional Jujutsu systems I formed my system, TaizanRyu the Peaceful Mountain System, and within the TaizanRyu system of self-defense I teach, Taiho Jutsu, apprehension techniques, and application. They can be used by anyone, especially those in law enforcement agencies. I teach the traditional systems of Ju Jutsu because the basic exercises known as katas and wazas, educate the practitioner on how to apply the defense applications for real-time street use. I also teach and encourage the healing art of the Peaceful Mountain system of Shiatsu, which I have developed to balance the martial arts with the healing arts.\n\nMy Teaching Philosophy\n\nI continue teaching traditional combative Ju Jutsu techniques for self-defense purposes. My philosophy is \"One must be able to dedicate themselves to training as much as they can, to keep up their skills of offense and defense.\" I focus my attention on the movement of one's body to defend oneself on all 360 degrees of approach from an attack. Martial Arts and martial ways are not for everyone. I believe in my 60 years of martial arts knowledge and study; one must devote the time to practice these ancient arts of self-defense to use them effectively.\n\nFaith and Gratitude\n\nBut my Journey would have never happened if it weren't for the Love I have for my Lord and Savior Jesus Christ who saved my life.\nThank you, God, for believing in me, to God be the Glory.",
+        signature: "Soke Joseph Miller",
       },
       training: {
         heading: "Training Content",

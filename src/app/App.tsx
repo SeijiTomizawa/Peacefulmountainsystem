@@ -150,6 +150,7 @@ function DojoWebsite() {
           <div className="px-6 text-center w-full">
             {/* Tagline with fade and slide up animation */}
             <motion.p
+              key={`hero-headline-${language}`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
@@ -162,16 +163,17 @@ function DojoWebsite() {
                 textShadow: '0 6px 16px rgba(0,0,0,0.95), 0 3px 6px rgba(0,0,0,0.9)'
               }}
             >
-              守破離の精神で、真の護身を。
+              {t.hero.headline}
             </motion.p>
             
             {/* Japanese Title with scale and fade animation */}
             <motion.h1
+              key={`hero-subtext-${language}`}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
               style={{ 
-                fontFamily: "'Zen Old Mincho', serif",
+                fontFamily: language === 'jp' ? "'Zen Old Mincho', serif" : "'Noto Sans JP', sans-serif",
                 fontSize: '42px',
                 fontWeight: 700,
                 color: 'white',
@@ -181,7 +183,7 @@ function DojoWebsite() {
                 textShadow: '0 6px 16px rgba(0,0,0,0.95), 0 3px 6px rgba(0,0,0,0.9)'
               }}
             >
-              泰山流護身術・逮捕術　東京八王子本部道場
+              {t.hero.subtext}
             </motion.h1>
             
             {/* English Title with fade and slide up animation */}

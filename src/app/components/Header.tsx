@@ -12,7 +12,7 @@ interface HeaderProps {
 }
 
 export const Header = memo(function Header({ onMenuClick }: HeaderProps) {
-  const { language } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
   const t = translations[language];
 
   return (
@@ -58,19 +58,18 @@ export const Header = memo(function Header({ onMenuClick }: HeaderProps) {
         </FadeTransition>
       </Link>
       <div className="flex items-center gap-3">
-        <FadeTransition keyValue={`booking-btn-${language}`}>
+        <FadeTransition keyValue={`lang-btn-${language}`}>
           <button
-            className="px-3 py-1.5 text-sm text-white rounded-md"
+            className="px-4 py-1.5 text-sm font-semibold text-white rounded-md transition-opacity hover:opacity-90"
             style={{
               backgroundColor: COLORS.buttonPrimary,
-              fontSize: "13px",
+              fontSize: "14px",
               fontWeight: 600,
+              minWidth: "70px",
             }}
-            onClick={() => {
-              window.location.href = "/#contact";
-            }}
+            onClick={toggleLanguage}
           >
-            {t.header.bookingButton}
+            {language === "jp" ? "English" : "日本語"}
           </button>
         </FadeTransition>
         <button className="p-2" onClick={onMenuClick}>

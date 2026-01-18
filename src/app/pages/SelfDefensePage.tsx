@@ -182,7 +182,91 @@ function SelfDefensePage() {
               whiteSpace: 'pre-line',
               marginBottom: '32px'
             }}>
-              {t.selfDefense.legacy.content}
+              {t.selfDefense.legacy.content.split('\n').map((line, index) => {
+                // Check if line is a heading (ends with specific patterns or is all caps)
+                const isMainHeading = line.trim() === 'SHUHARI - The Three Stages of Mastery' || 
+                                     line.trim() === '守破離（SHUHARI）';
+                const isSubHeading = [
+                  'My Journey in the Martial Arts',
+                  'The Formation of TaizanRyu',
+                  'My Teaching Philosophy',
+                  'Faith and Gratitude',
+                  '武道における私の歩み',
+                  '泰山流の創設',
+                  '私の指導哲学',
+                  '信仰と感謝'
+                ].includes(line.trim());
+                
+                if (isMainHeading) {
+                  return (
+                    <div key={index} style={{ 
+                      marginTop: index === 0 ? '0' : '40px',
+                      marginBottom: '32px',
+                      textAlign: 'center'
+                    }}>
+                      <div style={{
+                        display: 'inline-block',
+                        position: 'relative',
+                        paddingBottom: '12px'
+                      }}>
+                        <h4 style={{ 
+                          fontFamily: "'Noto Serif JP', serif",
+                          fontSize: '22px',
+                          fontWeight: 700,
+                          color: '#6B1F23',
+                          letterSpacing: '0.08em',
+                          marginBottom: '0'
+                        }}>
+                          {line}
+                        </h4>
+                        <div style={{
+                          position: 'absolute',
+                          bottom: '0',
+                          left: '50%',
+                          transform: 'translateX(-50%)',
+                          width: '60px',
+                          height: '3px',
+                          backgroundColor: '#5DADE2',
+                          borderRadius: '2px'
+                        }} />
+                      </div>
+                    </div>
+                  );
+                } else if (isSubHeading) {
+                  return (
+                    <div key={index} style={{ 
+                      marginTop: '48px',
+                      marginBottom: '20px',
+                      paddingLeft: '16px',
+                      borderLeft: '4px solid #5DADE2'
+                    }}>
+                      <h5 style={{ 
+                        fontFamily: "'Noto Serif JP', serif",
+                        fontSize: '18px',
+                        fontWeight: 700,
+                        color: '#1A2B48',
+                        letterSpacing: '0.05em',
+                        marginBottom: '0'
+                      }}>
+                        {line}
+                      </h5>
+                    </div>
+                  );
+                } else if (line.trim() === '') {
+                  return <div key={index} style={{ height: '12px' }} />;
+                } else {
+                  return (
+                    <p key={index} style={{ 
+                      marginBottom: '16px',
+                      color: '#2C3E50',
+                      fontSize: '15px',
+                      lineHeight: '1.9'
+                    }}>
+                      {line}
+                    </p>
+                  );
+                }
+              })}
             </div>
 
             <p style={{ 
