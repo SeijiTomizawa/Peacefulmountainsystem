@@ -60,7 +60,7 @@ export const AccessSection = memo(function AccessSection() {
           allowFullScreen={true}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Taizan-Ryu Hachioji Honbu Dojo Location"
+          title="TaizanRyu Hachioji Honbu Dojo Location"
         />
       </div>
     </section>

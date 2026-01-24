@@ -63,7 +63,7 @@ export const translations = {
             "1972年11月、ついに日本に到着しました。基地に落ち着いた後、埼玉県大宮の八光流柔術システムの創始者に会いに行きました。奥山龍峰に会うのは非常に重要な日でした。彼はマイク・デパスクワーレ師範から手紙を受け取ったと言いました。システムへの旅を始める準備ができているか尋ねられました。もちろん「はい」と答えました。新しい学校に通うのを待っている間、基地でマイケル・デパスクワーレ・シニア宗家から教わった義経柔術システムを教える機会を最大限に活用しました。すぐに週末に学校への入学を始めました。埼玉県大宮の八光流本部への旅は週単位で達成するのは本当に大変でした。大宮まで8時間かけて2本の電車に乗らなければなりませんでした。私は4年間毎週通い、高熱で病気になった1週末だけ休みました。1973年、私は八光流柔術システムの師範、つまり師範のテストを受ける準備ができていました。日本全国で15人がこの重要なテストの準備ができていました。2週間の集中テストがかかりました。私は少し不安だったので、マイケル・シニア宗家に電話して、彼のように師範の階級を授与されるかどうか尋ねました。彼は、あなたを組織に連れてきて、師範の階級を達成するために一生懸命訓練できるように、私の師匠の師匠に代わって手紙を書いたと言いました。私はマイケル師範がしてくれたすべてのサポートに感謝しました。深い愛と感謝を感じました。テストが終わったとき、私は師範の称号を授与されました。",
             "三沢空軍基地での任務が終わった後、韓国への命令を受けました。家族と友人に会うために2週間の休暇が与えられました。カナダの友人を訪問し、彼らと良い時間を過ごした後、ニューヨークに母と父に会いに行きました。その夜、カナダから電話があり、友人が狂犬病の犬のために牛と犬を失ったと知らされました。その動物を感染させた同じ犬が私も噛みました。すぐに病院に行き、一連の予防接種を受けなければなりませんでした。カナダの農場で見つかったすべての詳細は、私が治療を受けていたハーレムのマウントサイナイ病院に送られました。12日間連続で1日3回来なければなりませんでした。これらの注射は腹部に打たれ、耐え難いほど苦痛でした。次の12日間、この治療を受けましたが、治療がうまく機能していないことがわかりました。状況を改善する何かが行われなければ、私は死ぬでしょう。医療チームが特定の狂犬病ウイルス感染の解毒剤を見つけるためにあと数日しかありませんでした。翌日、カナダのCDCには効果があるかもしれない実験的なワクチンがありました。農場で私が接触したすべての人が同じタイプの予防接種を受けなければなりませんでした。CDCはニュージャージーのマクガイア空軍基地にワクチンを飛ばし、その後マウントサイナイ病院に送りました。翌日、新しい解毒剤が投与されました。夕方までに医師は私に良いニュースを伝えました。ワクチンが効いていて、私は死なないでしょう。カナダのCDCに感謝します。",
             "この医療状況の結果、韓国への命令はキャンセルされ、ロングアイランドのハンプトンズにあるモントーク空軍基地に再配置されました。私はハンプトンズの高校で柔術のデモンストレーションを行い始め、モントークのガーニーズヘルススパで指圧を実施し始めました。マイケル・ジュニア、現在は二代目宗家マイケル・デパスクワーレ・ジュニアは、道場が閉鎖されないようにするために義経道場でセミナーを実施し始めました。それは非常に成功し、マイケル・デパスクワーレ・シニア宗家が私のためにしてくれたすべてを支援するそのベンチャーの一部になれて本当に嬉しかったです。二代目宗家マイケル・ジュニアと私は八光流システムで緊密に協力しました。これらは私が常に覚えている年でした。私たちは武道で他の人々に奉仕し続けるために再会しました。",
-            "今は2023年で、私の心には空白があります。マイケル・シニア宗家、二代目宗家マイケル・ジュニア、デパスクワーレ夫人、そして他の家族で満たされていた場所です。私はマイケル・デパスクワーレ・シニア宗家と二代目宗家マイケル・ジュニアから学んだすべてについて、デパスクワーレ家に感謝しています。彼らは私と私のような何百人もの人々に彼らの人生と愛を注いでくれました。デパスクワーレ・シニア宗家はあらゆる意味で偉大な師で��た。彼の名前は、彼らが私の人生に与えた影響と、彼が研究の年月の中で触れた人々のために、私たちの心と武道のアーカイブに残るでしょう。神の助けを借りて、私はデパスクワーレの遺産を記念して義経システムを教え続け、また私自身のシステムと私が武道システムの6年間で学んだ他のシステムも教え続けます。神が私を家に呼ぶまで。",
+            "今は2023年で、私の心には空白があります。マイケル・シニア宗家、二代目宗家マイケル・ジュニア、デパスクワーレ夫人、そして他の家族で満たされていた場所です。私はマイケル・デパスクワーレ・シニア宗家と二代目宗家マイケル・ジュニアから学んだすべてについて、デパスクワーレ家に感謝しています。彼らは私と私のような何百人もの人々に彼らの人生と愛を注いでくれました。デパスクワーレ・シニア宗家はあらゆる意味で偉大な師でた。彼の名前は、彼らが私の人生に与えた影響と、彼が研究の年月の中で触れた人々のために、私たちの心と武道のアーカイブに残るでしょう。神の助けを借りて、私はデパスクワーレの遺産を記念して義経システムを教え続け、また私自身のシステムと私が武道システムの6年間��学んだ他のシステムも教え続けます。神が私を家に呼ぶまで。",
           ],
         },
         journey: {
@@ -89,7 +89,7 @@ export const translations = {
         },
         philosophy: {
           heading: "指導理念",
-          text: "攻撃と防御のスキルを維持するために、できる限り修行に専念しなければならない。攻撃に対して360度すべての方向から自分を守るための身体の動きに注意を集中しています。武道と武の道は、すべての人のためのものではありません。古代の身術を効果的に使用するには、その実践に時間をげなればならないと信じています。",
+          text: "攻撃と防御のスキルを維持するために、できる限り修行に専念しなければならない。攻撃に対して360度すべての方向から自分を守るための身体の動きに注意を集中してます。武道と武の道は、すべての人のためのものではありません。古代の身術を効果的に使用するには、その実践に時間をげなればならないと信じています。",
         },
         systems: {
           heading: "泰山流システム",
@@ -197,7 +197,7 @@ export const translations = {
         subheading:
           "Seminars held in Osaka, New York, and more, as well as daily life at Hachioji Honbu Dojo",
         description:
-          "Taizan-Ryu self-defense is a martial art that brings together a community across borders. Instruction is available in English, and practitioners of various nationalities, ages, and experience levels train together towards their goals.",
+          "TaizanRyu self-defense is a martial art that brings together a community across borders. Instruction is available in English, and practitioners of various nationalities, ages, and experience levels train together towards their goals.",
       },
     },
     members: {
@@ -236,7 +236,7 @@ export const translations = {
     },
     access: {
       heading: "アクセス",
-      text: "東京都八王子市子町1-29-1\\n八王子駅南口より徒歩5分\\n新宿駅から30分、日本全国からアクセス良好",
+      text: "東京都八王子市子町1-29-1\n八王子駅南口より徒歩5分\n新宿駅から30分、日本全国からアクセス良好",
       mapPlaceholder: "Google Maps Integration",
     },
     contact: {
@@ -300,9 +300,10 @@ export const translations = {
       },
     },
     footer: {
-      name: "泰山流護身術・逮捕術　東京八王子本部道場",
-      location: "東京都八王子市子安町1-29-1",
-      hours: "完全予約制｜八王子駅南口より徒歩5分",
+      name: "TaizanRyu Self-Defense & Taiho Jutsu - Hachioji Honbu Dojo",
+      location: "1-29-1 Koyasu-cho, Hachioji City, Tokyo",
+      hours:
+        "By Appointment | 5 min walk from Hachioji Station South Exit",
       copyright:
         "© PEACEFUL MOUNTAIN SYSTEM. All rights reserved.",
     },
@@ -481,12 +482,12 @@ export const translations = {
     hero: {
       headline: "Shuhari - The Path to True Self-Defense.",
       subtext:
-        "Taizan-Ryu Self-Defense System - Hachioji Honbu Dojo",
+        "TaizanRyu Self-Defense System - Hachioji Honbu Dojo",
       cta: "Book Your Trial Class",
     },
     introduction: {
       heading: "The Peaceful Mountain System - Taizan-Ryu",
-      text: "Taizan-Ryu is a comprehensive self-defense system created by Soke Joe Miller, based on traditional martial arts including Hakkoryu (52 years), Yoshitsune Jujutsu (59 years), Karate, and Judo (20 years). Built on the concept of Shuhari, it integrates practical self-defense with healing arts.",
+      text: "TaizanRyu is a comprehensive self-defense system created by Soke Joe Miller, based on traditional martial arts including Hakkoryu (52 years), Yoshitsune Jujutsu (59 years), Karate, and Judo (20 years). Built on the concept of Shuhari, it integrates practical self-defense with healing arts.",
     },
     master: {
       heading: "Soke Joe Miller - 60 Years of Martial Arts",
@@ -523,7 +524,7 @@ export const translations = {
         },
         journey: {
           heading: "Martial Arts Journey",
-          text: "After over 60 years of martial arts training and research, I broke away from traditional Jujutsu systems to form Taizan-Ryu—the Peaceful Mountain System. Hakkoryu 52 years, Yoshitsune Jujutsu 59 years, Karate, and Judo 20 years. The martial arts and healing arts I have mastered are incorporated into my lifestyle; I live what I teach.",
+          text: "After over 60 years of martial arts training and research, I broke away from traditional Jujutsu systems to form TaizanRyu—the Peaceful Mountain System. Hakkoryu 52 years, Yoshitsune Jujutsu 59 years, Karate, and Judo 20 years. The martial arts and healing arts I have mastered are incorporated into my lifestyle; I live what I teach.",
         },
         masters: {
           heading: "My Masters",
@@ -547,10 +548,10 @@ export const translations = {
           text: "You must be as dedicated as you can to keep your attack and defensive skills at their best. My focus is on body movements to defend yourself from attacks at 360 degrees in all directions. Martial arts and the martial way are not for everyone. In my 60 years of martial arts knowledge and research, I believe you must dedicate the time to the practice to use the ancient art of self-defense effectively.",
         },
         systems: {
-          heading: "Taizan-Ryu Systems",
+          heading: "TaizanRyu Systems",
           items: [
             {
-              title: "Taizan-Ryu Self-Defense",
+              title: "TaizanRyu Self-Defense",
               description:
                 "Teaching practical defense applications based on traditional Jujutsu katas and wazas",
             },
@@ -560,7 +561,7 @@ export const translations = {
                 "Apprehension techniques for law enforcement and practical applications",
             },
             {
-              title: "Taizan-Ryu Shiatsu",
+              title: "TaizanRyu Shiatsu",
               description:
                 "The Peaceful Mountain System of Shiatsu, developed to balance martial and healing arts",
             },
@@ -586,12 +587,12 @@ export const translations = {
     services: {
       heading: "Learn & Heal. Two Approaches.",
       selfDefense: {
-        title: "Taizan-Ryu Self-Defense - Combat Jujutsu",
+        title: "TaizanRyu Self-Defense - Combat Jujutsu",
         text: "360-degree defense against attacks. Learn real-time street defense through traditional katas and wazas. Suitable for law enforcement and civilians alike.",
         button: "View Class Details",
       },
       seitai: {
-        title: "Taizan-Ryu Shiatsu - Healing Arts",
+        title: "TaizanRyu Shiatsu - Healing Arts",
         text: "A unique shiatsu system developed to balance martial arts with healing arts. Perfect for post-training care and daily wellness.",
         button: "Learn About Therapy",
       },
@@ -645,7 +646,7 @@ export const translations = {
         subheading:
           "Seminars held in Osaka, New York, and more, as well as daily life at Hachioji Honbu Dojo",
         description:
-          "Taizan-Ryu self-defense is a martial art that brings together a community across borders. Instruction is available in English, and practitioners of various nationalities, ages, and experience levels train together towards their goals.",
+          "TaizanRyu self-defense is a martial art that brings together a community across borders. Instruction is available in English, and practitioners of various nationalities, ages, and experience levels train together towards their goals.",
       },
     },
     members: {
@@ -666,13 +667,13 @@ export const translations = {
     },
     videos: {
       preview: {
-        heading: "Taizan-Ryu Techniques",
+        heading: "TaizanRyu Techniques",
         text: "Watch technical explanations by Soke Joe Miller and training sessions at our dojo. From basic techniques to practical applications, explore Taizan-Ryu techniques and philosophy through video.",
         button: "View Video Gallery",
       },
       page: {
         hero: {
-          headline: "Taizan-Ryu Techniques",
+          headline: "TaizanRyu Techniques",
           subtext:
             "Training sessions and technique demonstrations",
         },
@@ -684,7 +685,7 @@ export const translations = {
     },
     access: {
       heading: "Access",
-      text: "1-29-1 Koyasu-cho, Hachioji City, Tokyo\\n5 minutes walk from Hachioji Station South Exit\\n30 minutes from Shinjuku Station, easily accessible from all over Japan",
+      text: "1-29-1 Koyasu-cho, Hachioji City, Tokyo\n5 minutes walk from Hachioji Station South Exit\n30 minutes from Shinjuku Station, easily accessible from all over Japan",
       mapPlaceholder: "Google Maps Integration",
     },
     contact: {
@@ -747,7 +748,7 @@ export const translations = {
       },
     },
     footer: {
-      name: "Taizan-Ryu Self-Defense & Taiho Jutsu - Hachioji Honbu Dojo",
+      name: "TaizanRyu Self-Defense & Taiho Jutsu - Hachioji Honbu Dojo",
       location: "1-29-1 Koyasu-cho, Hachioji City, Tokyo",
       hours:
         "By Appointment | 5 min walk from Hachioji Station South Exit",
@@ -756,19 +757,19 @@ export const translations = {
     },
     shiatsu: {
       hero: {
-        headline: "Taizan-Ryu Shiatsu",
+        headline: "TaizanRyu Shiatsu",
         subtext:
           "A unique shiatsu system developed to balance martial arts with healing arts",
       },
       about: {
-        heading: "About Taizan-Ryu Shiatsu",
-        text: "Taizan-Ryu Shiatsu is a unique treatment method created by Soke Joe Miller through over 60 years of martial arts research and shiatsu practice. Combining deep body understanding from martial arts techniques with Eastern medicine wisdom, it balances mind and body. Effective for post-training care, daily wellness, and chronic pain relief.",
+        heading: "About TaizanRyu Shiatsu",
+        text: "TaizanRyu Shiatsu is a unique treatment method created by Soke Joe Miller through over 60 years of martial arts research and shiatsu practice. Combining deep body understanding from martial arts techniques with Eastern medicine wisdom, it balances mind and body. Effective for post-training care, daily wellness, and chronic pain relief.",
       },
       services: {
         heading: "Treatment Menu",
         items: [
           {
-            title: "Taizan-Ryu Shiatsu (60 min)",
+            title: "TaizanRyu Shiatsu (60 min)",
             price: "ASK",
             description:
               "Basic course to balance muscles and joints throughout the body",
@@ -800,7 +801,7 @@ export const translations = {
     },
     selfDefense: {
       hero: {
-        headline: "Taizan-Ryu Self-Defense",
+        headline: "TaizanRyu Self-Defense",
         subtext:
           "A comprehensive self-defense system combining practical techniques with traditional philosophy",
       },
@@ -842,7 +843,7 @@ export const translations = {
       },
       videos: {
         heading: "Training Videos",
-        subheading: "Taizan-Ryu techniques and training sessions",
+        subheading: "TaizanRyu techniques and training sessions",
         description: "Watch actual techniques and movements from our training sessions.",
         button: "View Video Gallery",
       },
@@ -889,17 +890,17 @@ export const translations = {
             url: "https://mokkeijuku.com/",
           },
           {
-            name: "Taizan-Ryu New York Branch",
+            name: "TaizanRyu New York Branch",
             location: "New York, USA",
             description:
-              "Taizan-Ryu New York branch with regular seminars",
+              "TaizanRyu New York branch with regular seminars",
             url: "https://example.com",
           },
           {
-            name: "Taizan-Ryu Aichi Dojo",
+            name: "TaizanRyu Aichi Dojo",
             location: "Aichi, Japan",
             description:
-              "Taizan-Ryu Aichi branch with regular seminars",
+              "TaizanRyu Aichi branch with regular seminars",
             url: "https://example.com",
           },
         ],

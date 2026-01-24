@@ -80,14 +80,14 @@ function ShiatsuPage() {
       <SEOHead
         title={language === 'jp' 
           ? '泰山流指圧整体院 | 武道の知識を活かした指圧療法 - 泰山流八王子本部道場'
-          : 'Taizan-Ryu Shiatsu | Martial Arts-Based Therapy - Hachioji Honbu'}
+          : 'TaizanRyu Shiatsu | Martial Arts-Based Therapy - Hachioji Honbu'}
         description={language === 'jp'
           ? '武道の知識と経験を活かした独自の泰山流指圧療法。身体のバランスを整え、自然治癒力を高める整体・指圧で心身の健康をサポートします。'
-          : 'Unique Taizan-Ryu Shiatsu therapy utilizing martial arts knowledge and experience. Support mind-body health by balancing the body and enhancing natural healing power.'}
+          : 'Unique TaizanRyu Shiatsu therapy utilizing martial arts knowledge and experience. Support mind-body health by balancing the body and enhancing natural healing power.'}
         keywords={language === 'jp'
           ? '指圧,整体,泰山流指圧,八王子,Shiatsu,ボディワーク,自然療法,東洋医学,マッサージ療法'
-          : 'Shiatsu,Seitai,Taizan-Ryu Shiatsu,Hachioji,Bodywork,Natural Healing,Oriental Medicine,Massage Therapy'}
-        canonicalUrl="https://www.taizan-ryu.com/shiatsu"
+          : 'Shiatsu,Seitai,TaizanRyu Shiatsu,Hachioji,Bodywork,Natural Healing,Oriental Medicine,Massage Therapy'}
+        canonicalUrl="https://www.taizanryu.com/shiatsu"
       />
 
       {/* Structured Data */}
@@ -95,8 +95,8 @@ function ShiatsuPage() {
         type="breadcrumb" 
         data={{
           breadcrumbs: [
-            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizan-ryu.com/' },
-            { name: language === 'jp' ? '指圧整体' : 'Shiatsu', url: 'https://www.taizan-ryu.com/shiatsu' }
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizanryu.com/' },
+            { name: language === 'jp' ? '指圧整体' : 'Shiatsu', url: 'https://www.taizanryu.com/shiatsu' }
           ]
         }}
       />

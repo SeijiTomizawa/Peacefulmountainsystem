@@ -76,16 +76,14 @@ export const ContactFooter = memo(function ContactFooter() {
             <Link to="/" style={{ textDecoration: 'none' }}>
               <img 
                 src={logoImage} 
-                alt="Taizan-Ryu Logo"
+                alt="TaizanRyu Logo"
                 loading="lazy"
                 decoding="async"
                 style={{ 
                   width: '80px', 
                   height: '80px',
-                  objectFit: 'contain',
-                  marginBottom: '16px',
-                  cursor: 'pointer'
-                }} 
+                  objectFit: 'contain'
+                }}
               />
             </Link>
             <p style={{ 

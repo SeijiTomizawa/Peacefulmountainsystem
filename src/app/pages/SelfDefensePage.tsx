@@ -72,14 +72,14 @@ function SelfDefensePage() {
       <SEOHead
         title={language === 'jp' 
           ? '泰山流護身術・逮捕術 | 実践的な防御システム - 泰山流八王子本部道場'
-          : 'Taizan-Ryu Self-Defense & Arrest Techniques | Practical Defense System'}
+          : 'TaizanRyu Self-Defense & Arrest Techniques | Practical Defense System'}
         description={language === 'jp'
           ? '60年以上の武道経験に基づく実践的な護身術・逮捕術。合気柔術、柔道、空手の技術を統合した効果的な防御システムを八王子本部道場で学びます。'
           : 'Practical self-defense and arrest techniques based on 60+ years of martial arts experience. Learn effective defense system integrating Aikijujutsu, Judo, and Karate at Hachioji Honbu Dojo.'}
         keywords={language === 'jp'
           ? '護身術,逮捕術,合気柔術,泰山流,八王子,武道,Self-Defense,実践的防御,防犯,護身'
-          : 'Self-Defense,Arrest Techniques,Aikijujutsu,Taizan-Ryu,Hachioji,Martial Arts,Practical Defense,Personal Safety'}
-        canonicalUrl="https://www.taizan-ryu.com/self-defense"
+          : 'Self-Defense,Arrest Techniques,Aikijujutsu,TaizanRyu,Hachioji,Martial Arts,Practical Defense,Personal Safety'}
+        canonicalUrl="https://www.taizanryu.com/self-defense"
       />
 
       {/* Structured Data */}
@@ -87,8 +87,8 @@ function SelfDefensePage() {
         type="breadcrumb" 
         data={{
           breadcrumbs: [
-            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizan-ryu.com/' },
-            { name: language === 'jp' ? '護身術・逮捕術' : 'Self-Defense', url: 'https://www.taizan-ryu.com/self-defense' }
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizanryu.com/' },
+            { name: language === 'jp' ? '護身術・逮捕術' : 'Self-Defense', url: 'https://www.taizanryu.com/self-defense' }
           ]
         }}
       />

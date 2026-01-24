@@ -82,11 +82,15 @@ function DojoWebsite() {
       {/* SEO Meta Tags */}
       <SEOHead
         title={language === 'jp' 
-          ? '泰山流護身術 八王子本部道場 | Taizan-Ryu Hachioji Honbu'
-          : 'Taizan-Ryu Hachioji Honbu | Traditional Japanese Martial Arts & Shiatsu'}
+          ? '泰山流護身術 八王子本部道場 | TaizanRyu Hachioji Honbu'
+          : 'TaizanRyu Hachioji Honbu | Traditional Japanese Martial Arts & Shiatsu'}
         description={language === 'jp'
-          ? '60年以上の武道経験に基づく実的な護身術。合気柔術、柔道、空手の技術を統合し、現代社会に適応した効果的な防御システムを学びます。'
-          : 'Practical self-defense based on over 60 years of martial arts experience. Learn effective defense system integrating Aikijujutsu, Judo, and Karate techniques.'}
+          ? '60年以上の武道経験に基づく実践的な護身術。合気柔術、柔道、空手の技術を統合し、現代社会に適応した効果的な防御システムを学びます。'
+          : 'Over 60 years of martial arts experience. Learn practical self-defense combining Aikijujutsu, Judo, and Karate techniques adapted for modern society.'}
+        keywords={language === 'jp'
+          ? '護身術,逮捕術,合気柔術,指圧,整体,八王子,武道,TaizanRyu,Self-Defense,Shiatsu'
+          : 'Self-Defense,Arrest Techniques,Aikijujutsu,Shiatsu,Seitai,Hachioji,Martial Arts,TaizanRyu'}
+        canonicalUrl="https://www.taizanryu.com/"
       />
       
       {/* Structured Data for SEO */}
@@ -220,7 +224,7 @@ function DojoWebsite() {
             <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: COLORS.offWhite }}>
               <img
                 src={Images.homeDojoInteriorImage}
-                alt="Taizan-Ryu Self-Defense"
+                alt="TaizanRyu Self-Defense"
                 className="w-full h-full object-contain"
                 style={{ objectPosition: 'center' }}
               />
@@ -234,7 +238,7 @@ function DojoWebsite() {
                 lineHeight: '1.4',
                 marginBottom: '16px'
               }}>
-                {language === 'jp' ? '泰山流護身術・逮捕術' : 'Taizan-Ryu Self-Defense'}
+                {language === 'jp' ? '泰山流護身術・逮捕術' : 'TaizanRyu Self-Defense'}
               </h2>
               <p style={{ 
                 color: 'white',
@@ -279,7 +283,7 @@ function DojoWebsite() {
             <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: COLORS.offWhite }}>
               <img
                 src={Images.homeShiatsuImage}
-                alt="Taizan-Ryu Shiatsu"
+                alt="TaizanRyu Shiatsu"
                 className="w-full h-full object-contain"
                 style={{ objectPosition: 'center' }}
               />
@@ -293,7 +297,7 @@ function DojoWebsite() {
                 lineHeight: '1.4',
                 marginBottom: '16px'
               }}>
-                {language === 'jp' ? '泰山流指圧整体院' : 'Taizan-Ryu Shiatsu'}
+                {language === 'jp' ? '泰山流指圧整体院' : 'TaizanRyu Shiatsu'}
               </h2>
               <p style={{ 
                 color: 'white',
@@ -434,7 +438,7 @@ function DojoWebsite() {
           <div className="max-w-2xl mx-auto text-center">
             <img
               src={Images.taizanLogo}
-              alt="Taizan-Ryu Peaceful Mountain System Logo"
+              alt="TaizanRyu Peaceful Mountain System Logo"
               className="mx-auto"
               style={{
                 width: '100%',

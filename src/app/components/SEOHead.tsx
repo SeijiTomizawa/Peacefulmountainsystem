@@ -11,9 +11,9 @@ interface SEOHeadProps {
 }
 
 export function SEOHead({
-  title = '泰山流護身術 八王子本部道場 | Taizan-Ryu Hachioji Honbu',
+  title = '泰山流護身術 八王子本部道場 | TaizanRyu Hachioji Honbu',
   description = '60年以上の武道経験に基づく実践的な護身術。合気柔術、柔道、空手の技術を統合し、現代社会に適応した効果的な防御システムを学びます。',
-  keywords = '護身術,逮捕術,合気柔術,指圧,整体,八王子,武道,Taizan-Ryu,Self-Defense,Shiatsu',
+  keywords = '護身術,逮捕術,合気柔術,指圧,整体,八王子,武道,TaizanRyu,Self-Defense,Shiatsu',
   ogImage = '',
   canonicalUrl = '',
 }: SEOHeadProps) {

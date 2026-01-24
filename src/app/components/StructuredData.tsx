@@ -25,10 +25,10 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         structuredData = {
           "@context": "https://schema.org",
           "@type": "Organization",
-          "name": language === 'jp' ? "泰山流護身術 八王子本部道場" : "Taizan-Ryu Hachioji Honbu Dojo",
-          "alternateName": "Taizan-Ryu",
-          "url": "https://www.taizan-ryu.com",
-          "logo": "https://www.taizan-ryu.com/logo.png",
+          "name": language === 'jp' ? "泰山流護身術 八王子本部道場" : "TaizanRyu Hachioji Honbu Dojo",
+          "alternateName": "TaizanRyu",
+          "url": "https://www.taizanryu.com",
+          "logo": "https://www.taizanryu.com/logo.png",
           "description": language === 'jp' 
             ? "60年以上の武道経験に基づく実践的な護身術。合気柔術、柔道、空手の技術を統合し、現代社会に適応した効果的な防御システムを学びます。"
             : "Over 60 years of martial arts experience. Learn practical self-defense combining Aikijujutsu, Judo, and Karate techniques adapted for modern society.",
@@ -55,8 +55,8 @@ export function StructuredData({ type, data }: StructuredDataProps) {
               : "Soke with over 60 years of martial arts experience"
           },
           "sameAs": [
-            "https://www.facebook.com/taizan-ryu",
-            "https://www.youtube.com/taizan-ryu"
+            "https://www.facebook.com/taizanryu",
+            "https://www.youtube.com/taizanryu"
           ]
         };
         break;
@@ -65,8 +65,8 @@ export function StructuredData({ type, data }: StructuredDataProps) {
         structuredData = {
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": language === 'jp' ? "泰山流護身術 八王子本部道場" : "Taizan-Ryu Hachioji Honbu Dojo",
-          "image": "https://www.taizan-ryu.com/logo.png",
+          "name": language === 'jp' ? "泰山流護身術 八王子本部道場" : "TaizanRyu Hachioji Honbu Dojo",
+          "image": "https://www.taizanryu.com/logo.png",
           "description": language === 'jp'
             ? "八王子にある伝統的な武道道場。護身術、合気柔術、指圧・整体を提供。"
             : "Traditional martial arts dojo in Hachioji offering self-defense, Aikijujutsu, and Shiatsu.",
@@ -146,8 +146,8 @@ export function StructuredData({ type, data }: StructuredDataProps) {
             "@type": "Review",
             "itemReviewed": {
               "@type": "LocalBusiness",
-              "name": language === 'jp' ? "泰山流護身術 八王子本部道場" : "Taizan-Ryu Hachioji Honbu Dojo",
-              "image": "https://www.taizan-ryu.com/logo.png",
+              "name": language === 'jp' ? "泰山流護身術 八王子本部道場" : "TaizanRyu Hachioji Honbu Dojo",
+              "image": "https://www.taizanryu.com/logo.png",
               "description": language === 'jp'
                 ? "八王子にある伝統的な武道道場。護身術、合気柔術、指圧・整体を提供。"
                 : "Traditional martial arts dojo in Hachioji offering self-defense, Aikijujutsu, and Shiatsu.",

@@ -65,7 +65,7 @@ ${language === 'jp' ? 'メッセージ' : 'Message'}:
 ${formData.message}
       `.trim();
       
-      const mailtoLink = `mailto:sokemiller@gmail.com?cc=info@denkyusha.com&subject=${encodeURIComponent(language === 'jp' ? 'お問い合わせ - 泰山流護身術' : 'Contact Form - Taizan-Ryu')}&body=${encodeURIComponent(emailBody)}`;
+      const mailtoLink = `mailto:sokemiller@gmail.com?cc=info@denkyusha.com&subject=${encodeURIComponent(language === 'jp' ? 'お問い合わせ - 泰山流護身術' : 'Contact Form - TaizanRyu')}&body=${encodeURIComponent(emailBody)}`;
       
       window.location.href = mailtoLink;
       
@@ -102,14 +102,14 @@ ${formData.message}
       <SEOHead
         title={language === 'jp' 
           ? 'お問い合わせ | 泰山流護身術 八王子本部道場'
-          : 'Contact Us | Taizan-Ryu Hachioji Honbu Dojo'}
+          : 'Contact Us | TaizanRyu Hachioji Honbu Dojo'}
         description={language === 'jp'
           ? '泰山流護身術八王子本部道場へのお問い合わせはこちら。体験入門、指圧・整体のご予約、その他ご質問など、お気軽にご連絡ください。'
-          : 'Contact Taizan-Ryu Hachioji Honbu Dojo for trial lessons, Shiatsu appointments, and general inquiries. We look forward to hearing from you.'}
+          : 'Contact TaizanRyu Hachioji Honbu Dojo for trial lessons, Shiatsu appointments, and general inquiries. We look forward to hearing from you.'}
         keywords={language === 'jp'
           ? 'お問い合わせ,体験入門,指圧予約,八王子,泰山流,Contact,Trial Lesson,Shiatsu Appointment'
-          : 'Contact,Inquiry,Trial Lesson,Shiatsu Appointment,Hachioji,Taizan-Ryu'}
-        canonicalUrl="https://www.taizan-ryu.com/contact"
+          : 'Contact,Inquiry,Trial Lesson,Shiatsu Appointment,Hachioji,TaizanRyu'}
+        canonicalUrl="https://www.taizanryu.com/contact"
       />
 
       {/* Structured Data */}
@@ -117,8 +117,8 @@ ${formData.message}
         type="breadcrumb" 
         data={{
           breadcrumbs: [
-            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizan-ryu.com/' },
-            { name: language === 'jp' ? 'お問い合わせ' : 'Contact', url: 'https://www.taizan-ryu.com/contact' }
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizanryu.com/' },
+            { name: language === 'jp' ? 'お問い合わせ' : 'Contact', url: 'https://www.taizanryu.com/contact' }
           ]
         }}
       />
