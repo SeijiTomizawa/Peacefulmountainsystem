@@ -8,7 +8,7 @@ import { ContactFooter } from "../components/ContactFooter";
 import { SEOHead } from "../components/SEOHead";
 import { StructuredData } from "../components/StructuredData";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Check, X, Play } from "lucide-react";
 import Slider from "react-slick";
 import "../../styles/slick.css";
@@ -20,6 +20,10 @@ import {
   getCloudflareStreamThumbnail,
   CLOUDFLARE_STREAM_CONFIG
 } from "../data/videosData";
+import {
+  getFeaturedPost,
+  facebookPageData,
+} from "../data/facebookData";
 
 function ShiatsuPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -27,8 +31,55 @@ function ShiatsuPage() {
     useState<number | null>(null);
   const [selectedVideoId, setSelectedVideoId] = useState<number | null>(null);
   const [showAllVideos, setShowAllVideos] = useState(false);
+  const [fbLoaded, setFbLoaded] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
+
+  // Load Facebook SDK
+  useEffect(() => {
+    // Check if Facebook SDK is already loaded
+    if ((window as any).FB) {
+      setFbLoaded(true);
+      return;
+    }
+
+    // Load Facebook SDK script
+    const script = document.createElement('script');
+    script.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v18.0';
+    script.async = true;
+    script.defer = true;
+    script.crossOrigin = 'anonymous';
+    script.id = 'facebook-jssdk'; // Add ID to prevent duplicates
+    
+    script.onload = () => {
+      setFbLoaded(true);
+      // Parse Facebook plugins after SDK is loaded
+      if ((window as any).FB) {
+        (window as any).FB.XFBML.parse();
+      }
+    };
+
+    // Only append if not already present
+    if (!document.getElementById('facebook-jssdk')) {
+      document.body.appendChild(script);
+    }
+
+    // Cleanup function - but don't remove the script
+    // Facebook SDK should persist across component mounts
+    return () => {
+      // Do not remove script - let it persist
+      // The SDK is designed to be loaded once per page
+    };
+  }, []);
+
+  // Re-parse Facebook plugins when language changes
+  useEffect(() => {
+    if (fbLoaded && (window as any).FB) {
+      setTimeout(() => {
+        (window as any).FB.XFBML.parse();
+      }, 100);
+    }
+  }, [language, fbLoaded]);
 
   const clientLetters = [
     {
@@ -67,6 +118,9 @@ function ShiatsuPage() {
     arrows: false,
     dotsClass: "slick-dots custom-dots",
   };
+
+  // Get featured Facebook post for shiatsu page
+  const featuredPost = getFeaturedPost('shiatsu');
 
   return (
     <div
@@ -1021,6 +1075,205 @@ function ShiatsuPage() {
               </div>
             </FadeTransition>
           )}
+        </div>
+      </section>
+
+      {/* Facebook Section */}
+      <section
+        style={{ backgroundColor: "white" }}
+        className="px-6 py-16"
+      >
+        <FadeTransition keyValue={`facebook-section-${language}`}>
+          <h2
+            style={{
+              fontFamily: "'Noto Serif JP', serif",
+              fontSize: "28px",
+              fontWeight: 700,
+              color: "#6B1F23",
+              lineHeight: "1.5",
+              marginBottom: "16px",
+              textAlign: "center",
+              letterSpacing: "0.02em",
+            }}
+          >
+            {language === "jp"
+              ? "最新情報をチェック"
+              : "Follow Us on Facebook"}
+          </h2>
+          <p
+            style={{
+              color: "#1A2B48",
+              fontSize: "15px",
+              lineHeight: "1.8",
+              marginBottom: "32px",
+              textAlign: "center",
+              opacity: 0.85,
+            }}
+          >
+            {language === "jp"
+              ? "Facebookで最新のセミナー情報やイベントをご確認ください"
+              : "Check out our latest seminars and events on Facebook"}
+          </p>
+        </FadeTransition>
+
+        <div className="max-w-2xl mx-auto">
+          <div
+            className="rounded-lg overflow-hidden shadow-lg"
+            style={{
+              backgroundColor: "#F9F9F7",
+              padding: "16px",
+            }}
+          >
+            {/* Featured Video Link */}
+            <FadeTransition keyValue={`facebook-featured-${language}`}>
+              <div className="mb-8">
+                <h3
+                  style={{
+                    fontFamily: "'Noto Serif JP', serif",
+                    fontSize: "18px",
+                    fontWeight: 600,
+                    color: "#1A2B48",
+                    marginBottom: "16px",
+                    textAlign: "center",
+                  }}
+                >
+                  {language === "jp"
+                    ? "注目の投稿"
+                    : "Featured Post"}
+                </h3>
+                
+                {/* Direct link to Facebook Reel */}
+                <div className="text-center">
+                  <div
+                    className="mb-4 p-6 rounded-lg"
+                    style={{
+                      backgroundColor: "rgba(93, 173, 226, 0.1)",
+                      border: "2px solid #5DADE2",
+                    }}
+                  >
+                    <p
+                      style={{
+                        color: "#1A2B48",
+                        fontSize: "15px",
+                        lineHeight: "1.7",
+                        marginBottom: "16px",
+                        opacity: 0.85,
+                      }}
+                    >
+                      {language === "jp"
+                        ? (featuredPost?.descriptionJP || "最新のリール動画をFacebookでチェック！施術の様子や効果をご覧いただけます。")
+                        : (featuredPost?.descriptionEN || "Check out our latest Reel on Facebook! See our treatments and their effects in action.")}
+                    </p>
+                    <a
+                      href={featuredPost?.url || "https://www.facebook.com/profile.php?id=100063558792326"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block px-8 py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                      style={{
+                        backgroundColor: COLORS.buttonPrimary,
+                        color: "white",
+                        fontSize: "15px",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
+                        e.currentTarget.style.transform = "translateY(-2px)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
+                        e.currentTarget.style.transform = "translateY(0)";
+                      }}
+                    >
+                      {language === "jp"
+                        ? "Facebookで動画を見る 🎬"
+                        : "Watch Video on Facebook 🎬"}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </FadeTransition>
+
+            {/* Divider */}
+            <div
+              className="my-8"
+              style={{
+                height: "1px",
+                backgroundColor: "rgba(26, 43, 72, 0.1)",
+              }}
+            />
+
+            {/* Facebook Page Timeline - NO FadeTransition */}
+            <div>
+              <h3
+                style={{
+                  fontFamily: "'Noto Serif JP', serif",
+                  fontSize: "18px",
+                  fontWeight: 600,
+                  color: "#1A2B48",
+                  marginBottom: "16px",
+                  textAlign: "center",
+                }}
+              >
+                {language === "jp"
+                  ? "最新のタイムライン"
+                  : "Latest Timeline"}
+              </h3>
+              {fbLoaded && (
+                <div
+                  className="fb-page"
+                  data-href={facebookPageData.pageUrl}
+                  data-tabs="timeline"
+                  data-width="500"
+                  data-height="500"
+                  data-small-header="false"
+                  data-adapt-container-width="true"
+                  data-hide-cover="false"
+                  data-show-facepile="true"
+                >
+                  <blockquote
+                    cite={facebookPageData.pageUrl}
+                    className="fb-xfbml-parse-ignore"
+                  >
+                    <a href={facebookPageData.pageUrl}>
+                      {language === "jp" ? facebookPageData.pageNameJP : facebookPageData.pageName}
+                    </a>
+                  </blockquote>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Link to Facebook Page */}
+          <FadeTransition keyValue={`facebook-link-${language}`}>
+            <div className="text-center mt-6">
+              <a
+                href={facebookPageData.pageUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
+                style={{
+                  backgroundColor: COLORS.buttonPrimary,
+                  color: "white",
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
+                  e.currentTarget.style.transform = "translateY(-2px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
+                  e.currentTarget.style.transform = "translateY(0)";
+                }}
+              >
+                {language === "jp"
+                  ? "Facebookページを見る"
+                  : "Visit Our Facebook Page"}
+              </a>
+            </div>
+          </FadeTransition>
         </div>
       </section>
 

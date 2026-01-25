@@ -16,6 +16,8 @@ import { LoadingSpinner } from './components/LoadingSpinner';
 import { ScrollToTop } from './components/ScrollToTop';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { NotFoundPage } from './pages/NotFoundPage';
+import { ImageWithFallback } from './components/figma/ImageWithFallback';
+import * as Images from './assets/images';
 import Slider from 'react-slick';
 import '../styles/slick.css';
 
@@ -29,9 +31,6 @@ import { SokePage } from './pages/SokePage';
 import { ContactPage } from './pages/ContactPage';
 import { LinksPage } from './pages/LinksPage';
 
-// Import all images from centralized asset management
-import * as Images from './assets/images';
-
 function DojoWebsite() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const { language } = useLanguage();
@@ -43,29 +42,29 @@ function DojoWebsite() {
 
   // All seminar images
   const allSeminarImages = useMemo(() => [
-    { src: Images.aichiSeminar1, alt: 'Seminar 1' },
-    { src: Images.aichiSeminar2, alt: 'Seminar 2' },
-    { src: Images.aichiSeminar3, alt: 'Seminar 3' },
-    { src: Images.aichiSeminar4, alt: 'Seminar 4' },
-    { src: Images.aichiSeminar5, alt: 'Seminar 5' },
-    { src: Images.aichiSeminar6, alt: 'Seminar 6' },
-    { src: Images.aichiSeminar7, alt: 'Seminar 7' },
-    { src: Images.aichiSeminar8, alt: 'Seminar 8' },
-    { src: Images.aichiSeminar9, alt: 'Seminar 9' },
-    { src: Images.aichiSeminar11, alt: 'Seminar 11' },
-    { src: Images.newyorkSeminar1, alt: 'Seminar 12' },
-    { src: Images.newyorkSeminar2, alt: 'Seminar 13' },
-    { src: Images.newyorkSeminar3, alt: 'Seminar 14' },
-    { src: Images.newyorkSeminar4, alt: 'Seminar 15' },
-    { src: Images.newyorkSeminar5, alt: 'Seminar 16' },
-    { src: Images.newyorkSeminar6, alt: 'Seminar 17' },
-    { src: Images.newyorkSeminar7, alt: 'Seminar 18' },
-    { src: Images.newyorkSeminar8, alt: 'Seminar 19' },
-    { src: Images.newyorkSeminar9, alt: 'Seminar 20' },
-    { src: Images.newyorkSeminar10, alt: 'Seminar 21' },
-    { src: Images.newyorkSeminar11, alt: 'Seminar 22' },
-    { src: Images.newyorkSeminar12, alt: 'Seminar 23' },
-    { src: Images.newyorkSeminar13, alt: 'Seminar 24' },
+    { src: Images.aichiSeminar1, alt: 'Aichi Seminar 1' },
+    { src: Images.aichiSeminar2, alt: 'Aichi Seminar 2' },
+    { src: Images.aichiSeminar3, alt: 'Aichi Seminar 3' },
+    { src: Images.aichiSeminar4, alt: 'Aichi Seminar 4' },
+    { src: Images.aichiSeminar5, alt: 'Aichi Seminar 5' },
+    { src: Images.aichiSeminar6, alt: 'Aichi Seminar 6' },
+    { src: Images.aichiSeminar7, alt: 'Aichi Seminar 7' },
+    { src: Images.aichiSeminar8, alt: 'Aichi Seminar 8' },
+    { src: Images.aichiSeminar9, alt: 'Aichi Seminar 9' },
+    { src: Images.aichiSeminar11, alt: 'Aichi Seminar 10' },
+    { src: Images.newyorkSeminar1, alt: 'New York Seminar 1' },
+    { src: Images.newyorkSeminar2, alt: 'New York Seminar 2' },
+    { src: Images.newyorkSeminar3, alt: 'New York Seminar 3' },
+    { src: Images.newyorkSeminar4, alt: 'New York Seminar 4' },
+    { src: Images.newyorkSeminar5, alt: 'New York Seminar 5' },
+    { src: Images.newyorkSeminar6, alt: 'New York Seminar 6' },
+    { src: Images.newyorkSeminar7, alt: 'New York Seminar 7' },
+    { src: Images.newyorkSeminar8, alt: 'New York Seminar 8' },
+    { src: Images.newyorkSeminar9, alt: 'New York Seminar 9' },
+    { src: Images.newyorkSeminar10, alt: 'New York Seminar 10' },
+    { src: Images.newyorkSeminar11, alt: 'New York Seminar 11' },
+    { src: Images.newyorkSeminar12, alt: 'New York Seminar 12' },
+    { src: Images.newyorkSeminar13, alt: 'New York Seminar 13' },
   ], []);
 
   // Select 7 random images from all seminar images
@@ -77,7 +76,7 @@ function DojoWebsite() {
   return (
     <div className="min-h-screen" style={{ 
       fontFamily: "'Noto Sans JP', sans-serif",
-      backgroundColor: COLORS.offWhite
+      backgroundColor: '#f9f9f9'
     }}>
       {/* SEO Meta Tags */}
       <SEOHead
@@ -104,7 +103,7 @@ function DojoWebsite() {
       <Header onMenuClick={handleMenuClick} />
 
       {/* Hero Section */}
-      <section id="hero" className="relative" style={{ backgroundColor: COLORS.main, height: '500px', overflow: 'hidden' }}>
+      <section id="hero" className="relative" style={{ backgroundColor: '#6B1F23', height: '500px', overflow: 'hidden' }}>
         {/* Carousel Background */}
         <div className="absolute inset-0 z-0" style={{ width: '100%', height: '100%' }}>
           <Slider
@@ -121,7 +120,7 @@ function DojoWebsite() {
             lazyLoad="progressive"
           >
             <div style={{ height: '500px', width: '100%' }}>
-              <img 
+              <ImageWithFallback 
                 src={Images.homeSokeImage} 
                 alt="Soke Joe Miller seated in seiza"
                 loading="eager"
@@ -129,20 +128,18 @@ function DojoWebsite() {
               />
             </div>
             <div style={{ height: '500px', width: '100%' }}>
-              <img
+              <ImageWithFallback
                 src={Images.homeSokeTeachingImage}
                 alt="Soke teaching students"
                 loading="lazy"
-                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 70%', opacity: 0.7 }}
               />
             </div>
             <div style={{ height: '500px', width: '100%' }}>
-              <img
+              <ImageWithFallback
                 src={Images.homeShiatsuImage}
                 alt="Soke demonstrating technique"
                 loading="lazy"
-                decoding="async"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 70%', opacity: 0.7 }}
               />
             </div>
@@ -217,12 +214,12 @@ function DojoWebsite() {
       </section>
 
       {/* Three Main Sections: Self-Defense, Shiatsu, About Soke */}
-      <section style={{ backgroundColor: COLORS.main }} className="px-6 py-16">
+      <section style={{ backgroundColor: '#6B1F23' }} className="px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Self-Defense (泰山流護身術) */}
           <div className="flex flex-col">
-            <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: COLORS.offWhite }}>
-              <img
+            <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: '#f9f9f9' }}>
+              <ImageWithFallback
                 src={Images.homeDojoInteriorImage}
                 alt="TaizanRyu Self-Defense"
                 className="w-full h-full object-contain"
@@ -280,8 +277,8 @@ function DojoWebsite() {
 
           {/* Card 2: Shiatsu (泰山流指圧) */}
           <div className="flex flex-col">
-            <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: COLORS.offWhite }}>
-              <img
+            <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: '#f9f9f9' }}>
+              <ImageWithFallback
                 src={Images.homeShiatsuImage}
                 alt="TaizanRyu Shiatsu"
                 className="w-full h-full object-contain"
@@ -339,8 +336,8 @@ function DojoWebsite() {
 
           {/* Card 3: About Soke (宗家について) */}
           <div className="flex flex-col">
-            <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: COLORS.offWhite }}>
-              <img 
+            <div className="rounded-lg overflow-hidden shadow-md mb-6" style={{ aspectRatio: '4/3', backgroundColor: '#f9f9f9' }}>
+              <ImageWithFallback 
                 src={Images.sokeImage} 
                 alt="Soke Joe Miller" 
                 className="w-full h-full object-contain"
@@ -436,7 +433,7 @@ function DojoWebsite() {
       <section style={{ backgroundColor: COLORS.warmBeige }} className="px-6 py-20">
         <FadeTransition keyValue={`taizan-logo-${language}`}>
           <div className="max-w-2xl mx-auto text-center">
-            <img
+            <ImageWithFallback
               src={Images.taizanLogo}
               alt="TaizanRyu Peaceful Mountain System Logo"
               className="mx-auto"
