@@ -503,7 +503,7 @@ function ShiatsuPage() {
                 }}
               >
                 {language === "jp"
-                  ? "私は柔術の師である奥山龍峰宗家初代から、初めて皇法指圧を学びました。奥山宗家は八光流柔術という護身術システムの創始者であり、このシステムには皇法指圧システムが武道の一部として組み込まれていました。1985年、私は皇法治療の技術を自分自身の経絡とツボへの応用アイデアと融合させ、異なるレベルの施術を実現したいと考えました。"
+                  ? "私は柔術の師である奥山龍峰宗家代から、初めて皇法指圧を学びました。奥山宗家は八光流柔術という護身術システムの創始者であり、このシステムには皇法指圧システムが武道の一部として組み込まれていました。1985年、私は皇法治療の技術を自分自身の経絡とツボへの応用アイデアと融合させ、異なるレベルの施術を実現したいと考えました。"
                   : "I was first introduced to Koho Shiatsu from my Jujutsu instructor Soke Shodai Okuyama Ryuho, founder of the Hakkoryu Jujutsu system of self-defense. This system incorporated the Koho Shiatsu system as part of his martial arts Hakkoryu Jujutsu. In 1985 I wanted to blend those techniques of Koho healing with my own idea of application to the meridian's lines and pressure points to attain a different level of application."}
               </p>
             </div>
@@ -1083,39 +1083,6 @@ function ShiatsuPage() {
         style={{ backgroundColor: "white" }}
         className="px-6 py-16"
       >
-        <FadeTransition keyValue={`facebook-section-${language}`}>
-          <h2
-            style={{
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: "28px",
-              fontWeight: 700,
-              color: "#6B1F23",
-              lineHeight: "1.5",
-              marginBottom: "16px",
-              textAlign: "center",
-              letterSpacing: "0.02em",
-            }}
-          >
-            {language === "jp"
-              ? "最新情報をチェック"
-              : "Follow Us on Facebook"}
-          </h2>
-          <p
-            style={{
-              color: "#1A2B48",
-              fontSize: "15px",
-              lineHeight: "1.8",
-              marginBottom: "32px",
-              textAlign: "center",
-              opacity: 0.85,
-            }}
-          >
-            {language === "jp"
-              ? "Facebookで最新のセミナー情報やイベントをご確認ください"
-              : "Check out our latest seminars and events on Facebook"}
-          </p>
-        </FadeTransition>
-
         <div className="max-w-2xl mx-auto">
           <div
             className="rounded-lg overflow-hidden shadow-lg"
@@ -1126,7 +1093,7 @@ function ShiatsuPage() {
           >
             {/* Featured Video Link */}
             <FadeTransition keyValue={`facebook-featured-${language}`}>
-              <div className="mb-8">
+              <div>
                 <h3
                   style={{
                     fontFamily: "'Noto Serif JP', serif",
@@ -1193,87 +1160,7 @@ function ShiatsuPage() {
                 </div>
               </div>
             </FadeTransition>
-
-            {/* Divider */}
-            <div
-              className="my-8"
-              style={{
-                height: "1px",
-                backgroundColor: "rgba(26, 43, 72, 0.1)",
-              }}
-            />
-
-            {/* Facebook Page Timeline - NO FadeTransition */}
-            <div>
-              <h3
-                style={{
-                  fontFamily: "'Noto Serif JP', serif",
-                  fontSize: "18px",
-                  fontWeight: 600,
-                  color: "#1A2B48",
-                  marginBottom: "16px",
-                  textAlign: "center",
-                }}
-              >
-                {language === "jp"
-                  ? "最新のタイムライン"
-                  : "Latest Timeline"}
-              </h3>
-              {fbLoaded && (
-                <div
-                  className="fb-page"
-                  data-href={facebookPageData.pageUrl}
-                  data-tabs="timeline"
-                  data-width="500"
-                  data-height="500"
-                  data-small-header="false"
-                  data-adapt-container-width="true"
-                  data-hide-cover="false"
-                  data-show-facepile="true"
-                >
-                  <blockquote
-                    cite={facebookPageData.pageUrl}
-                    className="fb-xfbml-parse-ignore"
-                  >
-                    <a href={facebookPageData.pageUrl}>
-                      {language === "jp" ? facebookPageData.pageNameJP : facebookPageData.pageName}
-                    </a>
-                  </blockquote>
-                </div>
-              )}
-            </div>
           </div>
-
-          {/* Link to Facebook Page */}
-          <FadeTransition keyValue={`facebook-link-${language}`}>
-            <div className="text-center mt-6">
-              <a
-                href={facebookPageData.pageUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-8 py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
-                style={{
-                  backgroundColor: COLORS.buttonPrimary,
-                  color: "white",
-                  fontSize: "15px",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
-                  e.currentTarget.style.transform = "translateY(0)";
-                }}
-              >
-                {language === "jp"
-                  ? "Facebookページを見る"
-                  : "Visit Our Facebook Page"}
-              </a>
-            </div>
-          </FadeTransition>
         </div>
       </section>
 
