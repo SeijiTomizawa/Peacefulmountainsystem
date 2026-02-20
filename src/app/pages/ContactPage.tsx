@@ -64,8 +64,11 @@ ${language === 'jp' ? 'お問い合わせ種別' : 'Inquiry Type'}: ${formData.i
 ${language === 'jp' ? 'メッセージ' : 'Message'}:
 ${formData.message}
       `.trim();
-      
-      const mailtoLink = `mailto:sokemiller@gmail.com?cc=info@denkyusha.com&subject=${encodeURIComponent(language === 'jp' ? 'お問い合わせ - 泰山流護身術' : 'Contact Form - TaizanRyu')}&body=${encodeURIComponent(emailBody)}`;
+
+      const mailSoke = 'sokemiller@gmail.com';
+      const mailYuri = 'uilriku59jp@yahoo.co.jp';
+      const mailDenQ = 'info@denkyusha.com';
+      const mailtoLink = `mailto:${mailYuri}?cc=${mailDenQ}&subject=${encodeURIComponent(language === 'jp' ? 'お問い合わせ - 泰山流護身術' : 'Contact Form - TaizanRyu')}&body=${encodeURIComponent(emailBody)}`;
       
       window.location.href = mailtoLink;
       

@@ -278,19 +278,19 @@ export const translations = {
           heading: "道場情報",
           address: {
             title: "所在地",
-            text: "東京都八王子市子安町1-29-1",
+            text: "東京都八王子市子安町１-２９-１",
           },
           hours: {
             title: "営業時間",
-            text: "完全予約制\\n少人数指導",
+            text: "完全予約制　少人数指導",
           },
           phone: {
             title: "電話",
-            text: "お問い合わせフォームよりご連絡ください",
+            text: "０９０ー４４３２ー２６９５（宛先：西村）",
           },
           email: {
             title: "メール",
-            text: "お問い合わせフォームよりご連絡ください",
+            text: "uilriku59jp★yahoo.co.jp　(★を@に変換して送信ください)",
           },
         },
         note: {
@@ -300,12 +300,12 @@ export const translations = {
       },
     },
     footer: {
-      name: "TaizanRyu Self-Defense & Taiho Jutsu - Hachioji Honbu Dojo",
-      location: "1-29-1 Koyasu-cho, Hachioji City, Tokyo",
+      name: "泰山流護身術・逮捕術 - 東京八王子本部道場",
+      location: "東京都八王子市子安町１−２９-１",
       hours:
-        "By Appointment | 5 min walk from Hachioji Station South Exit",
+        "JR八王子駅の南口から徒歩５分",
       copyright:
-        "© PEACEFUL MOUNTAIN SYSTEM. All rights reserved.",
+        "© 電究社 All rights reserved.",
     },
     shiatsu: {
       hero: {
@@ -348,6 +348,13 @@ export const translations = {
           "手術後のリハビリテーション",
           "ストレスによる緊張の緩和",
         ],
+      },
+      book: {
+        heading: "著書紹介",
+        title: "Healing Touch: The Complete Guide",
+        subtitle: "泰山流指圧・整体のガイドブック",
+        description: "宗家ジョセフ・ミラーによる、60年以上の武道経験に基づいた泰山流指圧の包括的なガイドブックです。伝統的な日本の治療芸術と現代的なアプローチを融合させ、心身の健康を取り戻すための実践的な知識が詰まっています。",
+        button: "Amazonで見る",
       },
     },
     selfDefense: {
@@ -730,15 +737,15 @@ export const translations = {
           },
           hours: {
             title: "Hours",
-            text: "By Appointment Only\\nSmall Group Instruction",
+            text: "By Appointment Only. Small Group Instruction",
           },
           phone: {
             title: "Phone",
-            text: "Please contact us via the contact form",
+            text: "０９０ー４４３２ー２６９５（To：Yuri Nishimura）",
           },
           email: {
             title: "Email",
-            text: "Please contact us via the contact form",
+            text: "uilriku59jp★yahoo.co.jp　(Please replace ★ with @ before sending)",
           },
         },
         note: {
@@ -748,12 +755,12 @@ export const translations = {
       },
     },
     footer: {
-      name: "TaizanRyu Self-Defense & Taiho Jutsu - Hachioji Honbu Dojo",
+      name: "TaizanRyu Self-Defense & Taiho Jutsu -　Tokyo-Hachioji Honbu Dojo",
       location: "1-29-1 Koyasu-cho, Hachioji City, Tokyo",
       hours:
         "By Appointment | 5 min walk from Hachioji Station South Exit",
       copyright:
-        "© PEACEFUL MOUNTAIN SYSTEM. All rights reserved.",
+        "© DenQ Studio All rights reserved.",
     },
     shiatsu: {
       hero: {
@@ -797,6 +804,13 @@ export const translations = {
           "Post-surgery rehabilitation",
           "Stress-related tension relief",
         ],
+      },
+      book: {
+        heading: "Book Introduction",
+        title: "Healing Touch: The Complete Guide",
+        subtitle: "A Guide to the TaizanRyu System of Shiatsu and Seitai",
+        description: "Discover the secrets of TaizanRyu Shiatsu in this comprehensive guide by Soke Joseph Miller. Drawing from over 60 years of martial arts experience, this book bridges traditional Japanese healing arts with practical application.",
+        button: "View on Amazon",
       },
     },
     selfDefense: {

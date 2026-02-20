@@ -54,7 +54,8 @@ export const membersDataJP: MemberData[] = [
   { name: 'CHRISTIAN HALBAL', rank: 'TZ0049', experience: '', comment: '' },
   { name: 'RICHARD SCHAFER', rank: 'TZ0050', experience: '', comment: '' },
   { name: 'RAFAEL MELANDEZ', rank: 'TZ0051', experience: '', comment: '' },
-  { name: 'PERRY BATUNDA GALLEMORE', rank: 'TZ0052', experience: '', comment: '' }
+  { name: 'PERRY BATUNDA GALLEMORE', rank: 'TZ0052', experience: '', comment: '' },
+  { name: 'ANTONIO CKARKE', rank: 'TZ0053', experience: '', comment: '' }
 ];
 
 export const membersDataEN: MemberData[] = [
@@ -106,5 +107,6 @@ export const membersDataEN: MemberData[] = [
   { name: 'CHRISTIAN HALBAL', rank: 'TZ0049', experience: '', comment: '' },
   { name: 'RICHARD SCHAFER', rank: 'TZ0050', experience: '', comment: '' },
   { name: 'RAFAEL MELANDEZ', rank: 'TZ0051', experience: '', comment: '' },
-  { name: 'PERRY BATUNDA GALLEMORE', rank: 'TZ0052', experience: '', comment: '' }
+  { name: 'PERRY BATUNDA GALLEMORE', rank: 'TZ0052', experience: '', comment: '' },
+  { name: 'ANTONIO CKARKE', rank: 'TZ0053', experience: '', comment: '' }
 ];

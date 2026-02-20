@@ -81,6 +81,10 @@ export const certificate2 =
 export const bibleLadyLetter =
   IMAGE_STORAGE_URL + "/shiatsu/SHIATSU_LETTER_01.webp";
 
+// 著書
+export const shiatsuTextbook1 =
+  IMAGE_STORAGE_URL + "/41nYq%2Bw7QAL._SY445_SX342_ML2_.jpg";
+
 // ================================================
 // セミナー画像 - 愛知セミナー
 // ================================================
