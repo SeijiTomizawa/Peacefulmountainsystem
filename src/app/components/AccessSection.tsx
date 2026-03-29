@@ -1,5 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../translations/translations';
+import { translations } from '../translations';
 import { FadeTransition } from './FadeTransition';
 import { MapPin, Clock, Phone, Mail } from 'lucide-react';
 import { ButtonLink } from './ButtonLink';

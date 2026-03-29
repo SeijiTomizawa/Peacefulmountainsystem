@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../translations/translations';
+import { translations } from '../translations';
 import { NavigationDrawer } from '../components/NavigationDrawer';
 import { Header } from '../components/Header';
 import { FadeTransition } from '../components/FadeTransition';

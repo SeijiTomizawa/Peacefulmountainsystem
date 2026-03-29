@@ -1,15 +1,15 @@
-import { NavigationDrawer } from '../components/NavigationDrawer';
-import { Header } from '../components/Header';
-import { FadeTransition } from '../components/FadeTransition';
-import { AccessSection } from '../components/AccessSection';
-import { ContactFooter } from '../components/ContactFooter';
 import { SEOHead } from '../components/SEOHead';
 import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../translations/translations';
+import { translations } from '../translations';
 import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import { taizanLogo } from '../assets/images';
 import { COLORS } from '../constants/theme';
+import { NavigationDrawer } from '../components/NavigationDrawer';
+import { Header } from '../components/Header';
+import { AccessSection } from '../components/AccessSection';
+import { ContactFooter } from '../components/ContactFooter';
+import { FadeTransition } from '../components/FadeTransition';
 
 export function LinksPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -31,7 +31,7 @@ export function LinksPage() {
         {
           name: '天庸流柔術 大阪総本部道場 木鶏塾',
           location: '大阪府大阪市北区天満',
-          description: '力や身体の大きさに関係なく、一人ひとりのポテンシャルの向上を目的とした稽古を行っております。',
+          description: '力や身体の大きさに関係なく、一人ひとりのポテンシャルの向上を目的とした稽古を行ってります。',
           url: 'https://mokkeijuku.com/'
         },
         {

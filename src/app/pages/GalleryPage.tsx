@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import * as Images from "../assets/images";
 import Slider from "react-slick";
 import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../translations/translations";
+import { translations } from "../translations";
 import { NavigationDrawer } from "../components/NavigationDrawer";
 import { Header } from "../components/Header";
 import { FadeTransition } from "../components/FadeTransition";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
+import * as Images from "../assets/images";
 import "../../styles/slick.css";
 
 export function GalleryPage() {

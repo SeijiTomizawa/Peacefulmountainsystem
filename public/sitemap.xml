@@ -1,95 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================
+  ⚠️  URL変更時の注意
+  このファイルの URL は src/app/constants/siteConfig.ts と
+  public/robots.txt も合わせて手動で更新してください。
+  ============================================================
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <!-- Home Page / トップページ -->
   <url>
-    <loc>https://www.taizanryu.com/</loc>
+    <loc>https://www.peacefulmountainsystem.com/</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/?lang=en" />
   </url>
 
   <!-- Self Defense Page / 護身術ページ -->
   <url>
-    <loc>https://www.taizanryu.com/self-defense</loc>
+    <loc>https://www.peacefulmountainsystem.com/self-defense</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/self-defense?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/self-defense?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/self-defense?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/self-defense?lang=en" />
   </url>
 
   <!-- Shiatsu Page / 指圧ページ -->
   <url>
-    <loc>https://www.taizanryu.com/shiatsu</loc>
+    <loc>https://www.peacefulmountainsystem.com/shiatsu</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/shiatsu?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/shiatsu?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/shiatsu?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/shiatsu?lang=en" />
   </url>
 
   <!-- Soke Page / 宗家ページ -->
   <url>
-    <loc>https://www.taizanryu.com/soke</loc>
+    <loc>https://www.peacefulmountainsystem.com/soke</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/soke?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/soke?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/soke?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/soke?lang=en" />
   </url>
 
   <!-- Members Page / メンバーページ -->
   <url>
-    <loc>https://www.taizanryu.com/members</loc>
+    <loc>https://www.peacefulmountainsystem.com/members</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/members?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/members?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/members?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/members?lang=en" />
   </url>
 
   <!-- Videos Page / 動画ページ -->
   <url>
-    <loc>https://www.taizanryu.com/videos</loc>
+    <loc>https://www.peacefulmountainsystem.com/videos</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/videos?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/videos?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/videos?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/videos?lang=en" />
   </url>
 
   <!-- Gallery Page / ギャラリーページ -->
   <url>
-    <loc>https://www.taizanryu.com/gallery</loc>
+    <loc>https://www.peacefulmountainsystem.com/gallery</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/gallery?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/gallery?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/gallery?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/gallery?lang=en" />
   </url>
 
   <!-- Links Page / リンクページ -->
   <url>
-    <loc>https://www.taizanryu.com/links</loc>
+    <loc>https://www.peacefulmountainsystem.com/links</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/links?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/links?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/links?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/links?lang=en" />
   </url>
 
   <!-- Contact Page / お問い合わせページ -->
   <url>
-    <loc>https://www.taizanryu.com/contact</loc>
+    <loc>https://www.peacefulmountainsystem.com/contact</loc>
     <lastmod>2026-01-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.taizanryu.com/contact?lang=jp" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.taizanryu.com/contact?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.peacefulmountainsystem.com/contact?lang=jp" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.peacefulmountainsystem.com/contact?lang=en" />
   </url>
 
 </urlset>

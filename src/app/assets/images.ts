@@ -155,7 +155,8 @@ export const homeTaizanLogoPlaceholder =
   IMAGE_STORAGE_URL + "/soke/SOKE_JOE_MILLER.webp";
 
 // 宗家セクション用画像（App.tsxの宗家カード）
-export const sokeImage = IMAGE_STORAGE_URL + "/soke/SOKE_JOE_MILLER.webp";
+export const sokeImage =
+  IMAGE_STORAGE_URL + "/soke/SOKE_JOE_MILLER.webp";
 
 // ================================================
 // HeroSlideshow画像 (HeroSlideshow.tsx)
@@ -300,3 +301,7 @@ export const sokeMartialArt19 =
   IMAGE_STORAGE_URL + "/soke/MARTIALART_photo_19.webp";
 export const sokeMartialArt20 =
   IMAGE_STORAGE_URL + "/soke/MARTIALART_photo_20.webp";
+export const sokeMartialArt21 =
+  IMAGE_STORAGE_URL + "/soke/MARTIALART_photo_21.jpg";
+export const sokeMartialArt22 =
+  IMAGE_STORAGE_URL + "/soke/MARTIALART_photo_22.jpg";

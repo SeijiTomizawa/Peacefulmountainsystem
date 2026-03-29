@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { membersGroupImage } from '../assets/images';
 import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../translations/translations';
+import { translations } from '../translations';
 import { FadeTransition } from '../components/FadeTransition';
 import { NavigationDrawer } from '../components/NavigationDrawer';
 import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
+import { ContactFooter } from '../components/ContactFooter';
 
 export function MembersPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -150,7 +150,7 @@ export function MembersPage() {
       </section>
 
       {/* Footer */}
-      <Footer />
+      <ContactFooter />
     </div>
   );
 }

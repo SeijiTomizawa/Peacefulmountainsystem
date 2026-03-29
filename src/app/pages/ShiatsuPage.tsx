@@ -1,5 +1,6 @@
+import { PAGE_URLS } from "../constants/siteConfig";
 import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../translations/translations";
+import { translations } from "../translations";
 import { NavigationDrawer } from "../components/NavigationDrawer";
 import { Header } from "../components/Header";
 import { FadeTransition } from "../components/FadeTransition";
@@ -141,7 +142,7 @@ function ShiatsuPage() {
         keywords={language === 'jp'
           ? '指圧,整体,泰山流指圧,八王子,Shiatsu,ボディワーク,自然療法,東洋医学,マッサージ療法'
           : 'Shiatsu,Seitai,TaizanRyu Shiatsu,Hachioji,Bodywork,Natural Healing,Oriental Medicine,Massage Therapy'}
-        canonicalUrl="https://www.taizanryu.com/shiatsu"
+        canonicalUrl={PAGE_URLS.shiatsu}
       />
 
       {/* Structured Data */}
@@ -149,8 +150,8 @@ function ShiatsuPage() {
         type="breadcrumb" 
         data={{
           breadcrumbs: [
-            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizanryu.com/' },
-            { name: language === 'jp' ? '指圧整体' : 'Shiatsu', url: 'https://www.taizanryu.com/shiatsu' }
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: PAGE_URLS.home },
+            { name: language === 'jp' ? '指圧整体' : 'Shiatsu', url: PAGE_URLS.shiatsu }
           ]
         }}
       />
@@ -503,7 +504,7 @@ function ShiatsuPage() {
                 }}
               >
                 {language === "jp"
-                  ? "私は柔術の師である奥山龍峰宗家代から、初めて皇法指圧を学びました。奥山宗家は八光流柔術という護身術システムの創始者であり、このシステムには皇法指圧システムが武道の一部として組み込まれていました。1985年、私は皇法治療の技術を自分自身の経絡とツボへの応用アイデアと融合させ、異なるレベルの施術を実現したいと考えました。"
+                  ? "私は柔術の師である奥山龍峰宗家代から���初めて皇法指圧を学びました。奥山宗家は八光流柔術という護身術システムの創始者であり、このシステムには皇法指圧システムが武道の一部として組み込まれていました。1985年、私は皇法治療の技術を自分自身の経絡とツボへの応用アイデアと融合させ、異なるレベルの施術を実現したいと考えました。"
                   : "I was first introduced to Koho Shiatsu from my Jujutsu instructor Soke Shodai Okuyama Ryuho, founder of the Hakkoryu Jujutsu system of self-defense. This system incorporated the Koho Shiatsu system as part of his martial arts Hakkoryu Jujutsu. In 1985 I wanted to blend those techniques of Koho healing with my own idea of application to the meridian's lines and pressure points to attain a different level of application."}
               </p>
             </div>

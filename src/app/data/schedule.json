@@ -1,0 +1,30 @@
+{
+  "_comment": "練習スケジュール管理ファイル / Training Schedule Data File",
+  "_usage": {
+    "ja": "このファイルを編集するだけでスケジュール表示が更新されます。",
+    "en": "Edit this file to update the schedule display on SelfDefensePage."
+  },
+  "classes": [
+    {
+      "id": 1,
+      "dayJP": "4月4日（土）",
+      "dayEN": "Saturday, 4 Apr",
+      "timeJP": "17:00 〜 21:00",
+      "timeEN": "5:00 PM – 9:00 PM",
+      "classJP": "護身術・逮捕術",
+      "classEN": "Self-Defense & Arrest Techniques",
+      "levelJP": "全レベル",
+      "levelEN": "All Levels"
+    }
+  ],
+  "notes": {
+    "ja": [
+      "※ 体験入門は随時受け付けています。まずはお気軽にお問い合わせください。",
+      "※ スケジュールは変更になる場合があります。最新情報はSNSまたはお問い合わせでご確認ください。"
+    ],
+    "en": [
+      "* Trial classes are available at any time. Feel free to contact us.",
+      "* Schedule is subject to change. Please check our SNS or contact us for the latest information."
+    ]
+  }
+}

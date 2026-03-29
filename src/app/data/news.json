@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "date": "2025-09-20",
+      "category": "event",
+      "titleJP": "愛知セミナー開催のご報告",
+      "titleEN": "Aichi Seminar Report",
+      "bodyJP": "2025年9月、愛知にて泰山流セミナーを開催いたしました。多くの方にご参加いただき、盛況のうちに終了しました。次回のセミナー情報もお楽しみに。",
+      "bodyEN": "TaizanRyu seminar was held in Aichi in September 2025. We had a wonderful turnout and look forward to the next event. Stay tuned for upcoming seminar information."
+    },
+    {
+      "id": 2,
+      "date": "2025-08-01",
+      "category": "notice",
+      "titleJP": "体験・見学のお申し込みについて",
+      "titleEN": "Trial Class & Observation Applications",
+      "bodyJP": "体験・見学を希望される方は、必ず事前にお問い合わせください。定員に限りがありますので、お早めにご連絡いただくようお願いいたします。",
+      "bodyEN": "Please contact us in advance if you wish to attend a trial class or observe. Spaces are limited, so early inquiries are appreciated."
+    },
+    {
+      "id": 3,
+      "date": "2025-07-15",
+      "category": "update",
+      "titleJP": "道場ウェブサイトをリニューアルしました",
+      "titleEN": "Website Renewed",
+      "bodyJP": "泰山流八王子本部道場のウェブサイトをリニューアルいたしました。今後も情報を随時更新してまいります。どうぞよろしくお願いいたします。",
+      "bodyEN": "We have renewed the official website of TaizanRyu Hachioji Honbu Dojo. We will continue to update with the latest information. Thank you for your support."
+    }
+  ]
+}

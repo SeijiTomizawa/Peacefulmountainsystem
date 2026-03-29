@@ -1,10 +1,10 @@
-import { X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../translations/translations";
+import { translations } from "../translations";
 import { FadeTransition } from "./FadeTransition";
 import { memo, useCallback } from "react";
 import { COLORS, FONTS } from "../constants/theme";
+import { X } from "lucide-react";
 
 interface NavigationDrawerProps {
   isOpen: boolean;

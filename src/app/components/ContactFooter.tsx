@@ -1,5 +1,5 @@
 import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../translations/translations';
+import { translations } from '../translations';
 import { FadeTransition } from './FadeTransition';
 import { Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';

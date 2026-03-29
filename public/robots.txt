@@ -1,11 +1,17 @@
 # Robots.txt for TaizanRyu Hachioji Honbu Dojo
 # Allow all search engines to crawl the site
 
+# ============================================================
+# ⚠️  URL変更時の注意
+# このファイルの URL は src/app/constants/siteConfig.ts と
+# public/sitemap.xml も合わせて手動で更新してください。
+# ============================================================
+
 User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.taizanryu.com/sitemap.xml
+Sitemap: https://www.peacefulmountainsystem.com/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

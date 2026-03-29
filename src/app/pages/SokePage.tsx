@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { PAGE_URLS } from "../constants/siteConfig";
 import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../translations/translations";
+import { translations } from "../translations";
 import { FadeTransition } from "../components/FadeTransition";
 import { SEOHead } from "../components/SEOHead";
 import { StructuredData } from "../components/StructuredData";
@@ -44,6 +45,8 @@ export function SokePage() {
     Images.sokeMartialArt18,
     Images.sokeMartialArt19,
     Images.sokeMartialArt20,
+    Images.sokeMartialArt21,
+    Images.sokeMartialArt22,
   ];
 
   const oldPictureImages = [
@@ -78,7 +81,7 @@ export function SokePage() {
         keywords={language === 'jp'
           ? '宗家,ジョセフ・ミラー,泰山流,八光流,合気柔術,武道家,師範,Soke,Joseph Miller'
           : 'Soke,Joseph Miller,TaizanRyu,Hakkoryu,Aikijujutsu,Martial Arts Master,Shihan'}
-        canonicalUrl="https://www.taizanryu.com/soke"
+        canonicalUrl={PAGE_URLS.soke}
       />
 
       {/* Structured Data */}
@@ -86,8 +89,8 @@ export function SokePage() {
         type="breadcrumb" 
         data={{
           breadcrumbs: [
-            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizanryu.com/' },
-            { name: language === 'jp' ? '宗家について' : 'About Soke', url: 'https://www.taizanryu.com/soke' }
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: PAGE_URLS.home },
+            { name: language === 'jp' ? '宗家について' : 'About Soke', url: PAGE_URLS.soke }
           ]
         }}
       />

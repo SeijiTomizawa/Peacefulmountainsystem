@@ -1,9 +1,5 @@
-import { useState } from 'react';
-import type { FormEvent, ChangeEvent } from 'react';
-import { MapPin, Clock, Phone, Mail, User, AtSign, MessageSquare, Send } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 import { useLanguage } from '../contexts/LanguageContext';
-import { translations } from '../translations/translations';
+import { PAGE_URLS } from '../constants/siteConfig';
 import { NavigationDrawer } from '../components/NavigationDrawer';
 import { Header } from '../components/Header';
 import { FadeTransition } from '../components/FadeTransition';
@@ -35,7 +31,7 @@ export function ContactPage() {
     
     try {
       // EmailJS設定 - これらの値は実際のEmailJSアカウントから取得する必要があります
-      // 現在はプレースホルダーとして設定しています
+      // 現在はプレースホーとして設定しています
       const SERVICE_ID = 'YOUR_SERVICE_ID';
       const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
       const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
@@ -112,7 +108,7 @@ ${formData.message}
         keywords={language === 'jp'
           ? 'お問い合わせ,体験入門,指圧予約,八王子,泰山流,Contact,Trial Lesson,Shiatsu Appointment'
           : 'Contact,Inquiry,Trial Lesson,Shiatsu Appointment,Hachioji,TaizanRyu'}
-        canonicalUrl="https://www.taizanryu.com/contact"
+        canonicalUrl={PAGE_URLS.contact}
       />
 
       {/* Structured Data */}
@@ -120,8 +116,8 @@ ${formData.message}
         type="breadcrumb" 
         data={{
           breadcrumbs: [
-            { name: language === 'jp' ? 'ホーム' : 'Home', url: 'https://www.taizanryu.com/' },
-            { name: language === 'jp' ? 'お問い合わせ' : 'Contact', url: 'https://www.taizanryu.com/contact' }
+            { name: language === 'jp' ? 'ホーム' : 'Home', url: PAGE_URLS.home },
+            { name: language === 'jp' ? 'お問い合わせ' : 'Contact', url: PAGE_URLS.contact }
           ]
         }}
       />

@@ -1,9 +1,10 @@
+import { COLORS } from './constants/theme';
+import { PAGE_URLS } from './constants/siteConfig';
 import { useState, useCallback, useMemo, Suspense, lazy } from 'react';
 import { BrowserRouter, Route, Routes, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
-import { translations } from './translations/translations';
-import { COLORS } from './constants/theme';
+import { translations } from './translations';
 import { SEOHead } from './components/SEOHead';
 import { StructuredData } from './components/StructuredData';
 import { NavigationDrawer } from './components/NavigationDrawer';
@@ -17,6 +18,7 @@ import { ScrollToTop } from './components/ScrollToTop';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
+import { NewsSection } from './components/NewsSection';
 import * as Images from './assets/images';
 import Slider from 'react-slick';
 import '../styles/slick.css';
@@ -89,7 +91,7 @@ function DojoWebsite() {
         keywords={language === 'jp'
           ? '護身術,逮捕術,合気柔術,指圧,整体,八王子,武道,TaizanRyu,Self-Defense,Shiatsu'
           : 'Self-Defense,Arrest Techniques,Aikijujutsu,Shiatsu,Seitai,Hachioji,Martial Arts,TaizanRyu'}
-        canonicalUrl="https://www.taizanryu.com/"
+        canonicalUrl={PAGE_URLS.home}
       />
       
       {/* Structured Data for SEO */}
@@ -394,40 +396,7 @@ function DojoWebsite() {
       </section>
 
       {/* Information Section */}
-      <section style={{ backgroundColor: 'white' }} className="px-6 py-16">
-        <FadeTransition keyValue={`information-${language}`}>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 style={{ 
-              fontFamily: language === 'jp' ? "'Zen Old Mincho', serif" : "'Damion', cursive",
-              fontSize: '28px',
-              fontWeight: 700,
-              color: '#6B1F23',
-              lineHeight: '1.5',
-              marginBottom: '16px',
-              letterSpacing: '0.05em'
-            }}>
-              {language === 'jp' ? 'お知らせ' : 'INFORMATION'}
-            </h2>
-            <div style={{
-              borderTop: `2px solid ${COLORS.warmBeige}`,
-              borderBottom: `2px solid ${COLORS.warmBeige}`,
-              padding: '32px 24px',
-              marginTop: '24px'
-            }}>
-              <p style={{ 
-                color: COLORS.main,
-                fontSize: '16px',
-                lineHeight: '1.8',
-                fontWeight: 500,
-                letterSpacing: '0.08em',
-                opacity: 0.7
-              }}>
-                NEW INFORMATION COMING SOON...
-              </p>
-            </div>
-          </div>
-        </FadeTransition>
-      </section>
+      <NewsSection />
 
       {/* Taizan-Ryu Logo Section */}
       <section style={{ backgroundColor: COLORS.warmBeige }} className="px-6 py-20">
