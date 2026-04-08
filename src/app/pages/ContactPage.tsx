@@ -1,4 +1,6 @@
+import React, { useState, FormEvent, ChangeEvent } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations';
 import { PAGE_URLS } from '../constants/siteConfig';
 import { NavigationDrawer } from '../components/NavigationDrawer';
 import { Header } from '../components/Header';
@@ -8,6 +10,7 @@ import { StructuredData } from '../components/StructuredData';
 import { AccessSection } from '../components/AccessSection';
 import { Footer } from '../components/Footer';
 import { COLORS } from '../constants/theme';
+import { User, AtSign, Phone, MessageSquare, MapPin, Clock, Mail } from 'lucide-react';
 
 export function ContactPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);

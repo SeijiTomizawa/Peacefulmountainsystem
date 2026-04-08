@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { PAGE_URLS } from "../constants/siteConfig";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../translations";

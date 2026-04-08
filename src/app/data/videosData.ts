@@ -17,7 +17,8 @@ export const CLOUDFLARE_STREAM_CONFIG = {
   // Cloudflare StreamのCustomer Code
   // 例: ビデオURL が https://customer-abc123def456.cloudflarestream.com/... の場合
   // customerCode = 'abc123def456'
-  customerCode: '1t88fwjwzf5zfn3p',
+  //customerCode: '1t88fwjwzf5zfn3p',
+  customerCode: 'szf31ebuob8tqnte',
   
   // ベースURL（通常は変更不要）
   baseUrl: 'https://customer-{customerCode}.cloudflarestream.com',
@@ -56,7 +57,7 @@ export const videosData: VideoData[] = [
     titleEN: titelEn_1,
     descriptionJP: descriptionJp_1,
     descriptionEN: descriptionEn_1,
-    cloudflareVideoId: '7ecdf951f891e2752ba2c7ae70b8a64c',
+    cloudflareVideoId: 'bb674bb7370d1c8dc82ca40711b15cab',
     thumbnailTime: 3,
   },
   {
@@ -65,7 +66,7 @@ export const videosData: VideoData[] = [
     titleEN: titelEn_1,
     descriptionJP: descriptionJp_1,
     descriptionEN: descriptionEn_1,
-    cloudflareVideoId: 'edbfb4a7492d55e8a8f237a30662c536',
+    cloudflareVideoId: 'af094672d8dedd642b47a3eb831d6be8',
     thumbnailTime: 3,
   },
   {
@@ -74,7 +75,7 @@ export const videosData: VideoData[] = [
     titleEN: titelEn_1,
     descriptionJP: descriptionJp_1,
     descriptionEN: descriptionEn_1,
-    cloudflareVideoId: '3d9b5ba407986d1ded35798593a11b12',
+    cloudflareVideoId: '3d4b9b81fcd3b0d211674d0adb0c91fe',
     thumbnailTime: 3,
   },
   {
@@ -83,7 +84,7 @@ export const videosData: VideoData[] = [
     titleEN: titelEn_1,
     descriptionJP: descriptionJp_1,
     descriptionEN: descriptionEn_1,
-    cloudflareVideoId: 'e23c54613287ff7861fbacc45d77aeb8',
+    cloudflareVideoId: 'd8b632eaccd37bab93a4d4e559a42e08',
     thumbnailTime: 3,
   },
   {
@@ -92,7 +93,7 @@ export const videosData: VideoData[] = [
     titleEN: titelEn_1,
     descriptionJP: descriptionJp_1,
     descriptionEN: descriptionEn_1,
-    cloudflareVideoId: '03e409e69fea01954846584a9856a023',
+    cloudflareVideoId: 'cc22e8b4ea56ed4b3cf7618aa5a378e9',
     thumbnailTime: 3,
   },
   {
@@ -101,7 +102,7 @@ export const videosData: VideoData[] = [
     titleEN: titelEn_1,
     descriptionJP: 'ミラー宗家による演武',
     descriptionEN: '',
-    cloudflareVideoId: 'c540a51baf9ba25f820caf9860b6ca49',
+    cloudflareVideoId: '2f4cf364a4dae713e68e7ca7668fb6fc',
     thumbnailTime: 3,
   },
   {
@@ -110,7 +111,7 @@ export const videosData: VideoData[] = [
     titleEN: titelEn_1,
     descriptionJP: '泰山流護身術の基本技',
     descriptionEN: '',
-    cloudflareVideoId: 'bf92c080a19b52d672fc466e030d7148',
+    cloudflareVideoId: 'b03dde76bac9feb208a9072ce1500f6d',
     thumbnailTime: 3,
   },
 ];
@@ -126,7 +127,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 1',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '4c358eecf6b6a25da78adf3f278ef8ca',
+    cloudflareVideoId: 'f587d0f6e7c91d082b060c69aa54f5e4',
     thumbnailTime: 3,
   },
   {
@@ -135,7 +136,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 2',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '07c757dfb346cd27a703a41378047c55',
+    cloudflareVideoId: '5dcf96e3bcb84ff6fc986d999e0e05be',
     thumbnailTime: 3,
   },
   {
@@ -144,7 +145,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 3',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '773eb27c1fd9049c4be68ec7d81b504f',
+    cloudflareVideoId: 'e607ee085b7edb5027e0aef3b474ac52',
     thumbnailTime: 3,
   },
   {
@@ -153,7 +154,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 4',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '8b3aa49e9b4fc3e2833055e4cd9faf5d',
+    cloudflareVideoId: 'af9e2dcdb164665f8eafbb4ddd4b8da8',
     thumbnailTime: 3,
   },
   {
@@ -162,7 +163,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 5',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: 'fca9132db3923a098a2ac738a3ef6892',
+    cloudflareVideoId: '623d56d788bcfe964b5b7b39f0719872',
     thumbnailTime: 3,
   },
   {
@@ -171,7 +172,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 6',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '25a3ef5bc19d2a5236f4e57e71b4eb3f',
+    cloudflareVideoId: '1f5d1df0451fd9e2ab281bc988a054b6',
     thumbnailTime: 3,
   },
   {
@@ -180,7 +181,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 7',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: 'b896baa4fea22f271adab3835a210782',
+    cloudflareVideoId: '76e8bdbdb5ee1570f86349ea081eb279',
     thumbnailTime: 3,
   },
   {
@@ -189,7 +190,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 8',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '8596f7853e70c90f69648ef9e129cf98',
+    cloudflareVideoId: '5dbcf46c9101b1e73d01d1742f2657e5',
     thumbnailTime: 3,
   },
   {
@@ -198,7 +199,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 9',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '26af94a13a3ad4c2dbb7ee6ad4a913e3',
+    cloudflareVideoId: '78bffcc9c205d8c1fc34a4ef2e839939',
     thumbnailTime: 3,
   },
   {
@@ -207,7 +208,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 10',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '0102da6ac96bff83c991343f7d65c418',
+    cloudflareVideoId: '2ff7c5183c26d732174436089889a4fc',
     thumbnailTime: 3,
   },
   {
@@ -216,7 +217,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 11',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '7644e58c203f2e66e2a6d9ec15c57a32',
+    cloudflareVideoId: 'e36cf164a5255e66c41b42a4848b9f41',
     thumbnailTime: 3,
   },
   {
@@ -225,7 +226,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 12',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '4b67e78be39de3ec76a590c58697d98c',
+    cloudflareVideoId: 'c1c32bea9eca50133d299cad092ff98b',
     thumbnailTime: 3,
   },
   {
@@ -234,7 +235,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 13',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '76f239206db02e04885758deeb2f6332',
+    cloudflareVideoId: '72257e9e94cf9cba6a163a64b24696c9',
     thumbnailTime: 3,
   },
   {
@@ -243,7 +244,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 14',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '61501b27ed201343a9254dda8f63ed6d',
+    cloudflareVideoId: 'addeb76d68a269ad0c156e9c51f4b9bb',
     thumbnailTime: 3,
   },
   {
@@ -252,7 +253,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 15',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '5173ab6b16c9ba9cf1ddade0cdfab2e6',
+    cloudflareVideoId: 'e7c41b969f5cc7f9d725b80bfc9a6954',
     thumbnailTime: 3,
   },
   {
@@ -261,7 +262,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 16',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '150470416cfd427947166bc5698b9d6d',
+    cloudflareVideoId: '8e5059ad93d1417e2763b33bcff62378',
     thumbnailTime: 3,
   },
   {
@@ -270,7 +271,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 17',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '1fae1dc0afeb9c924feb1fbc14de6906',
+    cloudflareVideoId: '77225f0011251feab8617bf0c8ee926b',
     thumbnailTime: 3,
   },
   {
@@ -279,7 +280,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 18',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '92c664b7b14a843664f06eea6986881c',
+    cloudflareVideoId: '60cd50372a01e68250806ef3bffa021b',
     thumbnailTime: 3,
   },
   {
@@ -288,7 +289,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 19',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '9ff616f5d05d01318ba6e55c166d3c19',
+    cloudflareVideoId: '2b2472dcecfc4888809d482d413e7af3',
     thumbnailTime: 3,
   },
   {
@@ -297,7 +298,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 20',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '60fdb619c9fb1fec077710c2b4f0b94a',
+    cloudflareVideoId: '41d0fe6a2d7d71f0cd4bc683633683ed',
     thumbnailTime: 3,
   },
   {
@@ -306,7 +307,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 21',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '800636a07054319fba8aa1101352c494',
+    cloudflareVideoId: '349fc5252fce7f096f46e682ba60464c',
     thumbnailTime: 3,
   },
   {
@@ -315,7 +316,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 22',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '1aa7e5322216c4be2b58af7cabcb3313',
+    cloudflareVideoId: '704f412963a5b52866f603ce0ec85646',
     thumbnailTime: 3,
   },
   {
@@ -324,7 +325,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 23',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '54b95ae4c844085a3f4726959d0437ac',
+    cloudflareVideoId: 'f9b1f29c7542a5f299bffd50e48b4a79',
     thumbnailTime: 3,
   },
   {
@@ -333,7 +334,7 @@ export const shiatsuTestimonialsData: VideoData[] = [
     titleEN: 'Customer Testimonial 24',
     descriptionJP: '',
     descriptionEN: '',
-    cloudflareVideoId: '4033c2849ec69b896724b8a8b0098630',
+    cloudflareVideoId: '56efe1965cf7434c5297e82084cec66f',
     thumbnailTime: 3,
   },
 ];
