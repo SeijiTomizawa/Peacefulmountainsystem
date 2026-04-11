@@ -41,12 +41,12 @@ export function NewsSection() {
           <div className="text-center mb-10">
             <h2
               style={{
-                fontFamily: language === 'jp' ? "'Zen Old Mincho', serif" : "'Damion', cursive",
+                fontFamily: language === 'jp' ? "'Zen Old Mincho', serif" : "'Playfair Display', serif",
                 fontSize: '28px',
-                fontWeight: 700,
+                fontWeight: language === 'jp' ? 700 : 600,
                 color: '#6B1F23',
                 lineHeight: '1.5',
-                letterSpacing: '0.05em',
+                letterSpacing: language === 'jp' ? '0.05em' : '0.08em',
                 marginBottom: '8px',
               }}
             >
@@ -67,6 +67,7 @@ export function NewsSection() {
           {items.length === 0 ? (
             <p
               style={{
+                fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                 color: '#6B1F23',
                 fontSize: '15px',
                 textAlign: 'center',
@@ -110,10 +111,10 @@ export function NewsSection() {
                       {/* Date */}
                       <span
                         style={{
+                          fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                           color: '#1A2B48',
                           fontSize: '13px',
                           opacity: 0.55,
-                          fontFamily: "'Noto Sans JP', sans-serif",
                         }}
                       >
                         {formatDate(item.date, language)}
@@ -123,9 +124,9 @@ export function NewsSection() {
                     {/* Title */}
                     <p
                       style={{
-                        fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Noto Sans JP', sans-serif",
+                        fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                         fontSize: '15px',
-                        fontWeight: 700,
+                        fontWeight: language === 'jp' ? 700 : 600,
                         color: '#1A2B48',
                         lineHeight: '1.6',
                         marginBottom: '8px',
@@ -137,6 +138,7 @@ export function NewsSection() {
                     {/* Body */}
                     <p
                       style={{
+                        fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                         fontSize: '14px',
                         color: '#1A2B48',
                         lineHeight: '1.85',

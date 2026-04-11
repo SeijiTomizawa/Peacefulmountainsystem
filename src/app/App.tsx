@@ -163,7 +163,8 @@ function DojoWebsite() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-              style={{ 
+              style={{
+                fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                 color: 'white',
                 fontSize: '20px',
                 lineHeight: '1.8',
@@ -181,18 +182,22 @@ function DojoWebsite() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-              style={{ 
-                fontFamily: language === 'jp' ? "'Zen Old Mincho', serif" : "'Noto Sans JP', sans-serif",
-                fontSize: '42px',
-                fontWeight: 700,
+              style={{
+                fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
+                fontSize: language === 'jp' ? 'clamp(28px, 7vw, 42px)' : 'clamp(20px, 5vw, 36px)',
+                fontWeight: language === 'jp' ? 700 : 600,
                 color: 'white',
-                lineHeight: '1.4',
+                lineHeight: '1.5',
                 marginBottom: '24px',
-                letterSpacing: '0.05em',
-                textShadow: '0 6px 16px rgba(0,0,0,0.95), 0 3px 6px rgba(0,0,0,0.9)'
+                letterSpacing: language === 'jp' ? '0.05em' : '0.03em',
+                textShadow: '0 6px 16px rgba(0,0,0,0.95), 0 3px 6px rgba(0,0,0,0.9)',
+                whiteSpace: 'pre-line',
+                textAlign: 'center'
               }}
             >
-              {t.hero.subtext}
+              {language === 'jp'
+                ? t.hero.subtext
+                : 'TaizanRyu Self-Defense System\n- Hachioji Honbu Dojo -'}
             </motion.h1>
             
             {/* English Title with fade and slide up animation */}
