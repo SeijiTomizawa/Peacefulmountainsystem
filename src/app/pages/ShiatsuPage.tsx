@@ -9,68 +9,16 @@ import { ContactFooter } from "../components/ContactFooter";
 import { SEOHead } from "../components/SEOHead";
 import { StructuredData } from "../components/StructuredData";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
-import { useState, useEffect } from "react";
-import { Check } from "lucide-react";
+import { useState } from "react";
 import Slider from "react-slick";
 import "../../styles/slick.css";
 import { COLORS } from "../constants/theme";
 import * as Images from "../assets/images";
-import {
-  getFeaturedPost,
-  facebookPageData,
-} from "../data/facebookData";
 
 function ShiatsuPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [fbLoaded, setFbLoaded] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
-
-  // Load Facebook SDK
-  useEffect(() => {
-    // Check if Facebook SDK is already loaded
-    if ((window as any).FB) {
-      setFbLoaded(true);
-      return;
-    }
-
-    // Load Facebook SDK script
-    const script = document.createElement('script');
-    script.src = 'https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v18.0';
-    script.async = true;
-    script.defer = true;
-    script.crossOrigin = 'anonymous';
-    script.id = 'facebook-jssdk'; // Add ID to prevent duplicates
-
-    script.onload = () => {
-      setFbLoaded(true);
-      // Parse Facebook plugins after SDK is loaded
-      if ((window as any).FB) {
-        (window as any).FB.XFBML.parse();
-      }
-    };
-
-    // Only append if not already present
-    if (!document.getElementById('facebook-jssdk')) {
-      document.body.appendChild(script);
-    }
-
-    // Cleanup function - but don't remove the script
-    // Facebook SDK should persist across component mounts
-    return () => {
-      // Do not remove script - let it persist
-      // The SDK is designed to be loaded once per page
-    };
-  }, []);
-
-  // Re-parse Facebook plugins when language changes
-  useEffect(() => {
-    if (fbLoaded && (window as any).FB) {
-      setTimeout(() => {
-        (window as any).FB.XFBML.parse();
-      }, 100);
-    }
-  }, [language, fbLoaded]);
 
   const carouselImages = [
     Images.shiatsuHeroBg1,
@@ -94,9 +42,6 @@ function ShiatsuPage() {
     pauseOnHover: false,
     arrows: false,
   };
-
-  // Get featured Facebook post for shiatsu page
-  const featuredPost = getFeaturedPost('shiatsu');
 
   return (
     <div
@@ -144,15 +89,15 @@ function ShiatsuPage() {
       <section
         className="relative"
         style={{
-          height: "60vh",
           minHeight: "400px",
+          height: "clamp(400px, 60vh, 600px)",
           backgroundColor: "#6B1F23",
         }}
       >
         <style>{`
           .shiatsu-carousel .slick-slide > div {
-            height: 60vh;
             min-height: 400px;
+            height: clamp(400px, 60vh, 600px);
           }
         `}</style>
 
@@ -267,127 +212,6 @@ function ShiatsuPage() {
               {t.shiatsu.about.text}
             </p>
           </FadeTransition>
-        </div>
-      </section>
-
-      {/* Treatment Menu Section */}
-      <section
-        style={{ backgroundColor: "white" }}
-        className="px-6 py-16"
-      >
-        <FadeTransition
-          keyValue={`services-heading-${language}`}
-        >
-          <h2
-            style={{
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: "26px",
-              fontWeight: 700,
-              color: "#1A2B48",
-              lineHeight: "1.5",
-              marginBottom: "32px",
-              textAlign: "center",
-            }}
-          >
-            {t.shiatsu.services.heading}
-          </h2>
-        </FadeTransition>
-
-        <div className="space-y-4">
-          {t.shiatsu.services.items.map((item, index) => (
-            <FadeTransition
-              key={index}
-              keyValue={`service-${index}-${language}`}
-            >
-              <div
-                className="rounded-lg shadow-md p-6"
-                style={{ backgroundColor: "#F9F9F7" }}
-              >
-                <div className="flex justify-between items-start mb-3">
-                  <h3
-                    style={{
-                      fontFamily: "'Noto Serif JP', serif",
-                      fontSize: "18px",
-                      fontWeight: 700,
-                      color: "#1A2B48",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <span
-                    style={{
-                      fontFamily: "'Noto Serif JP', serif",
-                      fontSize: "20px",
-                      fontWeight: 700,
-                      color: "#8C272E",
-                    }}
-                  >
-                    {item.price}
-                  </span>
-                </div>
-                <p
-                  style={{
-                    color: "#1A2B48",
-                    fontSize: "14px",
-                    lineHeight: "1.7",
-                    opacity: 0.8,
-                  }}
-                >
-                  {item.description}
-                </p>
-              </div>
-            </FadeTransition>
-          ))}
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section
-        style={{ backgroundColor: "#6B1F23" }}
-        className="px-6 py-16"
-      >
-        <FadeTransition
-          keyValue={`benefits-heading-${language}`}
-        >
-          <h2
-            style={{
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: "26px",
-              fontWeight: 700,
-              color: "white",
-              lineHeight: "1.5",
-              marginBottom: "32px",
-              textAlign: "center",
-            }}
-          >
-            {t.shiatsu.benefits.heading}
-          </h2>
-        </FadeTransition>
-
-        <div className="space-y-4">
-          {t.shiatsu.benefits.items.map((item, index) => (
-            <FadeTransition
-              key={index}
-              keyValue={`benefit-${index}-${language}`}
-            >
-              <div className="flex items-start gap-3">
-                <Check
-                  size={24}
-                  color="#8C272E"
-                  className="flex-shrink-0 mt-0.5"
-                />
-                <p
-                  style={{
-                    color: "white",
-                    fontSize: "16px",
-                    lineHeight: "1.8",
-                  }}
-                >
-                  {item}
-                </p>
-              </div>
-            </FadeTransition>
-          ))}
         </div>
       </section>
 
@@ -681,14 +505,14 @@ function ShiatsuPage() {
       </section>
 
       {/* Link to Reviews Page */}
-      <section style={{ backgroundColor: "white" }} className="px-6 py-12">
+      <section style={{ backgroundColor: "#6B1F23" }} className="px-6 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <FadeTransition keyValue={`reviews-link-${language}`}>
             <div
               className="rounded-lg p-8"
               style={{
-                backgroundColor: COLORS.warmBeige,
-                border: `2px solid ${COLORS.main}`,
+                backgroundColor: "rgba(255, 255, 255, 0.95)",
+                border: "2px solid rgba(255, 255, 255, 0.3)",
               }}
             >
               <h3
@@ -744,92 +568,6 @@ function ShiatsuPage() {
               </a>
             </div>
           </FadeTransition>
-        </div>
-      </section>
-
-      {/* Facebook Section */}
-      <section
-        style={{ backgroundColor: "white" }}
-        className="px-6 py-16"
-      >
-        <div className="max-w-2xl mx-auto">
-          <div
-            className="rounded-lg overflow-hidden shadow-lg"
-            style={{
-              backgroundColor: "#F9F9F7",
-              padding: "16px",
-            }}
-          >
-            {/* Featured Video Link */}
-            <FadeTransition keyValue={`facebook-featured-${language}`}>
-              <div>
-                <h3
-                  style={{
-                    fontFamily: "'Noto Serif JP', serif",
-                    fontSize: "18px",
-                    fontWeight: 600,
-                    color: "#1A2B48",
-                    marginBottom: "16px",
-                    textAlign: "center",
-                  }}
-                >
-                  {language === "jp"
-                    ? "注目の投稿"
-                    : "Featured Post"}
-                </h3>
-                
-                {/* Direct link to Facebook Reel */}
-                <div className="text-center">
-                  <div
-                    className="mb-4 p-6 rounded-lg"
-                    style={{
-                      backgroundColor: "rgba(93, 173, 226, 0.1)",
-                      border: "2px solid #5DADE2",
-                    }}
-                  >
-                    <p
-                      style={{
-                        color: "#1A2B48",
-                        fontSize: "15px",
-                        lineHeight: "1.7",
-                        marginBottom: "16px",
-                        opacity: 0.85,
-                      }}
-                    >
-                      {language === "jp"
-                        ? (featuredPost?.descriptionJP || "最新のリール動画をFacebookでチェック！施術の様子や効果をご覧いただけます。")
-                        : (featuredPost?.descriptionEN || "Check out our latest Reel on Facebook! See our treatments and their effects in action.")}
-                    </p>
-                    <a
-                      href={featuredPost?.url || "https://www.facebook.com/profile.php?id=100063558792326"}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block px-8 py-3 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg"
-                      style={{
-                        backgroundColor: COLORS.buttonPrimary,
-                        color: "white",
-                        fontSize: "15px",
-                        fontWeight: 600,
-                        textDecoration: "none",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
-                        e.currentTarget.style.transform = "translateY(-2px)";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
-                        e.currentTarget.style.transform = "translateY(0)";
-                      }}
-                    >
-                      {language === "jp"
-                        ? "Facebookで動画を見る 🎬"
-                        : "Watch Video on Facebook 🎬"}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </FadeTransition>
-          </div>
         </div>
       </section>
 

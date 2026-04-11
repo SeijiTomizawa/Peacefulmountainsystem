@@ -132,10 +132,10 @@ ${formData.message}
       <Header onMenuClick={() => setIsDrawerOpen(true)} />
 
       {/* Hero Section */}
-      <section className="relative" style={{ 
-        height: '40vh',
-        minHeight: '280px',
-        backgroundColor: '#1A2B48' 
+      <section className="relative" style={{
+        minHeight: '250px',
+        height: 'clamp(250px, 40vh, 400px)',
+        backgroundColor: '#1A2B48'
       }}>
         <div className="relative z-10 h-full flex items-center justify-center px-6">
           <FadeTransition keyValue={`contact-hero-${language}`} className="text-center">

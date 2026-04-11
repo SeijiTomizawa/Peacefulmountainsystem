@@ -88,11 +88,10 @@ export function ShiatsuReviewsPage() {
 
       {/* Hero Section */}
       <section
-        className="relative px-6"
+        className="relative px-6 py-16 md:pt-[120px] md:pb-[60px]"
         style={{
-          paddingTop: "120px",
-          paddingBottom: "60px",
-          minHeight: "400px",
+          minHeight: "350px",
+          height: "clamp(350px, 50vh, 500px)",
           backgroundImage: `linear-gradient(rgba(107, 31, 35, 0.85), rgba(107, 31, 35, 0.85)), url(${Images.shiatsuReviewsHeroBg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",

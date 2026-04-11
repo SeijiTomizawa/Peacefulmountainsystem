@@ -24,7 +24,7 @@ export function MembersPage() {
       <Header onMenuClick={() => setIsDrawerOpen(true)} />
 
       {/* Hero Section */}
-      <section style={{ backgroundColor: '#6B1F23' }} className="px-6 py-16">
+      <section style={{ backgroundColor: '#6B1F23', minHeight: '250px' }} className="px-6 py-12 md:py-16">
         <FadeTransition keyValue={`members-hero-${language}`}>
           <h1 style={{
             fontFamily: "'Playfair Display', serif",

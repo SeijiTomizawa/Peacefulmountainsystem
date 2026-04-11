@@ -106,7 +106,7 @@ function DojoWebsite() {
       <Header onMenuClick={handleMenuClick} />
 
       {/* Hero Section */}
-      <section id="hero" className="relative" style={{ backgroundColor: '#6B1F23', height: '500px', overflow: 'hidden' }}>
+      <section id="hero" className="relative" style={{ backgroundColor: '#6B1F23', minHeight: '400px', height: 'clamp(400px, 60vh, 600px)', overflow: 'hidden' }}>
         {/* Carousel Background */}
         <div className="absolute inset-0 z-0" style={{ width: '100%', height: '100%' }}>
           <Slider

@@ -44,10 +44,10 @@ function VideosPage() {
       <Header onMenuClick={() => setIsDrawerOpen(true)} />
 
       {/* Hero Section */}
-      <section className="relative" style={{ 
-        height: '50vh',
-        minHeight: '400px',
-        backgroundColor: '#6B1F23' 
+      <section className="relative" style={{
+        minHeight: '350px',
+        height: 'clamp(350px, 50vh, 500px)',
+        backgroundColor: '#6B1F23'
       }}>
         <div className="relative z-10 h-full flex items-center justify-center px-6">
           <FadeTransition keyValue={`videos-hero-${language}`} className="text-center max-w-4xl">

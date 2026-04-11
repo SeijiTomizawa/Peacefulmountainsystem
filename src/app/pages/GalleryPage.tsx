@@ -33,8 +33,8 @@ export function GalleryPage() {
 
       {/* Hero Section */}
       <section
-        style={{ backgroundColor: "#6B1F23" }}
-        className="px-6 py-16"
+        style={{ backgroundColor: "#6B1F23", minHeight: "250px" }}
+        className="px-6 py-12 md:py-16"
       >
         <FadeTransition keyValue={`gallery-hero-${language}`}>
           <h1

@@ -83,7 +83,7 @@ export function LinksPage() {
       <Header onMenuClick={() => setIsDrawerOpen(true)} />
 
       {/* Hero Section */}
-      <section style={{ backgroundColor: '#6B1F23' }} className="px-6 py-20">
+      <section style={{ backgroundColor: '#6B1F23', minHeight: '250px' }} className="px-6 py-12 md:py-20">
         <FadeTransition keyValue={`links-hero-${language}`}>
           <h1 style={{
             fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",

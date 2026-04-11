@@ -130,8 +130,8 @@ export function SokePage() {
 
       {/* Intro Section */}
       <section
-        style={{ backgroundColor: "#6B1F23" }}
-        className="px-6 py-16"
+        style={{ backgroundColor: "#6B1F23", minHeight: "300px" }}
+        className="px-6 py-12 md:py-16"
       >
         <div className="max-w-4xl mx-auto">
           <FadeTransition keyValue={`intro-${language}`}>

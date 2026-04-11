@@ -243,8 +243,8 @@ function SelfDefensePage() {
       <section
         className="relative"
         style={{
-          height: "70vh",
-          minHeight: "500px",
+          minHeight: "400px",
+          height: "clamp(400px, 60vh, 700px)",
           backgroundColor: th("hero").bg,
           overflow: "hidden",
         }}
@@ -264,7 +264,7 @@ function SelfDefensePage() {
             pauseOnHover={false}
             lazyLoad="progressive"
           >
-            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+            <div style={{ minHeight: "400px", height: "clamp(400px, 60vh, 700px)", width: "100%" }}>
               <img
                 src={Images.selfDefenseHeroBg1}
                 alt="Dojo Interior 1"
@@ -276,7 +276,7 @@ function SelfDefensePage() {
                 }}
               />
             </div>
-            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+            <div style={{ minHeight: "400px", height: "clamp(400px, 60vh, 700px)", width: "100%" }}>
               <img
                 src={Images.selfDefenseHeroBg2}
                 alt="Dojo Interior 2"
@@ -288,7 +288,7 @@ function SelfDefensePage() {
                 }}
               />
             </div>
-            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+            <div style={{ minHeight: "400px", height: "clamp(400px, 60vh, 700px)", width: "100%" }}>
               <img
                 src={Images.selfDefenseHeroBg3}
                 alt="Dojo Interior 3"
@@ -300,7 +300,7 @@ function SelfDefensePage() {
                 }}
               />
             </div>
-            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+            <div style={{ minHeight: "400px", height: "clamp(400px, 60vh, 700px)", width: "100%" }}>
               <img
                 src={Images.selfDefenseHeroBg4}
                 alt="Dojo Interior 4"
@@ -312,7 +312,7 @@ function SelfDefensePage() {
                 }}
               />
             </div>
-            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+            <div style={{ minHeight: "400px", height: "clamp(400px, 60vh, 700px)", width: "100%" }}>
               <img
                 src={Images.selfDefenseHeroBg5}
                 alt="Dojo Interior 5"
@@ -324,7 +324,7 @@ function SelfDefensePage() {
                 }}
               />
             </div>
-            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+            <div style={{ minHeight: "400px", height: "clamp(400px, 60vh, 700px)", width: "100%" }}>
               <img
                 src={Images.selfDefenseHeroBg6}
                 alt="Dojo Interior 6"
@@ -336,7 +336,7 @@ function SelfDefensePage() {
                 }}
               />
             </div>
-            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+            <div style={{ minHeight: "400px", height: "clamp(400px, 60vh, 700px)", width: "100%" }}>
               <img
                 src={Images.selfDefenseHeroBg7}
                 alt="Dojo Interior 7"
@@ -348,7 +348,7 @@ function SelfDefensePage() {
                 }}
               />
             </div>
-            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+            <div style={{ minHeight: "400px", height: "clamp(400px, 60vh, 700px)", width: "100%" }}>
               <img
                 src={Images.selfDefenseHeroBg8}
                 alt="Dojo Interior 8"
