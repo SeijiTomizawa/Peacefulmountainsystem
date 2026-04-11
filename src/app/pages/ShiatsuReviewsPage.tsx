@@ -38,6 +38,12 @@ export function ShiatsuReviewsPage() {
       src: Images.clientLetter3,
       alt: "Thank you letter from client Alexandra",
     },
+    {
+      src: Images.bibleLadyLetter,
+      alt: language === "jp"
+        ? "教会のバイブルスタディで宗家ミラー先生が助けた女性からの感動的な手紙"
+        : "Emotional letter from a lady who Soke Miller helped during Bible study",
+    },
   ];
 
   return (
@@ -82,15 +88,19 @@ export function ShiatsuReviewsPage() {
 
       {/* Hero Section */}
       <section
+        className="relative px-6"
         style={{
-          backgroundColor: COLORS.main,
           paddingTop: "120px",
           paddingBottom: "60px",
+          minHeight: "400px",
+          backgroundImage: `linear-gradient(rgba(107, 31, 35, 0.85), rgba(107, 31, 35, 0.85)), url(${Images.shiatsuReviewsHeroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
-        className="px-6"
       >
         <FadeTransition keyValue={`reviews-hero-${language}`}>
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl mx-auto text-center relative z-10">
             <h1
               style={{
                 fontFamily: "'Zen Old Mincho', serif",
@@ -117,71 +127,9 @@ export function ShiatsuReviewsPage() {
         </FadeTransition>
       </section>
 
-      {/* Testimonials Text Section */}
-      <section style={{ backgroundColor: "white" }} className="px-6 py-20">
-        <div className="max-w-4xl mx-auto">
-          <FadeTransition keyValue={`reviews-content-${language}`}>
-            <div className="space-y-12">
-              {t.testimonials.reviews.map((review, index) => (
-                <div
-                  key={index}
-                  className="rounded-lg p-8 shadow-md"
-                  style={{
-                    backgroundColor: COLORS.warmBeige,
-                    borderLeft: `4px solid ${COLORS.main}`,
-                  }}
-                >
-                  <div className="mb-4">
-                    <p
-                      style={{
-                        fontFamily: "'Zen Old Mincho', serif",
-                        fontSize: "18px",
-                        fontWeight: 600,
-                        color: COLORS.main,
-                        marginBottom: "8px",
-                      }}
-                    >
-                      {review.name}
-                    </p>
-                    <div
-                      style={{
-                        display: "flex",
-                        gap: "4px",
-                        marginBottom: "16px",
-                      }}
-                    >
-                      {[...Array(5)].map((_, i) => (
-                        <span
-                          key={i}
-                          style={{
-                            color: "#FFB800",
-                            fontSize: "20px",
-                          }}
-                        >
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <p
-                    style={{
-                      color: "#333",
-                      fontSize: "15px",
-                      lineHeight: "1.8",
-                    }}
-                  >
-                    {review.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </FadeTransition>
-        </div>
-      </section>
-
       {/* Testimonials Videos Section */}
       <section
-        style={{ backgroundColor: "#1A2B48" }}
+        style={{ backgroundColor: "white" }}
         className="px-6 py-12"
       >
         <div className="max-w-7xl mx-auto">
@@ -191,7 +139,7 @@ export function ShiatsuReviewsPage() {
                 fontFamily: "'Noto Serif JP', serif",
                 fontSize: "26px",
                 fontWeight: 700,
-                color: "white",
+                color: "#6B1F23",
                 lineHeight: "1.4",
                 marginBottom: "8px",
                 textAlign: "center",
@@ -204,7 +152,7 @@ export function ShiatsuReviewsPage() {
             </h2>
             <p
               style={{
-                color: "white",
+                color: "#1A2B48",
                 fontSize: "14px",
                 lineHeight: "1.6",
                 marginBottom: "32px",
@@ -228,8 +176,8 @@ export function ShiatsuReviewsPage() {
                 <div
                   className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl"
                   style={{
-                    backgroundColor: "rgba(255, 255, 255, 0.05)",
-                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                    backgroundColor: "white",
+                    border: "1px solid rgba(26, 43, 72, 0.1)",
                   }}
                 >
                   {/* Cloudflare Stream iframe */}
@@ -262,7 +210,7 @@ export function ShiatsuReviewsPage() {
                         fontFamily: "'Noto Sans JP', sans-serif",
                         fontSize: "13px",
                         fontWeight: 600,
-                        color: "white",
+                        color: "#1A2B48",
                         lineHeight: "1.4",
                         textAlign: "center",
                       }}
@@ -277,85 +225,7 @@ export function ShiatsuReviewsPage() {
         </div>
       </section>
 
-      {/* Emotional Letter from Bible Study Section */}
-      <section
-        style={{ backgroundColor: "white" }}
-        className="px-6 py-16"
-      >
-        <FadeTransition
-          keyValue={`bible-letter-heading-${language}`}
-        >
-          <h2
-            style={{
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: "28px",
-              fontWeight: 700,
-              color: "#6B1F23",
-              lineHeight: "1.5",
-              marginBottom: "16px",
-              textAlign: "center",
-              letterSpacing: "0.02em",
-            }}
-          >
-            {language === "jp"
-              ? "教会のバイブルスタディで宗家が助けた女性からの感動的な手紙"
-              : "Emotional Letter from a Lady who Soke Miller Helped Out in the Church During Bible Study"}
-          </h2>
-          <p
-            style={{
-              color: "#1A2B48",
-              fontSize: "15px",
-              lineHeight: "1.8",
-              marginBottom: "48px",
-              textAlign: "center",
-              opacity: 0.85,
-            }}
-          >
-            {language === "jp"
-              ? "教会のバイブルスタディで宗家ミラー先生から癒しと励ましを受けた女性からの心温まる感謝の手紙"
-              : "A heartwarming letter of gratitude from a lady who received healing and encouragement from Soke Miller during Bible study at church"}
-          </p>
-        </FadeTransition>
-
-        <div className="max-w-4xl mx-auto">
-          <FadeTransition
-            keyValue={`bible-letter-image-${language}`}
-          >
-            <div
-              className="rounded-lg overflow-hidden shadow-2xl"
-              style={{ backgroundColor: "white" }}
-            >
-              <img
-                src={Images.bibleLadyLetter}
-                alt={
-                  language === "jp"
-                    ? "教会のバイブルスタディで宗家ミラー先生が助けた女性からの感動的な手紙"
-                    : "Emotional letter from a lady who Soke Miller helped during Bible study"
-                }
-                className="w-full h-auto object-contain"
-                style={{ objectPosition: "center" }}
-              />
-            </div>
-            <p
-              className="mt-6"
-              style={{
-                color: "#1A2B48",
-                fontSize: "14px",
-                lineHeight: "1.8",
-                textAlign: "center",
-                opacity: 0.75,
-                fontStyle: "italic",
-              }}
-            >
-              {language === "jp"
-                ? "教会でのバイブルスタディ中に宗家ミラー先生から助けを受けた女性からの感謝の手紙"
-                : "Letter of gratitude from a lady who received help from Soke Miller during Bible study at church"}
-            </p>
-          </FadeTransition>
-        </div>
-      </section>
-
-      {/* Client Letters Section */}
+      {/* Client Letters Section (including Bible Study Letter) */}
       <section
         style={{ backgroundColor: "#E8E2D6" }}
         className="px-6 py-16"
@@ -390,12 +260,54 @@ export function ShiatsuReviewsPage() {
             }}
           >
             {language === "jp"
-              ? "心温まるお客様からの感謝のお手紙をご覧ください"
-              : "View heartwarming letters of gratitude from our clients"}
+              ? "心温まる感謝のお手紙をご覧ください。クリックすると拡大表示されます。"
+              : "View heartwarming letters of gratitude from our clients. Click to enlarge."}
           </p>
         </FadeTransition>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Bible Study Letter - First */}
+          <FadeTransition keyValue={`bible-letter-${language}`}>
+            <div className="md:col-span-2">
+              <div
+                className="rounded-lg overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:scale-105 max-w-3xl mx-auto"
+                style={{ backgroundColor: "white" }}
+                onClick={() => setSelectedLetterIndex(3)}
+              >
+                <img
+                  src={Images.bibleLadyLetter}
+                  alt={
+                    language === "jp"
+                      ? "教会のバイブルスタディで宗家ミラー先生が助けた女性からの感動的な手紙"
+                      : "Emotional letter from a lady who Soke Miller helped during Bible study"
+                  }
+                  className="w-full h-auto object-contain"
+                  style={{
+                    objectPosition: "center",
+                    aspectRatio: "3/2",
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+              <p
+                style={{
+                  fontFamily: "'Noto Serif JP', serif",
+                  color: "#1A2B48",
+                  fontSize: "14px",
+                  lineHeight: "1.8",
+                  textAlign: "center",
+                  marginTop: "12px",
+                  opacity: 0.75,
+                }}
+              >
+                {language === "jp"
+                  ? "教会でのバイブルスタディ中に宗家ミラー先生から助けを受けた女性からの感謝の手紙 - クリックして拡大"
+                  : "Letter from a lady who received help from Soke Miller during Bible study - Click to enlarge"}
+              </p>
+            </div>
+          </FadeTransition>
+
+          {/* Other Client Letters */}
           {clientLetters.map((letter, index) => (
             <FadeTransition
               key={index}

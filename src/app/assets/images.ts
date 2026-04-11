@@ -29,6 +29,7 @@
 const IMAGE_STORAGE_URL =
   "https://d3ztha1syidvy24e.public.blob.vercel-storage.com/images";
 const UNSPLASH_BASE_URL = "https://images.unsplash.com";
+const R2_STORAGE_URL = "https://pub-488a24026ed4411b8d591260b603cdd1.r2.dev";
 
 // ================================================
 // ロゴ・ブランド画像
@@ -84,6 +85,10 @@ export const bibleLadyLetter =
 // 著書
 export const shiatsuTextbook1 =
   IMAGE_STORAGE_URL + "/41nYq%2Bw7QAL._SY445_SX342_ML2_.jpg";
+
+// お客様の声ページヒーロー背景画像
+export const shiatsuReviewsHeroBg =
+  IMAGE_STORAGE_URL + "/shiatsu/SHIATSU_DO_04.webp";
 
 // ================================================
 // セミナー画像 - 愛知セミナー
