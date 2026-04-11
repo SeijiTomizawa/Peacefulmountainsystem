@@ -184,7 +184,7 @@ function DojoWebsite() {
               transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
               style={{
                 fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
-                fontSize: language === 'jp' ? 'clamp(28px, 7vw, 42px)' : 'clamp(20px, 5vw, 36px)',
+                fontSize: language === 'jp' ? 'clamp(24px, 6vw, 38px)' : 'clamp(20px, 5vw, 36px)',
                 fontWeight: language === 'jp' ? 700 : 600,
                 color: 'white',
                 lineHeight: '1.5',
@@ -196,7 +196,7 @@ function DojoWebsite() {
               }}
             >
               {language === 'jp'
-                ? t.hero.subtext
+                ? '泰山流護身術・逮捕術\n- 東京八王子本部道場 -'
                 : 'TaizanRyu Self-Defense System\n- Hachioji Honbu Dojo -'}
             </motion.h1>
             
