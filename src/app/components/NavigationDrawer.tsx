@@ -267,6 +267,27 @@ export const NavigationDrawer = memo(function NavigationDrawer({
                   </li>
                   <li>
                     <Link
+                      to="/shiatsu-reviews"
+                      onClick={onClose}
+                      className="block w-full text-left px-4 py-3 rounded-lg hover:bg-white/10 transition-colors"
+                      style={{
+                        color: "white",
+                        fontSize: "15px",
+                        fontWeight: 500,
+                        textDecoration: "none",
+                        backgroundColor:
+                          location.pathname === "/shiatsu-reviews"
+                            ? "rgba(255,255,255,0.1)"
+                            : "transparent",
+                      }}
+                    >
+                      {language === "jp"
+                        ? "整体院お客様の声"
+                        : "Testimonials"}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       to="/gallery"
                       onClick={onClose}
                       className="block w-full text-left px-4 py-3 rounded-lg hover:bg-white/10 transition-colors"

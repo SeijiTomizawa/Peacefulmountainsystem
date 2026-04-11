@@ -32,6 +32,7 @@ import { GalleryPage } from './pages/GalleryPage';
 import { SokePage } from './pages/SokePage';
 import { ContactPage } from './pages/ContactPage';
 import { LinksPage } from './pages/LinksPage';
+import { ShiatsuReviewsPage } from './pages/ShiatsuReviewsPage';
 
 function DojoWebsite() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -608,6 +609,7 @@ export default function App() {
             <Route path="/self-defense" element={<SelfDefensePage />} />
             <Route path="/members" element={<MembersPage />} />
             <Route path="/videos" element={<VideosPageDefault />} />
+            <Route path="/shiatsu-reviews" element={<ShiatsuReviewsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/soke" element={<SokePage />} />
             <Route path="/contact" element={<ContactPage />} />

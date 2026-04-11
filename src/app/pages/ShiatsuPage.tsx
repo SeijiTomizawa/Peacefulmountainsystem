@@ -10,17 +10,11 @@ import { SEOHead } from "../components/SEOHead";
 import { StructuredData } from "../components/StructuredData";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useState, useEffect } from "react";
-import { Check, X, Play } from "lucide-react";
+import { Check } from "lucide-react";
 import Slider from "react-slick";
 import "../../styles/slick.css";
 import { COLORS } from "../constants/theme";
 import * as Images from "../assets/images";
-import { 
-  shiatsuTestimonialsData, 
-  getCloudflareStreamUrl, 
-  getCloudflareStreamThumbnail,
-  CLOUDFLARE_STREAM_CONFIG
-} from "../data/videosData";
 import {
   getFeaturedPost,
   facebookPageData,
@@ -28,10 +22,6 @@ import {
 
 function ShiatsuPage() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [selectedLetterIndex, setSelectedLetterIndex] =
-    useState<number | null>(null);
-  const [selectedVideoId, setSelectedVideoId] = useState<number | null>(null);
-  const [showAllVideos, setShowAllVideos] = useState(false);
   const [fbLoaded, setFbLoaded] = useState(false);
   const { language } = useLanguage();
   const t = translations[language];
@@ -51,7 +41,7 @@ function ShiatsuPage() {
     script.defer = true;
     script.crossOrigin = 'anonymous';
     script.id = 'facebook-jssdk'; // Add ID to prevent duplicates
-    
+
     script.onload = () => {
       setFbLoaded(true);
       // Parse Facebook plugins after SDK is loaded
@@ -81,21 +71,6 @@ function ShiatsuPage() {
       }, 100);
     }
   }, [language, fbLoaded]);
-
-  const clientLetters = [
-    {
-      src: Images.clientLetter1,
-      alt: "Thank you letter from client Hilda",
-    },
-    {
-      src: Images.clientLetter2,
-      alt: "Thank you letter from client Francesca",
-    },
-    {
-      src: Images.clientLetter3,
-      alt: "Thank you letter from client Alexandra",
-    },
-  ];
 
   const carouselImages = [
     Images.carouselImage1,
@@ -738,344 +713,70 @@ function ShiatsuPage() {
         </div>
       </section>
 
-      {/* Emotional Letter from Bible Study Section */}
-      <section
-        style={{ backgroundColor: "white" }}
-        className="px-6 py-16"
-      >
-        <FadeTransition
-          keyValue={`bible-letter-heading-${language}`}
-        >
-          <h2
-            style={{
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: "28px",
-              fontWeight: 700,
-              color: "#6B1F23",
-              lineHeight: "1.5",
-              marginBottom: "16px",
-              textAlign: "center",
-              letterSpacing: "0.02em",
-            }}
-          >
-            {language === "jp"
-              ? "教会のバイブルスタディで宗家が助けた女性からの感動的な手紙"
-              : "Emotional Letter from a Lady who Soke Miller Helped Out in the Church During Bible Study"}
-          </h2>
-          <p
-            style={{
-              color: "#1A2B48",
-              fontSize: "15px",
-              lineHeight: "1.8",
-              marginBottom: "48px",
-              textAlign: "center",
-              opacity: 0.85,
-            }}
-          >
-            {language === "jp"
-              ? "教会のバイブルスタディで宗家ミラー先生から癒しと励ましを受けた女性からの心温まる感謝の手紙"
-              : "A heartwarming letter of gratitude from a lady who received healing and encouragement from Soke Miller during Bible study at church"}
-          </p>
-        </FadeTransition>
-
-        <div className="max-w-4xl mx-auto">
-          <FadeTransition
-            keyValue={`bible-letter-image-${language}`}
-          >
+      {/* Link to Reviews Page */}
+      <section style={{ backgroundColor: "white" }} className="px-6 py-12">
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeTransition keyValue={`reviews-link-${language}`}>
             <div
-              className="rounded-lg overflow-hidden shadow-2xl"
-              style={{ backgroundColor: "white" }}
-            >
-              <img
-                src={Images.bibleLadyLetter}
-                alt={
-                  language === "jp"
-                    ? "教会のバイブルタディで宗家ミラー先生が助けた女性からの感動的な手紙"
-                    : "Emotional letter from a lady who Soke Miller helped during Bible study"
-                }
-                className="w-full h-auto object-contain"
-                style={{ objectPosition: "center" }}
-              />
-            </div>
-            <p
-              className="mt-6"
+              className="rounded-lg p-8"
               style={{
-                color: "#1A2B48",
-                fontSize: "14px",
-                lineHeight: "1.8",
-                textAlign: "center",
-                opacity: 0.75,
-                fontStyle: "italic",
+                backgroundColor: COLORS.warmBeige,
+                border: `2px solid ${COLORS.main}`,
               }}
             >
-              {language === "jp"
-                ? "教会でのバイブルスタディ中に宗家ミラー先生から助けを受けた女性からの感謝の手紙"
-                : "Letter of gratitude from a lady who received help from Soke Miller during Bible study at church"}
-            </p>
-          </FadeTransition>
-        </div>
-      </section>
-
-      {/* Client Letters Section */}
-      <section
-        style={{ backgroundColor: "#E8E2D6" }}
-        className="px-6 py-16"
-      >
-        <FadeTransition
-          keyValue={`client-letters-heading-${language}`}
-        >
-          <h2
-            style={{
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: "28px",
-              fontWeight: 700,
-              color: "#6B1F23",
-              lineHeight: "1.5",
-              marginBottom: "16px",
-              textAlign: "center",
-              letterSpacing: "0.02em",
-            }}
-          >
-            {language === "jp"
-              ? "お客様からのお手紙"
-              : "Letters from Our Clients"}
-          </h2>
-          <p
-            style={{
-              color: "#1A2B48",
-              fontSize: "15px",
-              lineHeight: "1.8",
-              marginBottom: "48px",
-              textAlign: "center",
-              opacity: 0.85,
-            }}
-          >
-            {language === "jp"
-              ? "心温まるお客様からの感謝のお手紙をご覧ください"
-              : "View heartwarming letters of gratitude from our clients"}
-          </p>
-        </FadeTransition>
-
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {clientLetters.map((letter, index) => (
-            <FadeTransition
-              key={index}
-              keyValue={`client-letter-${index}-${language}`}
-            >
-              <div
-                className="rounded-lg overflow-hidden shadow-lg cursor-pointer transition-all duration-300 hover:shadow-2xl hover:scale-105"
-                style={{ backgroundColor: "white" }}
-                onClick={() => setSelectedLetterIndex(index)}
-              >
-                <img
-                  src={letter.src}
-                  alt={letter.alt}
-                  className="w-full h-auto object-contain"
-                  style={{
-                    objectPosition: "center",
-                    aspectRatio: "3/2",
-                    objectFit: "cover",
-                  }}
-                />
-              </div>
-              <p
+              <h3
                 style={{
                   fontFamily: "'Noto Serif JP', serif",
-                  color: "#1A2B48",
-                  fontSize: "14px",
-                  lineHeight: "1.8",
-                  textAlign: "center",
-                  marginTop: "12px",
-                  opacity: 0.75,
+                  fontSize: "22px",
+                  fontWeight: 700,
+                  color: COLORS.main,
+                  marginBottom: "16px",
                 }}
               >
                 {language === "jp"
-                  ? "クリックして拡大"
-                  : "Click to enlarge"}
-              </p>
-            </FadeTransition>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials Videos Section */}
-      <section
-        style={{ backgroundColor: "#1A2B48" }}
-        className="px-6 py-12"
-      >
-        <div className="max-w-7xl mx-auto">
-          <FadeTransition keyValue={`testimonials-heading-${language}`}>
-            <h2
-              style={{
-                fontFamily: "'Noto Serif JP', serif",
-                fontSize: "26px",
-                fontWeight: 700,
-                color: "white",
-                lineHeight: "1.4",
-                marginBottom: "8px",
-                textAlign: "center",
-                letterSpacing: "0.01em",
-              }}
-            >
-              {language === "jp"
-                ? "お客様の声（ビデオ）"
-                : "Customer Testimonials (Videos)"}
-            </h2>
-            <p
-              style={{
-                color: "white",
-                fontSize: "14px",
-                lineHeight: "1.6",
-                marginBottom: "32px",
-                textAlign: "center",
-                opacity: 0.75,
-              }}
-            >
-              {language === "jp"
-                ? "実際に施術を受けられたお客様の声をご覧ください"
-                : "Hear from our clients who have experienced our treatments"}
-            </p>
-          </FadeTransition>
-
-          {/* Video Grid */}
-          <div className="relative mb-6">
-            {/* 横スクロールコンテナ */}
-            <div 
-              className="overflow-x-auto pb-4"
-              style={{
-                scrollbarWidth: 'thin',
-                scrollbarColor: '#5DADE2 rgba(255, 255, 255, 0.1)',
-              }}
-            >
-              <style>{`
-                .video-scroll-container::-webkit-scrollbar {
-                  height: 8px;
-                }
-                .video-scroll-container::-webkit-scrollbar-track {
-                  background: rgba(255, 255, 255, 0.1);
-                  border-radius: 4px;
-                }
-                .video-scroll-container::-webkit-scrollbar-thumb {
-                  background: #5DADE2;
-                  border-radius: 4px;
-                }
-                .video-scroll-container::-webkit-scrollbar-thumb:hover {
-                  background: #4A9FD8;
-                }
-              `}</style>
-              <div 
-                className="flex gap-4 video-scroll-container"
-                style={{ minWidth: 'min-content', justifyContent: 'center' }}
+                  ? "お客様の声をもっと見る"
+                  : "View More Testimonials"}
+              </h3>
+              <p
+                style={{
+                  color: "#1A2B48",
+                  fontSize: "15px",
+                  lineHeight: "1.8",
+                  marginBottom: "24px",
+                  opacity: 0.85,
+                }}
               >
-                {(showAllVideos ? shiatsuTestimonialsData : shiatsuTestimonialsData.slice(0, 6)).map((video, index) => (
-                  <FadeTransition
-                    key={video.id}
-                    keyValue={`testimonial-${video.id}-${language}`}
-                  >
-                    <div
-                      className="rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl flex-shrink-0"
-                      style={{
-                        backgroundColor: "rgba(255, 255, 255, 0.05)",
-                        border: "1px solid rgba(255, 255, 255, 0.1)",
-                        width: "160px",
-                      }}
-                    >
-                      {/* Cloudflare Stream iframe - always visible with controls */}
-                      <div
-                        className="relative w-full"
-                        style={{
-                          aspectRatio: "9/16",
-                        }}
-                      >
-                        <iframe
-                          key={`video-${video.id}-${selectedVideoId === video.id ? 'active' : 'inactive'}`}
-                          src={getCloudflareStreamUrl(
-                            video.cloudflareVideoId, 
-                            selectedVideoId === video.id,
-                            video.thumbnailTime || 3
-                          )}
-                          className="w-full h-full"
-                          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                          allowFullScreen
-                          style={{
-                            border: "none",
-                          }}
-                        />
-                      </div>
-
-                      {/* Video Title - Compact */}
-                      <div className="p-2">
-                        <p
-                          style={{
-                            fontFamily: "'Noto Sans JP', sans-serif",
-                            fontSize: "12px",
-                            fontWeight: 600,
-                            color: "white",
-                            lineHeight: "1.3",
-                            textAlign: "center",
-                          }}
-                        >
-                          {language === "jp" ? video.titleJP : video.titleEN}
-                        </p>
-                      </div>
-                    </div>
-                  </FadeTransition>
-                ))}
-              </div>
+                {language === "jp"
+                  ? "実際に施術を受けられたお客様の体験談と動画インタビューをご覧いただけます。"
+                  : "See client testimonials and video interviews from those who have experienced our treatments."}
+              </p>
+              <a
+                href="/shiatsu-reviews"
+                style={{
+                  backgroundColor: COLORS.buttonPrimary,
+                  color: "white",
+                  padding: "14px 32px",
+                  borderRadius: "8px",
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                  display: "inline-block",
+                  transition: "all 0.3s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    COLORS.buttonPrimaryHover;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
+                }}
+              >
+                {language === "jp"
+                  ? "お客様の声ページへ"
+                  : "View Testimonials"}
+              </a>
             </div>
-
-            {/* スクロールヒント（モバイル用） */}
-            {!showAllVideos && shiatsuTestimonialsData.length > 6 && (
-              <div className="md:hidden text-center mt-2">
-                <p
-                  style={{
-                    color: "white",
-                    fontSize: "12px",
-                    opacity: 0.6,
-                    fontStyle: "italic",
-                  }}
-                >
-                  {language === "jp" ? "← スワイプして他のビデオを見る →" : "← Swipe to see more →"}
-                </p>
-              </div>
-            )}
-          </div>
-
-          {/* Show More/Less Button */}
-          {shiatsuTestimonialsData.length > 6 && (
-            <FadeTransition keyValue={`show-more-btn-${showAllVideos}`}>
-              <div className="text-center">
-                <button
-                  onClick={() => setShowAllVideos(!showAllVideos)}
-                  className="px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-                  style={{
-                    backgroundColor: COLORS.buttonPrimary,
-                    color: "white",
-                    fontSize: "14px",
-                    fontWeight: 600,
-                    border: "none",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
-                    e.currentTarget.style.transform = "translateY(0)";
-                  }}
-                >
-                  {showAllVideos
-                    ? language === "jp"
-                      ? "表示を減らす"
-                      : "Show Less"
-                    : language === "jp"
-                    ? `もっと見る（${shiatsuTestimonialsData.length - 6}件）`
-                    : `Show More (${shiatsuTestimonialsData.length - 6} more)`}
-                </button>
-              </div>
-            </FadeTransition>
-          )}
+          </FadeTransition>
         </div>
       </section>
 
@@ -1286,45 +987,6 @@ function ShiatsuPage() {
           </FadeTransition>
         </div>
       </section>
-
-      {/* Modal for Letter Details */}
-      {selectedLetterIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.85)" }}
-          onClick={() => setSelectedLetterIndex(null)}
-        >
-          <div
-            className="relative max-w-4xl w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setSelectedLetterIndex(null)}
-              className="absolute top-4 right-4 z-10 rounded-full p-2 transition-colors"
-              style={{ backgroundColor: COLORS.buttonPrimary }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = COLORS.buttonPrimaryHover;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = COLORS.buttonPrimary;
-              }}
-            >
-              <X size={24} color="white" />
-            </button>
-            <div
-              className="rounded-lg overflow-hidden"
-              style={{ backgroundColor: "white" }}
-            >
-              <img
-                src={clientLetters[selectedLetterIndex].src}
-                alt={clientLetters[selectedLetterIndex].alt}
-                className="w-full h-auto object-contain"
-                style={{ objectPosition: "center" }}
-              />
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Access Section */}
       <AccessSection />

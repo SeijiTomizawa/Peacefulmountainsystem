@@ -7,12 +7,13 @@ import { FadeTransition } from '../components/FadeTransition';
 import { AccessSection } from '../components/AccessSection';
 import { ContactFooter } from '../components/ContactFooter';
 import { Play } from 'lucide-react';
-import { 
-  videosData, 
-  getCloudflareStreamUrl, 
+import {
+  videosData,
+  martialArtsTechniquesData,
+  getCloudflareStreamUrl,
   getCloudflareStreamThumbnail,
   CLOUDFLARE_STREAM_CONFIG,
-  type VideoData 
+  type VideoData
 } from '../data/videosData';
 
 function VideosPage() {
@@ -115,31 +116,58 @@ function VideosPage() {
         </div>
       </section>
 
-      {/* Videos Grid Section */}
+      {/* Videos Grid Section - Dojo Training */}
       <section style={{ backgroundColor: '#F9F9F7' }} className="px-6 py-20">
         <div className="max-w-7xl mx-auto">
+          <FadeTransition keyValue={`dojo-training-heading-${language}`}>
+            <h2 style={{
+              fontFamily: "'Noto Serif JP', serif",
+              fontSize: '32px',
+              fontWeight: 700,
+              color: '#6B1F23',
+              lineHeight: '1.4',
+              marginBottom: '16px',
+              textAlign: 'center',
+              letterSpacing: '0.02em'
+            }}>
+              {language === 'jp' ? '道場での稽古風景' : 'Dojo Training Sessions'}
+            </h2>
+            <p style={{
+              color: '#1A2B48',
+              fontSize: '16px',
+              lineHeight: '1.8',
+              marginBottom: '48px',
+              textAlign: 'center',
+              opacity: 0.85
+            }}>
+              {language === 'jp'
+                ? '八王子本部道場での日常的な稽古の様子をご覧ください'
+                : 'Watch our daily training sessions at Hachioji Honbu Dojo'}
+            </p>
+          </FadeTransition>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {videosData.map((video, index) => (
               <FadeTransition key={video.id} keyValue={`video-${video.id}-${language}`}>
-                <div 
+                <div
                   className="rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl"
-                  style={{ 
+                  style={{
                     backgroundColor: 'white',
                     border: '1px solid rgba(26, 43, 72, 0.1)'
                   }}
                 >
                   {/* Cloudflare Stream iframe - always visible with controls */}
                   <div>
-                    <div 
+                    <div
                       className="relative"
-                      style={{ 
+                      style={{
                         aspectRatio: '16/9',
                       }}
                     >
                       <iframe
                         key={`video-${video.id}-${selectedVideo === video.id ? 'active' : 'inactive'}`}
                         src={getCloudflareStreamUrl(
-                          video.cloudflareVideoId, 
+                          video.cloudflareVideoId,
                           selectedVideo === video.id,
                           video.thumbnailTime || 3
                         )}
@@ -154,7 +182,7 @@ function VideosPage() {
 
                     {/* Video Info */}
                     <div className="p-6">
-                      <h3 style={{ 
+                      <h3 style={{
                         fontFamily: "'Noto Serif JP', serif",
                         fontSize: '18px',
                         fontWeight: 700,
@@ -165,7 +193,101 @@ function VideosPage() {
                         {language === 'jp' ? video.titleJP : video.titleEN}
                       </h3>
                       {(video.descriptionJP || video.descriptionEN) && (
-                        <p style={{ 
+                        <p style={{
+                          color: '#1A2B48',
+                          fontSize: '14px',
+                          lineHeight: '1.7',
+                          opacity: 0.75
+                        }}>
+                          {language === 'jp' ? video.descriptionJP : video.descriptionEN}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </FadeTransition>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Martial Arts Techniques Section */}
+      <section style={{ backgroundColor: '#E8E2D6' }} className="px-6 py-20">
+        <div className="max-w-7xl mx-auto">
+          <FadeTransition keyValue={`techniques-heading-${language}`}>
+            <h2 style={{
+              fontFamily: "'Noto Serif JP', serif",
+              fontSize: '32px',
+              fontWeight: 700,
+              color: '#6B1F23',
+              lineHeight: '1.4',
+              marginBottom: '16px',
+              textAlign: 'center',
+              letterSpacing: '0.02em'
+            }}>
+              {language === 'jp' ? '武術の解説' : 'Martial Arts Techniques'}
+            </h2>
+            <p style={{
+              color: '#1A2B48',
+              fontSize: '16px',
+              lineHeight: '1.8',
+              marginBottom: '48px',
+              textAlign: 'center',
+              opacity: 0.85
+            }}>
+              {language === 'jp'
+                ? '宗家による技術解説と実演をご覧ください'
+                : 'Watch technical explanations and demonstrations by Soke'}
+            </p>
+          </FadeTransition>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {martialArtsTechniquesData.map((video) => (
+              <FadeTransition key={video.id} keyValue={`technique-${video.id}-${language}`}>
+                <div
+                  className="rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl"
+                  style={{
+                    backgroundColor: 'white',
+                    border: '1px solid rgba(26, 43, 72, 0.1)'
+                  }}
+                >
+                  <div>
+                    <div
+                      className="relative"
+                      style={{
+                        aspectRatio: '16/9',
+                      }}
+                    >
+                      <iframe
+                        key={`technique-video-${video.id}-${selectedVideo === video.id ? 'active' : 'inactive'}`}
+                        src={getCloudflareStreamUrl(
+                          video.cloudflareVideoId,
+                          selectedVideo === video.id,
+                          video.thumbnailTime || 3
+                        )}
+                        className="w-full h-full"
+                        allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                        allowFullScreen
+                        style={{
+                          border: 'none',
+                        }}
+                      />
+                    </div>
+
+                    {/* Video Info */}
+                    <div className="p-6">
+                      <h3 style={{
+                        fontFamily: "'Noto Serif JP', serif",
+                        fontSize: '18px',
+                        fontWeight: 700,
+                        color: '#8C272E',
+                        marginBottom: '12px',
+                        letterSpacing: '0.01em'
+                      }}>
+                        {language === 'jp' ? video.titleJP : video.titleEN}
+                      </h3>
+                      {(video.descriptionJP || video.descriptionEN) && (
+                        <p style={{
                           color: '#1A2B48',
                           fontSize: '14px',
                           lineHeight: '1.7',
