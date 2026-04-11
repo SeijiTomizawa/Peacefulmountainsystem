@@ -24,6 +24,8 @@ import {
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import * as Images from "../assets/images";
 import { certificateImages } from "../data/certificatesData";
+import Slider from "react-slick";
+import "../../styles/slick.css";
 
 // ============================================================
 // 【テーマ定義】セクションの背景色・文字色などを一括管理
@@ -244,17 +246,130 @@ function SelfDefensePage() {
           height: "70vh",
           minHeight: "500px",
           backgroundColor: th("hero").bg,
-          backgroundImage: `url(${Images.selfDefenseDojoInterior})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          overflow: "hidden",
         }}
       >
+        {/* Carousel Background */}
+        <div className="absolute inset-0 z-0" style={{ width: "100%", height: "100%" }}>
+          <Slider
+            dots={false}
+            infinite={true}
+            speed={1000}
+            fade={true}
+            slidesToShow={1}
+            slidesToScroll={1}
+            autoplay={true}
+            autoplaySpeed={5000}
+            arrows={false}
+            pauseOnHover={false}
+            lazyLoad="progressive"
+          >
+            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+              <img
+                src={Images.selfDefenseHeroBg1}
+                alt="Dojo Interior 1"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+              <img
+                src={Images.selfDefenseHeroBg2}
+                alt="Dojo Interior 2"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+              <img
+                src={Images.selfDefenseHeroBg3}
+                alt="Dojo Interior 3"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+              <img
+                src={Images.selfDefenseHeroBg4}
+                alt="Dojo Interior 4"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+              <img
+                src={Images.selfDefenseHeroBg5}
+                alt="Dojo Interior 5"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+              <img
+                src={Images.selfDefenseHeroBg6}
+                alt="Dojo Interior 6"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+              <img
+                src={Images.selfDefenseHeroBg7}
+                alt="Dojo Interior 7"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+            <div style={{ height: "70vh", minHeight: "500px", width: "100%" }}>
+              <img
+                src={Images.selfDefenseHeroBg8}
+                alt="Dojo Interior 8"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+          </Slider>
+        </div>
+
         {/* オーバーレイ */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 z-[1]"
           style={{ backgroundColor: "rgba(107, 31, 35, 0.72)" }}
         />
+
+        {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center px-6">
           <FadeTransition
             keyValue={`selfdefense-hero-${language}`}

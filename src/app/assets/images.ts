@@ -90,6 +90,17 @@ export const shiatsuTextbook1 =
 export const shiatsuReviewsHeroBg =
   IMAGE_STORAGE_URL + "/shiatsu/SHIATSU_DO_04.webp";
 
+// 護身術ページヒーロー背景画像カルーセル（Cloudflare R2）
+const DOJO_R2_URL = "https://pub-488a24026ed4411b8d591260b603cdd1.r2.dev/dojo";
+export const selfDefenseHeroBg1 = DOJO_R2_URL + "/DOJO_01.webp";
+export const selfDefenseHeroBg2 = DOJO_R2_URL + "/DOJO_02.webp";
+export const selfDefenseHeroBg3 = DOJO_R2_URL + "/DOJO_03.webp";
+export const selfDefenseHeroBg4 = DOJO_R2_URL + "/DOJO_04.webp";
+export const selfDefenseHeroBg5 = DOJO_R2_URL + "/DOJO_05.webp";
+export const selfDefenseHeroBg6 = DOJO_R2_URL + "/DOJO_06.webp";
+export const selfDefenseHeroBg7 = DOJO_R2_URL + "/DOJO_07.webp";
+export const selfDefenseHeroBg8 = DOJO_R2_URL + "/DOJO_08.webp";
+
 // ================================================
 // セミナー画像 - 愛知セミナー
 // ================================================
