@@ -60,6 +60,7 @@ export const membersDataJP: MemberData[] = [
 ];
 
 export const membersDataEN: MemberData[] = [
+  { name: 'WARREN HARRIS', rank: 'TZ001', experience: '', comment: '' },
   { name: 'RENA KEY', rank: 'TZ002', experience: '', comment: '' },
   { name: 'RODNEY CHOE', rank: 'TZ003', experience: '', comment: '' },
   { name: 'JADA-LOVE ROPER', rank: 'TZ004', experience: '', comment: '' },
