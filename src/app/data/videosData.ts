@@ -173,7 +173,7 @@ export const martialArtsTechniquesData: VideoData[] = [
     titleEN: 'Basic Stance',
     descriptionJP: '泰山流護身術の基本姿勢と構え方',
     descriptionEN: 'Basic posture and stance in TaizanRyu Self-Defense',
-    cloudflareVideoId: 'aee7e408fe8eb2d611fee83502d0bb31',
+    cloudflareVideoId: '5f8e6c20984807725482fccffb004c71',
     thumbnailTime: 3,
   },
   {
