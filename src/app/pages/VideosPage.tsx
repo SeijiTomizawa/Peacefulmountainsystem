@@ -51,25 +51,28 @@ function VideosPage() {
       }}>
         <div className="relative z-10 h-full flex items-center justify-center px-6">
           <FadeTransition keyValue={`videos-hero-${language}`} className="text-center max-w-4xl">
-            <h1 style={{ 
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: '40px',
-              fontWeight: 700,
+            <h1 style={{
+              fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
+              fontSize: language === 'jp' ? '40px' : '42px',
+              fontWeight: language === 'jp' ? 700 : 600,
               color: 'white',
               lineHeight: '1.3',
               marginBottom: '24px',
-              letterSpacing: '0.02em'
+              letterSpacing: language === 'jp' ? '0.02em' : '0.03em',
+              textAlign: 'center'
             }}>
               {t.videos.page.hero.headline}
             </h1>
-            <p style={{ 
+            <p style={{
+              fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
               color: 'white',
               fontSize: '17px',
               lineHeight: '1.8',
               fontWeight: 400,
               opacity: 0.95,
               maxWidth: '600px',
-              margin: '0 auto'
+              margin: '0 auto',
+              textAlign: 'center'
             }}>
               {t.videos.page.hero.subtext}
             </p>

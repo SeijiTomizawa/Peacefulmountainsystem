@@ -377,13 +377,14 @@ function SelfDefensePage() {
           >
             <h1
               style={{
-                fontFamily: "'Noto Serif JP', serif",
-                fontSize: "40px",
-                fontWeight: 700,
+                fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
+                fontSize: language === "jp" ? "40px" : "42px",
+                fontWeight: language === "jp" ? 700 : 600,
                 color: th("hero").headingColor,
                 lineHeight: "1.3",
                 marginBottom: "24px",
-                letterSpacing: "0.02em",
+                letterSpacing: language === "jp" ? "0.02em" : "0.03em",
+                textAlign: "center",
               }}
             >
               {language === "jp"
@@ -392,6 +393,7 @@ function SelfDefensePage() {
             </h1>
             <p
               style={{
+                fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                 color: th("hero").bodyColor,
                 fontSize: "17px",
                 lineHeight: "1.8",
@@ -399,6 +401,7 @@ function SelfDefensePage() {
                 opacity: 0.95,
                 maxWidth: "600px",
                 margin: "0 auto",
+                textAlign: "center",
               }}
             >
               {t.selfDefense.hero.subtext}

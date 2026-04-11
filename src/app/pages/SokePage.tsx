@@ -137,13 +137,14 @@ export function SokePage() {
           <FadeTransition keyValue={`intro-${language}`}>
             <h1
               style={{
-                fontFamily: "'Noto Serif JP', serif",
-                fontSize: "26px",
-                fontWeight: 700,
+                fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
+                fontSize: language === "jp" ? "26px" : "42px",
+                fontWeight: language === "jp" ? 700 : 600,
                 color: "white",
                 lineHeight: "1.5",
                 marginBottom: "24px",
                 textAlign: "center",
+                letterSpacing: language === "jp" ? "0" : "0.03em",
               }}
             >
               {t.master.page.intro.heading}
@@ -153,6 +154,7 @@ export function SokePage() {
           <FadeTransition keyValue={`intro-text-${language}`}>
             <p
               style={{
+                fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                 color: "white",
                 fontSize: "15px",
                 lineHeight: "1.8",

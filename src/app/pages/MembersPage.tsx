@@ -26,21 +26,25 @@ export function MembersPage() {
       {/* Hero Section */}
       <section style={{ backgroundColor: '#6B1F23' }} className="px-6 py-16">
         <FadeTransition keyValue={`members-hero-${language}`}>
-          <h1 style={{ 
-            fontFamily: "'Damion', cursive",
-            fontSize: '32px',
-            fontWeight: 700,
+          <h1 style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: '42px',
+            fontWeight: 600,
             color: 'white',
             lineHeight: '1.4',
-            marginBottom: '12px'
+            marginBottom: '12px',
+            letterSpacing: '0.03em',
+            textAlign: 'center'
           }}>
             TAIZANRYU OFFICIAL STUDENT LIST
           </h1>
-          <p style={{ 
+          <p style={{
+            fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
             color: 'white',
             fontSize: '15px',
             lineHeight: '1.7',
-            opacity: 0.9
+            opacity: 0.9,
+            textAlign: 'center'
           }}>
             {t.members.page.hero.subtext}
           </p>

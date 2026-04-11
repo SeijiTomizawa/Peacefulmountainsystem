@@ -73,26 +73,26 @@ function ShiatsuPage() {
   }, [language, fbLoaded]);
 
   const carouselImages = [
-    Images.carouselImage1,
-    Images.carouselImage2,
-    Images.carouselImage3,
-    Images.carouselImage4,
-    Images.carouselImage5,
-    Images.carouselImage6,
+    Images.shiatsuHeroBg1,
+    Images.shiatsuHeroBg2,
+    Images.shiatsuHeroBg3,
+    Images.shiatsuHeroBg4,
+    Images.shiatsuHeroBg5,
+    Images.shiatsuHeroBg6,
+    Images.shiatsuHeroBg7,
   ];
 
   const sliderSettings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 800,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 10000,
     fade: true,
-    pauseOnHover: true,
+    pauseOnHover: false,
     arrows: false,
-    dotsClass: "slick-dots custom-dots",
   };
 
   // Get featured Facebook post for shiatsu page
@@ -150,48 +150,6 @@ function ShiatsuPage() {
         }}
       >
         <style>{`
-          .custom-dots {
-            position: absolute;
-            bottom: 25px;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            text-align: center;
-            z-index: 15;
-          }
-          .custom-dots li {
-            position: relative;
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            margin: 0 5px;
-            padding: 0;
-            cursor: pointer;
-          }
-          .custom-dots li button {
-            font-size: 0;
-            line-height: 0;
-            display: block;
-            width: 10px;
-            height: 10px;
-            padding: 0;
-            cursor: pointer;
-            color: transparent;
-            border: 0;
-            outline: none;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            transition: all 0.3s ease;
-          }
-          .custom-dots li button:hover {
-            background: rgba(255, 255, 255, 0.8);
-          }
-          .custom-dots li.slick-active button {
-            background: #5DADE2;
-            width: 12px;
-            height: 12px;
-          }
           .shiatsu-carousel .slick-slide > div {
             height: 60vh;
             min-height: 400px;
@@ -209,7 +167,6 @@ function ShiatsuPage() {
                     className="w-full h-full object-cover"
                     style={{
                       objectPosition: "center",
-                      opacity: 0.6,
                     }}
                   />
                 </div>
@@ -218,6 +175,12 @@ function ShiatsuPage() {
           </Slider>
         </div>
 
+        {/* オーバーレイ */}
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{ backgroundColor: "rgba(107, 31, 35, 0.72)" }}
+        />
+
         <div className="relative z-10 h-full flex items-center justify-center px-6">
           <FadeTransition
             keyValue={`shiatsu-hero-${language}`}
@@ -225,12 +188,14 @@ function ShiatsuPage() {
           >
             <h1
               style={{
-                fontFamily: "'Noto Serif JP', serif",
-                fontSize: "32px",
-                fontWeight: 700,
+                fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
+                fontSize: language === "jp" ? "32px" : "42px",
+                fontWeight: language === "jp" ? 700 : 600,
                 color: "white",
                 lineHeight: "1.4",
                 marginBottom: "16px",
+                letterSpacing: language === "jp" ? "0" : "0.03em",
+                textAlign: "center",
                 textShadow:
                   "0 4px 12px rgba(0,0,0,0.95), 0 2px 4px rgba(0,0,0,0.9)",
               }}
@@ -239,10 +204,12 @@ function ShiatsuPage() {
             </h1>
             <p
               style={{
+                fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                 color: "white",
                 fontSize: "15px",
                 lineHeight: "1.7",
                 fontWeight: 400,
+                textAlign: "center",
                 textShadow:
                   "0 4px 12px rgba(0,0,0,0.95), 0 2px 4px rgba(0,0,0,0.9)",
               }}

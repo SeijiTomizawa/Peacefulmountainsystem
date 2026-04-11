@@ -103,22 +103,26 @@ export function ShiatsuReviewsPage() {
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <h1
               style={{
-                fontFamily: "'Zen Old Mincho', serif",
-                fontSize: "32px",
-                fontWeight: 700,
+                fontFamily: language === "jp" ? "'Zen Old Mincho', serif" : "'Playfair Display', serif",
+                fontSize: language === "jp" ? "32px" : "42px",
+                fontWeight: language === "jp" ? 700 : 600,
                 color: "white",
                 lineHeight: "1.4",
                 marginBottom: "16px",
+                letterSpacing: language === "jp" ? "0" : "0.03em",
+                textAlign: "center",
               }}
             >
               {t.testimonials.heading}
             </h1>
             <p
               style={{
+                fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
                 color: "white",
                 fontSize: "16px",
                 lineHeight: "1.8",
                 opacity: 0.9,
+                textAlign: "center",
               }}
             >
               {t.testimonials.subheading}

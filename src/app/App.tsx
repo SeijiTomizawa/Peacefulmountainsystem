@@ -200,17 +200,18 @@ function DojoWebsite() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 1.3, ease: "easeOut" }}
-              style={{ 
-                fontFamily: "'Damion', cursive",
-                fontSize: '24px',
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                fontSize: '28px',
                 fontWeight: 600,
                 color: 'white',
                 lineHeight: '1.5',
-                letterSpacing: '0.12em',
-                textShadow: '0 6px 16px rgba(0,0,0,0.95), 0 3px 6px rgba(0,0,0,0.9)'
+                letterSpacing: '0.08em',
+                textShadow: '0 6px 16px rgba(0,0,0,0.95), 0 3px 6px rgba(0,0,0,0.9)',
+                textAlign: 'center'
               }}
             >
-              PEACEFUL MOUNTAIN SYSTEM
+              Peaceful Mountain System
             </motion.h2>
           </div>
         </div>

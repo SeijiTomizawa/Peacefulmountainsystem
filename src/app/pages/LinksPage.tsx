@@ -85,18 +85,20 @@ export function LinksPage() {
       {/* Hero Section */}
       <section style={{ backgroundColor: '#6B1F23' }} className="px-6 py-20">
         <FadeTransition keyValue={`links-hero-${language}`}>
-          <h1 style={{ 
-            fontFamily: "'Noto Serif JP', serif",
-            fontSize: '32px',
-            fontWeight: 700,
+          <h1 style={{
+            fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
+            fontSize: language === 'jp' ? '32px' : '42px',
+            fontWeight: language === 'jp' ? 700 : 600,
             color: 'white',
             lineHeight: '1.4',
             marginBottom: '12px',
-            textAlign: 'center'
+            textAlign: 'center',
+            letterSpacing: language === 'jp' ? '0' : '0.03em'
           }}>
             {pageContent.hero.headline}
           </h1>
-          <p style={{ 
+          <p style={{
+            fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
             color: 'white',
             fontSize: '16px',
             lineHeight: '1.8',

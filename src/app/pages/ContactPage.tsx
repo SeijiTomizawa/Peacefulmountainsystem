@@ -139,22 +139,26 @@ ${formData.message}
       }}>
         <div className="relative z-10 h-full flex items-center justify-center px-6">
           <FadeTransition keyValue={`contact-hero-${language}`} className="text-center">
-            <h1 style={{ 
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: '32px',
-              fontWeight: 700,
+            <h1 style={{
+              fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
+              fontSize: language === 'jp' ? '32px' : '42px',
+              fontWeight: language === 'jp' ? 700 : 600,
               color: 'white',
               lineHeight: '1.4',
-              marginBottom: '12px'
+              marginBottom: '12px',
+              letterSpacing: language === 'jp' ? '0' : '0.03em',
+              textAlign: 'center'
             }}>
               {t.contact.page.hero.headline}
             </h1>
-            <p style={{ 
+            <p style={{
+              fontFamily: language === 'jp' ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
               color: 'white',
               fontSize: '15px',
               lineHeight: '1.7',
               fontWeight: 400,
-              opacity: 0.9
+              opacity: 0.9,
+              textAlign: 'center'
             }}>
               {t.contact.page.hero.subtext}
             </p>

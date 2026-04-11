@@ -39,22 +39,26 @@ export function GalleryPage() {
         <FadeTransition keyValue={`gallery-hero-${language}`}>
           <h1
             style={{
-              fontFamily: "'Noto Serif JP', serif",
-              fontSize: "32px",
-              fontWeight: 700,
+              fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
+              fontSize: language === "jp" ? "32px" : "42px",
+              fontWeight: language === "jp" ? 700 : 600,
               color: "white",
               lineHeight: "1.4",
               marginBottom: "12px",
+              letterSpacing: language === "jp" ? "0" : "0.03em",
+              textAlign: "center",
             }}
           >
             {t.gallery.page.hero.headline}
           </h1>
           <p
             style={{
+              fontFamily: language === "jp" ? "'Noto Serif JP', serif" : "'Playfair Display', serif",
               color: "white",
               fontSize: "15px",
               lineHeight: "1.7",
               opacity: 0.85,
+              textAlign: "center",
             }}
           >
             {t.gallery.page.hero.subtext}
