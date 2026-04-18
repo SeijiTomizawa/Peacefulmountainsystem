@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useLanguage } from "../contexts/LanguageContext";
 import { translations } from "../translations";
 import { NavigationDrawer } from "../components/NavigationDrawer";
@@ -24,6 +24,15 @@ export function ShiatsuReviewsPage() {
     useState<number | null>(null);
   const { language } = useLanguage();
   const t = translations[language];
+
+  // Sort videos by order (if specified) or by id
+  const sortedTestimonials = useMemo(() => {
+    return [...shiatsuTestimonialsData].sort((a, b) => {
+      const orderA = a.order ?? a.id;
+      const orderB = b.order ?? b.id;
+      return orderA - orderB;
+    });
+  }, []);
 
   const clientLetters = [
     {
@@ -171,7 +180,7 @@ export function ShiatsuReviewsPage() {
 
           {/* Video Grid - 4 columns */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {shiatsuTestimonialsData.map((video) => (
+            {sortedTestimonials.map((video) => (
               <FadeTransition
                 key={video.id}
                 keyValue={`testimonial-${video.id}-${language}`}

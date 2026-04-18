@@ -33,6 +33,7 @@ export interface VideoData {
   descriptionEN: string;
   cloudflareVideoId: string; // Cloudflare StreamのVideo ID
   thumbnailTime?: number; // サムネイル表示する秒数（オプション、デフォルトは0）
+  order?: number; // 表示順序（オプション、小さい数字が先に表示される）
 }
 
 /**
@@ -59,6 +60,7 @@ export const videosData: VideoData[] = [
     descriptionEN: descriptionEn_1,
     cloudflareVideoId: 'bb674bb7370d1c8dc82ca40711b15cab',
     thumbnailTime: 3,
+    order: 2, // 2番目に表示
   },
   {
     id: 2,
@@ -444,6 +446,16 @@ export const shiatsuTestimonialsData: VideoData[] = [
     descriptionEN: '',
     cloudflareVideoId: '56efe1965cf7434c5297e82084cec66f',
     thumbnailTime: 3,
+  },
+  {
+    id: 125,
+    titleJP: 'お客様の声 25',
+    titleEN: 'Customer Testimonial 25',
+    descriptionJP: '',
+    descriptionEN: '',
+    cloudflareVideoId: '88d657701c4d0d20760c570c38d65566',
+    thumbnailTime: 3,
+    order: 1, // 最初に表示
   },
 ];
 
