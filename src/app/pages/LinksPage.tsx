@@ -29,6 +29,12 @@ export function LinksPage() {
       visitButton: 'ウェブサイトを見る',
       items: [
         {
+          name: '泰山流柔術 東海岸本部 コウジン道場',
+          location: '20 Seaview Avenue Jersey City N.J 07305',
+          description: '私たちは、そのビジョンに100％共感しています。それが「コウジン道場」のスタイルです。混沌としたこの世界において、真の修行とは帯やトロフィーのためではありません。それは、揺るぎない肉体、精神、そして魂の鎧を鍛え上げ、胸を張って歩み、脅威を早期に察知し、街が投げかけるあらゆる事態に対処できるようにすることです。言い訳は通用せず、経歴も問われません。ただ、純粋な可能性を解き放つだけです。道場師範 エメリー・マルドロウ',
+          url: 'ウェブサイトは現在作成中'
+        },
+        {
           name: '天庸流柔術 大阪総本部道場 木鶏塾',
           location: '大阪府大阪市北区天満',
           description: '力や身体の大きさに関係なく、一人ひとりのポテンシャルの向上を目的とした稽古を行ってります。',
@@ -52,6 +58,12 @@ export function LinksPage() {
       description: 'Introducing dojos and martial arts organizations with friendly relationships that have trained with Soke Joe Miller.',
       visitButton: 'Visit Website',
       items: [
+        {
+          name: 'Peaceful Mountain System East Coast Honbu KOUJIN Dojo',
+          location: '120 Seaview Avenue Jersey City N.J 07305',
+          description: 'We connect with that vision 100%, KOUJIN dojo style. In a chaotic world, real training isn\'t about belts or trophies—it\'s forging unbreakable physical, mental, and spiritual armor so you walk tall, spot threats early, and handle whatever the streets throw at you. No excuses, no backgrounds held against you; just pure potential unlocked. Dojo Sensei Emery Muldrow',
+          url: 'Web site under construction. '
+        },
         {
           name: 'Tenyo-Ryu Jujutsu Osaka Sohonbu Dojo Mokkeijuku',
           location: 'Kita-ku, Osaka City, Osaka',
